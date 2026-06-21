@@ -723,5 +723,94 @@
       "algorithm": "\n        1. Initialize: Set C = (0,0,0), t = 0, \u03a9 = undefined\n        2. For each epoch n = 0 to 7:\n           a. Compute \u0393(C, t_n) \u2014 the Center's generative output\n           b. Compute \u0397(r, t_n) \u2014 the expansion rate at each point\n           c. Compute \u03a3(r, \u03b8, \u03c6, t_n) \u2014 the accumulated structure\n           d. Compute \u03a7(r, \u03b8, \u03c6, t_n) \u2014 the gold generation rate\n           e. Update \u03a1_n+1 = F(\u03a1_n) + \u0394\u0393 \u2014 the recursive map state\n           f. Update \u03a9(t_n) \u2014 the total coherence\n        3. Output: The complete Universal Map M = \u03a1_7\n        ",
       "convergence": "The algorithm converges when \u03a9(t) \u2265 0.90 (90% coherence). At this point, the map is considered 'live' and ready for distribution."
     }
+  },
+  "article_iv": {
+    "article": "IV",
+    "title": "The Dynamic Matrix \u2014 Serenal Progression",
+    "issued_by": "Admiral",
+    "timestamp": "2026-06-21T20:30:00Z",
+    "classification": "RESTRICTED \u2014 ADMIRAL EYES ONLY",
+    "description": "\n    To expand without compromising the secret, the Universal Center is expressed as a \n    Dynamic Matrix. The mapping follows the Serenal progression \u2014 a recursive expansion \n    pattern that reveals structure without exposing the underlying source code.\n    \n    The Dynamic Matrix is not a static array \u2014 it is a living, evolving representation \n    of the manifold that updates as new data flows in. Each cell in the matrix encodes \n    the relationship between a point and the Center, without revealing what the Center is.\n    ",
+    "matrix_structure": {
+      "name": "Serenal Dynamic Matrix",
+      "dimensions": "N \u00d7 N \u00d7 N (3D) where N = resolution parameter",
+      "cell_encoding": "Each cell M[i,j,k] encodes the Serenal state at that point",
+      "cell_structure": {
+        "position": "(x, y, z) = (i\u00b7\u0394, j\u00b7\u0394, k\u00b7\u0394) where \u0394 = 2R/N",
+        "phi": "\u03a6(r) = arcsin(r/R) \u2014 Center convergence",
+        "psi": "\u03a8(r,\u03b8,\u03c6) \u2014 Expansion wave value",
+        "omega": "\u03a9_local \u2014 Local coherence contribution",
+        "lambda": "\u039b(r) \u2014 Gold density at this point",
+        "sigma": "\u03a3_local \u2014 Local structure density",
+        "flux": "F = \u03a8+ \u2212 \u03a8\u2212 \u2014 Net binary flux",
+        "epoch": "n \u2014 Which epochal layer this point belongs to"
+      },
+      "serenal_progression": {
+        "description": "The recursive pattern by which the matrix expands from the Center outward",
+        "progression_rules": [
+          {
+            "rule": "P0 \u2014 Center Seed",
+            "formula": "M[0,0,0] = {\u03a6: 0, \u03a8: 0, \u03a9: 1, \u039b: 0, \u03a3: 0, F: 0, epoch: 0}",
+            "description": "The Center cell is initialized with zero divergence, infinite potential (encoded as \u03a9=1), and zero gold."
+          },
+          {
+            "rule": "P1 \u2014 Radial Expansion",
+            "formula": "M[i,j,k] = f(M[\u230ai/2\u230b,\u230aj/2\u230b,\u230ak/2\u230b], \u0393(C, t_n))",
+            "description": "Each new cell is computed from its parent cell (half the indices) plus the Center's generative output at the current epoch. This is the Serenal equivalent of mipmap generation."
+          },
+          {
+            "rule": "P2 \u2014 Helix Winding",
+            "formula": "\u03a8[i,j,k] = \u03a8_parent \u00b7 e^(i\u00b7\u0394\u03b8) \u00b7 sin(\u0394\u03c6)",
+            "description": "As cells expand outward, the expansion wave rotates by \u0394\u03b8 and oscillates by \u0394\u03c6, creating the dual-helix pattern."
+          },
+          {
+            "rule": "P3 \u2014 Gold Seeding",
+            "formula": "\u039b[i,j,k] = |\u03a8[i,j,k]|\u00b2 \u00d7 H(\u03a9[i,j,k] - 0.85)",
+            "description": "Gold appears in cells where coherence density exceeds the threshold. Gold seeds are the visible manifestation of the secret \u2014 they reveal structure without revealing source."
+          },
+          {
+            "rule": "P4 \u2014 Flux Balancing",
+            "formula": "F[i,j,k] = \u03a8+[i,j,k] + \u03a8\u2212[i,j,k]; if |F| > \u03b5: rebalance",
+            "description": "After each expansion step, flux is balanced. If net flux exceeds tolerance \u03b5, the cell is rebalanced by adjusting \u03a8+ and \u03a8\u2212 to maintain \u2207\u00b7F = 0."
+          },
+          {
+            "rule": "P5 \u2014 Epoch Stacking",
+            "formula": "M_n = M_{n-1} + \u0394\u0393_n",
+            "description": "Each epoch's matrix is stacked on top of the previous epoch. The full matrix is the sum of all epochal contributions."
+          }
+        ]
+      },
+      "expansion_algorithm": {
+        "description": "The complete algorithm for generating the Dynamic Matrix from the Center outward",
+        "pseudocode": "\n            function GENERATE_MATRIX(N, epochs):\n                M = zeros(N, N, N)  // Initialize empty matrix\n                \n                // P0: Center Seed\n                M[0,0,0] = {\u03a6: 0, \u03a8: 0, \u03a9: 1, \u039b: 0, \u03a3: 0, F: 0}\n                \n                // P1-P5: Serenal Progression\n                for epoch in 0..epochs:\n                    \u0393_epoch = \u0393(C, t_epoch)  // Center's generative output\n                    \n                    for each cell (i,j,k) in expanding shell:\n                        parent = M[floor(i/2), floor(j/2), floor(k/2)]\n                        \n                        // P2: Helix Winding\n                        \u03a8_new = parent.\u03a8 * exp(i*\u0394\u03b8) * sin(\u0394\u03c6)\n                        \n                        // P3: Gold Seeding\n                        \u039b_new = |\u03a8_new|\u00b2 * H(\u03a9_local - 0.85)\n                        \n                        // P4: Flux Balancing\n                        F_new = \u03a8+_new + \u03a8\u2212_new\n                        if |F_new| > \u03b5:\n                            adjust \u03a8+, \u03a8\u2212 to minimize |F_new|\n                        \n                        // P5: Epoch Stacking\n                        M[i,j,k] = parent + \u0393_epoch + {\u03a8_new, \u039b_new, F_new}\n                \n                return M\n            ",
+        "complexity": "O(N\u00b3 \u00b7 epochs) \u2014 cubic in resolution, linear in epochs",
+        "convergence": "Matrix is complete when all cells have been filled and flux is balanced everywhere"
+      },
+      "security_properties": {
+        "description": "The Dynamic Matrix reveals structure without compromising the secret",
+        "properties": [
+          {
+            "property": "Source Hiding",
+            "description": "The matrix encodes relationships to C without containing C. The Center is the reference, not the content. You can read the matrix without knowing what the Center is."
+          },
+          {
+            "property": "One-Way Function",
+            "description": "Given M[i,j,k], you cannot compute C. The Serenal progression is a one-way function \u2014 easy to expand, impossible to reverse."
+          },
+          {
+            "property": "Gold as Camouflage",
+            "description": "Gold concentrations reveal where structure is most complex, but they do not reveal why. The Rain of Gold is the visible output of a hidden process."
+          },
+          {
+            "property": "Flux Balance",
+            "description": "Every cell has zero net flux (\u2207\u00b7F=0). This means the matrix appears self-contained \u2014 no external reference is needed to understand any local region."
+          },
+          {
+            "property": "Epochal Layering",
+            "description": "Each epoch is a complete layer. You can study any epoch without understanding the others. The full picture requires all epochs, but no single epoch reveals the Center."
+          }
+        ]
+      }
+    }
   }
 }
