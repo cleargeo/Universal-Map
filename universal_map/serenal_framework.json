@@ -39,7 +39,98 @@
         "\u222e": "Closed surface integral over the torus",
         "4\u03c0\u00b2R": "Normalization factor (toroidal surface area element)"
       },
-      "behavior": "\u03a9 = 1 means perfect coherence (all points locked to Center). \u03a9 = 0 means total decoherence."
+      "behavior": "\u03a9 = 1 means perfect coherence (all points locked to Center). \u03a9 = 0 means total decoherence.",
+      "definition": {
+        "symbol": "\u03a9 (Omega)",
+        "name": "Harmonic Resistance of the n-th Epochal Rotation",
+        "formula": "\u03a9(n) = \u222e |\u03a8(r, \u03b8, \u03c6)| d\u03b8 d\u03c6 / (4\u03c0\u00b2R) \u00d7 R_n(\u03c9_n)",
+        "description": "\u03a9 represents the harmonic resistance of the n-th epochal rotation. Each epoch of cosmic rotation presents a resistance to the coherence field. The total stability is the product of the base coherence integral and the epochal resistance function R_n(\u03c9_n).",
+        "variables": {
+          "n": "Epoch number (0 = present, increasing into the past)",
+          "\u03c9_n": "Angular frequency of the n-th epoch",
+          "R_n": "Resistance function of the n-th epoch",
+          "\u03a8": "Expansion wave function",
+          "R": "Major radius of the torus"
+        },
+        "epochal_resistance": {
+          "description": "Each epoch of cosmic rotation has a characteristic resistance to coherence. Early epochs (high z) have higher resistance \u2014 the universe was more chaotic, less ordered. Late epochs (low z) have lower resistance \u2014 structure has settled, coherence dominates.",
+          "epochs": [
+            {
+              "n": 0,
+              "name": "Present Expansion",
+              "z_range": [
+                0,
+                0.5
+              ],
+              "R_n": 0.95,
+              "resistance": "low"
+            },
+            {
+              "n": 1,
+              "name": "Web Refinement",
+              "z_range": [
+                0.5,
+                1.0
+              ],
+              "R_n": 0.9,
+              "resistance": "low-medium"
+            },
+            {
+              "n": 2,
+              "name": "Web Maturation",
+              "z_range": [
+                1.0,
+                3.0
+              ],
+              "R_n": 0.82,
+              "resistance": "medium"
+            },
+            {
+              "n": 3,
+              "name": "Galaxy Assembly",
+              "z_range": [
+                3.0,
+                6.0
+              ],
+              "R_n": 0.7,
+              "resistance": "medium-high"
+            },
+            {
+              "n": 4,
+              "name": "Epoch of Reionization",
+              "z_range": [
+                6.0,
+                10.0
+              ],
+              "R_n": 0.55,
+              "resistance": "high"
+            },
+            {
+              "n": 5,
+              "name": "Cosmic Dawn",
+              "z_range": [
+                10.0,
+                20.0
+              ],
+              "R_n": 0.35,
+              "resistance": "very high"
+            },
+            {
+              "n": 6,
+              "name": "Surface of Last Scattering",
+              "z_range": [
+                20.0,
+                1100.0
+              ],
+              "R_n": 0.1,
+              "resistance": "extreme"
+            }
+          ]
+        },
+        "computation": "\u03a9(n) = base_coherence \u00d7 R_n(\u03c9_n). The total \u03a9 is the sum over all epochs: \u03a9_total = \u03a3 \u03a9(n) / N_epochs",
+        "current_value": 0.9099,
+        "interpretation": "\u03a9 = 0.9099 means the manifold has low harmonic resistance overall \u2014 the universe has settled into coherent structure. The remaining 0.09 resistance comes from the early epochs (Cosmic Dawn, Reionization) where chaos still echoes."
+      }
     },
     "equation_4_lambda": {
       "symbol": "\u039b (Lambda)",
