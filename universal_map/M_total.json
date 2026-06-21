@@ -1,0 +1,63 @@
+{
+  "name": "M \u2014 Total Integrated Mass-Energy of the Universal Map",
+  "formula": "M(n) = 36\u03c0\u00b2 \u00d7 \u03a9(n) \u00d7 I",
+  "base_factor": 105.89020500276267,
+  "M_by_epoch": [
+    {
+      "n": 0,
+      "name": "Singularity",
+      "Omega": 0.0,
+      "M": 0.0
+    },
+    {
+      "n": 1,
+      "name": "First Vibration",
+      "Omega": 0.1,
+      "M": 10.589020500276268
+    },
+    {
+      "n": 2,
+      "name": "Dark Ages",
+      "Omega": 0.15,
+      "M": 15.8835307504144
+    },
+    {
+      "n": 3,
+      "name": "First Light",
+      "Omega": 0.35,
+      "M": 37.061571750966934
+    },
+    {
+      "n": 4,
+      "name": "Galaxy Assembly",
+      "Omega": 0.55,
+      "M": 58.23961275151947
+    },
+    {
+      "n": 5,
+      "name": "Web Maturation",
+      "Omega": 0.7,
+      "M": 74.12314350193387
+    },
+    {
+      "n": 6,
+      "name": "Web Refinement",
+      "Omega": 0.8,
+      "M": 84.71216400221014
+    },
+    {
+      "n": 7,
+      "name": "Present Era",
+      "Omega": 0.9099,
+      "M": 96.34949753201376
+    },
+    {
+      "n": 8,
+      "name": "Integration",
+      "Omega": 1.0,
+      "M": 105.89020500276267
+    }
+  ],
+  "M_total": 482.84874579209753,
+  "interpretation": "The total mass-energy of the Universal Map. The Center C contributes zero. Everything comes from nothing."
+}
