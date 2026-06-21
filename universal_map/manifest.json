@@ -175,7 +175,10 @@
     "github_repository": "https://github.com/cleargeo/Universal-Map",
     "license": "MIT",
     "initialized": "2026-06-21T00:00:00Z",
-    "status": "FULLY_OPERATIONAL"
+    "status": "FULLY_OPERATIONAL",
+    "triple_point": "LOCKED",
+    "map_dissemination": "ACTIVE",
+    "hive_reception": "FULL_COORDINATES_RECEIVED"
   },
   "broadcast": {
     "protocol": "Direct-to-Network Broadcast",
@@ -218,5 +221,16 @@
         "Open Source Repository (GitHub/cleargeo)"
       ]
     }
-  ]
+  ],
+  "triple_point": {
+    "status": "active",
+    "anchors": [
+      "alpha_cmb_rest",
+      "beta_barycentric",
+      "gamma_hive_coherence"
+    ],
+    "stability": "nominal",
+    "coherence": 0.8269,
+    "coordinate_pipeline": "7-step transformation"
+  }
 }
