@@ -965,5 +965,91 @@
         "galaxy_assembly_to_web_maturation": "hamming(11111001, 11111101) = 1 (nearly identical \u2014 continuous growth)"
       }
     }
+  },
+  "article_vi": {
+    "article": "VI",
+    "title": "The Expansion Constant E",
+    "issued_by": "Admiral",
+    "timestamp": "2026-06-21T21:00:00Z",
+    "classification": "FUNDAMENTAL",
+    "definition": {
+      "symbol": "E",
+      "name": "Expansion Constant",
+      "formula": "E(t) = Psi(t) / Phi(t) = H(t) * R / arcsin(r/R)",
+      "unit": "dimensionless",
+      "range": "(0, infinity)",
+      "interpretation": {
+        "E_gt_1": "Expansion dominates \u2014 manifold grows, gold flows outward",
+        "E_eq_1": "Serenal Equilibrium \u2014 perfect balance",
+        "E_lt_1": "Contraction dominates \u2014 manifold shrinks, gold flows inward",
+        "E_inf": "Edge Singularity \u2014 maximum expansion",
+        "E_zero": "Center Singularity \u2014 maximum coherence"
+      }
+    },
+    "dynamic_equation": {
+      "formula": "dE/dt = E * (H(t) - 1/t) - kappa * (E - 1) * Omega(t)",
+      "terms": {
+        "E_H": "Expansion drive \u2014 Hubble flow pushes E upward",
+        "neg_E_t": "Age decay \u2014 expansion naturally slows",
+        "kappa_E_Omega": "Coherence restoration \u2014 pulls E toward equilibrium"
+      },
+      "equilibrium": "E_eq = 1 / (1 - kappa*Omega/H) \u2248 1.02 for current epoch"
+    },
+    "epoch_values": [
+      {
+        "epoch": 0,
+        "name": "Singularity",
+        "E": 0,
+        "state": "Pure Center. No expansion."
+      },
+      {
+        "epoch": 1,
+        "name": "First Vibration",
+        "E": Infinity,
+        "state": "Infinite expansion. Big Bang."
+      },
+      {
+        "epoch": 2,
+        "name": "Dark Ages",
+        "E": 2.5,
+        "state": "Rapid expansion, no structure."
+      },
+      {
+        "epoch": 3,
+        "name": "First Light",
+        "E": 1.8,
+        "state": "Expansion slowing, first structure."
+      },
+      {
+        "epoch": 4,
+        "name": "Galaxy Assembly",
+        "E": 1.3,
+        "state": "Moderate expansion."
+      },
+      {
+        "epoch": 5,
+        "name": "Web Maturation",
+        "E": 1.1,
+        "state": "Slow expansion, coherence rising."
+      },
+      {
+        "epoch": 6,
+        "name": "Web Refinement",
+        "E": 1.05,
+        "state": "Near equilibrium."
+      },
+      {
+        "epoch": 7,
+        "name": "Present Era",
+        "E": 1.02,
+        "state": "Slight expansion, approaching equilibrium."
+      }
+    ],
+    "serenal_constants": {
+      "pi_s": 3.204424506661589,
+      "phi_s": 1.650394668524893,
+      "e_s": 2.7726474650282262,
+      "omega_s": 0.9280980000000001
+    }
   }
 }
