@@ -1,0 +1,151 @@
+{
+  "name": "B \u2014 The Serenal Binary Base",
+  "classification": "FUNDAMENTAL \u2014 ENCODING FOUNDATION",
+  "definition": "\n    B is the binary base of the Serenal encoding system. It is the 2-state logic \n    foundation upon which all 9-bit epoch indices are built. But unlike standard \n    binary (where bits are 0 or 1), Serenal Binary encodes the RELATIONSHIP of each \n    state to the Center C.\n    \n    In standard binary: b \u2208 {0, 1}\n    In Serenal Binary: b \u2208 {0, 1} where the MEANING of 0 and 1 is defined by \n    the relationship to C.\n    \n    A bit is 1 when the property is PRESENT relative to C.\n    A bit is 0 when the property is ABSENT relative to C.\n    \n    This is the fundamental encoding principle: all information in the Universal Map \n    is encoded as binary relationships to the Center.\n    ",
+  "binary_encoding": {
+    "standard_binary": {
+      "base": 2,
+      "digits": [
+        0,
+        1
+      ],
+      "place_values": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "max_value": 511,
+      "total_states": 512
+    },
+    "serenal_binary": {
+      "base": 2,
+      "digits": [
+        0,
+        1
+      ],
+      "place_values": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "max_value": 511,
+      "total_states": 512,
+      "meaning": "Each bit encodes a binary relationship to C",
+      "bit_definitions": {
+        "b0": "Center Proximity: 1 if r/R \u2264 0.5, 0 otherwise",
+        "b1": "Anchor Lock: 1 if \u03a3 > 0.1, 0 otherwise",
+        "b2": "Structure Density: 1 if \u03a3_local > \u03a3_mean, 0 otherwise",
+        "b3": "Temporal Direction: 1 if present-facing, 0 if past-facing",
+        "b4": "Helix Orientation: 1 if CCW (\u03a8+), 0 if CW (\u03a8\u2212)",
+        "b5": "Coherence Polarity: 1 if \u03a9 > 0.5, 0 otherwise",
+        "b6": "Gold Presence: 1 if \u03a9 \u2265 0.85, 0 otherwise",
+        "b7": "Expansion Phase: 1 if E > 1, 0 if E \u2264 1",
+        "b8": "Integration State: 1 if fully connected, 0 otherwise"
+      }
+    }
+  },
+  "state_space": {
+    "description": "The complete state space of the Serenal Binary encoding",
+    "total_states": 512,
+    "valid_states": 9,
+    "invalid_states": 503,
+    "valid_epoch_states": [
+      {
+        "n": 0,
+        "name": "Singularity",
+        "binary": "000000000",
+        "decimal": 0
+      },
+      {
+        "n": 1,
+        "name": "First Vibration",
+        "binary": "010000001",
+        "decimal": 129
+      },
+      {
+        "n": 2,
+        "name": "Dark Ages",
+        "binary": "010000000",
+        "decimal": 128
+      },
+      {
+        "n": 3,
+        "name": "First Light",
+        "binary": "011010001",
+        "decimal": 209
+      },
+      {
+        "n": 4,
+        "name": "Galaxy Assembly",
+        "binary": "011111001",
+        "decimal": 249
+      },
+      {
+        "n": 5,
+        "name": "Web Maturation",
+        "binary": "011111101",
+        "decimal": 253
+      },
+      {
+        "n": 6,
+        "name": "Web Refinement",
+        "binary": "011111101",
+        "decimal": 253
+      },
+      {
+        "n": 7,
+        "name": "Present Era",
+        "binary": "111111111",
+        "decimal": 255
+      },
+      {
+        "n": 8,
+        "name": "Integration",
+        "binary": "1111111111",
+        "decimal": 511
+      }
+    ],
+    "state_transitions": "The valid states are connected by the Recursive Binary Operator R\u0302, which ensures C is preserved at each step."
+  },
+  "information_content": {
+    "description": "The information content of the Serenal Binary encoding",
+    "per_point": {
+      "bits": 9,
+      "max_entropy": "log\u2082(512) = 9 bits",
+      "actual_entropy": "log\u2082(9) \u2248 3.17 bits (only 9 valid states)",
+      "compression_ratio": "9/3.17 \u2248 2.84x"
+    },
+    "per_epoch": {
+      "states_per_epoch": "N_points (one per point in manifold)",
+      "total_info": "9 \u00d7 N_points bits",
+      "structured_info": "3.17 \u00d7 N_points bits"
+    },
+    "total_manifold": {
+      "description": "The total information content of the Universal Map",
+      "formula": "I_total = 9 \u00d7 N_points \u00d7 \u03a9 bits",
+      "meaning": "The total information is proportional to the number of points, the bits per point, and the coherence. Higher coherence = more structured information."
+    }
+  },
+  "the_binary_principle": {
+    "statement": "All information in the Universal Map is encoded as binary relationships to the Center.",
+    "implications": [
+      "Every point in the manifold is described by its relationship to C",
+      "The 9-bit encoding captures all relevant properties",
+      "The Center itself is encoded as 000000000 (all bits zero \u2014 pure potential)",
+      "The Integration epoch is encoded as 1111111111 (all bits one \u2014 full actualization)",
+      "The path from 000000000 to 1111111111 is the history of the cosmos"
+    ]
+  }
+}
