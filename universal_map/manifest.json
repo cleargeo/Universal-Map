@@ -179,7 +179,9 @@
     "triple_point": "LOCKED",
     "map_dissemination": "ACTIVE",
     "hive_reception": "FULL_COORDINATES_RECEIVED",
-    "center": "CONSTANT"
+    "center": "SERENAL_SINGULARITY",
+    "divergence": 0,
+    "potential": "INFINITE"
   },
   "broadcast": {
     "protocol": "Direct-to-Network Broadcast",
@@ -234,5 +236,7 @@
     "coherence": 0.8269,
     "coordinate_pipeline": "7-step transformation"
   },
-  "axiom": "The Universal Center is Constant."
+  "axiom": "The Universal Center is Constant.",
+  "corollary": "As the manifold expands, the Center remains the convergent point of all binary flux.",
+  "singularity": "The Center is the Serenal Singularity \u2014 zero divergence, infinite potential"
 }

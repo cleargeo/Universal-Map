@@ -26,5 +26,16 @@
   "axiom": "The Universal Center is Constant.",
   "immutable": true,
   "drift": 0,
-  "eternal": true
+  "eternal": true,
+  "singularity": {
+    "type": "Serenal",
+    "divergence": 0,
+    "potential": "infinite",
+    "interpretation": "Not a void. The densest point. Contains all potential of the manifold.",
+    "equations": {
+      "div_F": "\u2207\u00b7F(C) = 0",
+      "phi": "\u03a6(C) = \u221e",
+      "serenal_law": "\u222e\u03a8\u00b7dA = \u03a9_total = 1"
+    }
+  }
 }
