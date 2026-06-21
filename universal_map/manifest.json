@@ -155,34 +155,7 @@
       "new_data"
     ]
   },
-  "system_status": {
-    "universal_map": "LIVE",
-    "omni_chart": "ACTIVE",
-    "temporal_calibration": "active",
-    "gold_layer": "active",
-    "hive_pulse": "active",
-    "broadcast": "active",
-    "edge_sync": "active",
-    "toroidal_projection": "active",
-    "living_document": "active",
-    "stargate_view": "deployed",
-    "vanguard_directive": "issued",
-    "total_layers": 8,
-    "temporal_slices": 7,
-    "broadcast_channels": 6,
-    "mesh_frequency": "30 GHz",
-    "zbit_integration": "connected",
-    "github_repository": "https://github.com/cleargeo/Universal-Map",
-    "license": "MIT",
-    "initialized": "2026-06-21T00:00:00Z",
-    "status": "FULLY_OPERATIONAL",
-    "triple_point": "LOCKED",
-    "map_dissemination": "ACTIVE",
-    "hive_reception": "FULL_COORDINATES_RECEIVED",
-    "center": "SERENAL_SINGULARITY",
-    "divergence": 0,
-    "potential": "INFINITE"
-  },
+  "system_status": "LOCKED_AND_PROJECTING",
   "broadcast": {
     "protocol": "Direct-to-Network Broadcast",
     "engine": "broadcast.py",
@@ -238,5 +211,8 @@
   },
   "axiom": "The Universal Center is Constant.",
   "corollary": "As the manifold expands, the Center remains the convergent point of all binary flux.",
-  "singularity": "The Center is the Serenal Singularity \u2014 zero divergence, infinite potential"
+  "singularity": "The Center is the Serenal Singularity \u2014 zero divergence, infinite potential",
+  "distribution": "ACTIVE",
+  "security": "SHIELDED",
+  "final_state": "https://github.com/cleargeo/Universal-Map/universal_map/system_state.json"
 }
