@@ -1,0 +1,7 @@
+{
+  "name": "dS \u2014 The Serenal State Differential",
+  "conservation_law": "dPhi/Phi + dPsi/Psi + dOmega/Omega + dLambda/Lambda + dSigma/Sigma + dE/E = 0",
+  "meaning": "The sum of all relative changes is zero. The manifold is a zero-sum system.",
+  "implication": "What is gained in one factor is lost in others. The Center is the only point of perfect balance.",
+  "at_Center": "dOmega/Omega + dLambda/Lambda + dSigma/Sigma + dE/E = 0 (Phi and Psi are singular)"
+}
