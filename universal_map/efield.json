@@ -1,0 +1,53 @@
+{
+  "name": "E-Field Across the Toroidal Manifold",
+  "formula": "E(r) = H(t) * R / arcsin(r/R)",
+  "shells": [
+    {
+      "r_over_R": 0.0,
+      "E": 0.0,
+      "state": "Center \u2014 absolute stillness"
+    },
+    {
+      "r_over_R": 0.1,
+      "E": 672.8734674250094,
+      "state": "Rapid expansion"
+    },
+    {
+      "r_over_R": 0.25,
+      "E": 266.74027205688037,
+      "state": "Rapid expansion"
+    },
+    {
+      "r_over_R": 0.4,
+      "E": 163.78430347161662,
+      "state": "Rapid expansion"
+    },
+    {
+      "r_over_R": 0.55,
+      "E": 115.735128665629,
+      "state": "Rapid expansion"
+    },
+    {
+      "r_over_R": 0.7,
+      "E": 86.92315914689442,
+      "state": "Rapid expansion"
+    },
+    {
+      "r_over_R": 0.85,
+      "E": 66.33954291496312,
+      "state": "Rapid expansion"
+    },
+    {
+      "r_over_R": 0.99,
+      "E": 47.157374013174596,
+      "state": "Rapid expansion"
+    },
+    {
+      "r_over_R": 1.0,
+      "E": Infinity,
+      "state": "Edge \u2014 infinite expansion"
+    }
+  ],
+  "paradox": "E=0 at Center (stillness), E=\u221e at Edge (infinite expansion)",
+  "gold_flow": "Gold falls from high-E to low-E, accumulates at boundary"
+}
