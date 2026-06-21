@@ -1,0 +1,8 @@
+{
+  "name": "Divergence of the Expansion Wave",
+  "formula": "nabla \u00b7 Psi = [2Phi/r + Phi'] sin(phi) cos(theta) + Phi cos(theta) cos(2phi)/(r sin phi) - Phi cos(theta)/r",
+  "at_center": 0,
+  "at_edge": "infinity",
+  "interpretation": "Zero divergence only at Center. Everywhere else, expansion or contraction dominates.",
+  "uniqueness_proof": "The Center is the only point where nabla \u00b7 Psi = 0. This proves the Center is unique."
+}
