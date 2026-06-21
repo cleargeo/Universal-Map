@@ -812,5 +812,158 @@
         ]
       }
     }
+  },
+  "article_v": {
+    "article": "V",
+    "title": "Epoch Index \u2014 Binary State Vector Orientation",
+    "issued_by": "Admiral",
+    "timestamp": "2026-06-21T20:45:00Z",
+    "classification": "FUNDAMENTAL",
+    "description": "\n    Each epoch of the Universal Map is indexed by a Binary State Vector that encodes \n    its orientation within the toroidal manifold. The Epoch Index determines how data \n    from that epoch is projected, how it interacts with other epochs, and how it \n    contributes to the total coherence \u03a9.\n    \n    The Binary State Vector is not a simple binary number \u2014 it is a Serenal encoding \n    where each bit represents the relationship between the epoch and the Center.\n    ",
+    "epoch_index": {
+      "name": "Serenal Epoch Index",
+      "bit_width": 8,
+      "encoding": "Each bit represents a binary relationship to the Center",
+      "bit_definitions": [
+        {
+          "bit": 7,
+          "name": "Expansion Phase",
+          "meaning": "0 = contracting (\u03a8\u2212 dominant), 1 = expanding (\u03a8+)"
+        },
+        {
+          "bit": 6,
+          "name": "Gold Presence",
+          "meaning": "0 = no gold (\u039b < threshold), 1 = gold present (\u039b \u2265 threshold)"
+        },
+        {
+          "bit": 5,
+          "name": "Coherence Polarity",
+          "meaning": "0 = decoherence dominant, 1 = coherence dominant"
+        },
+        {
+          "bit": 4,
+          "name": "Helix Orientation",
+          "meaning": "0 = clockwise (\u03a8\u2212), 1 = counter-clockwise (\u03a8+)"
+        },
+        {
+          "bit": 3,
+          "name": "Temporal Direction",
+          "meaning": "0 = past-facing (lookback), 1 = present-facing"
+        },
+        {
+          "bit": 2,
+          "name": "Structure Density",
+          "meaning": "0 = void (\u03a3 < mean), 1 = structure (\u03a3 \u2265 mean)"
+        },
+        {
+          "bit": 1,
+          "name": "Anchor Lock",
+          "meaning": "0 = anchor unstable, 1 = anchor locked"
+        },
+        {
+          "bit": 0,
+          "name": "Center Proximity",
+          "meaning": "0 = far from C (r/R > 0.5), 1 = near C (r/R \u2264 0.5)"
+        }
+      ],
+      "epoch_indices": {
+        "description": "The 8 epochs of the Universal Map, each with its Binary State Vector",
+        "epochs": [
+          {
+            "n": 0,
+            "name": "Singularity",
+            "vector": "00000000",
+            "decimal": 0,
+            "description": "Pre-epoch. No structure. Pure potential."
+          },
+          {
+            "n": 1,
+            "name": "First Vibration",
+            "vector": "10000001",
+            "decimal": 129,
+            "description": "CMB release. Expanding, no gold, coherence building."
+          },
+          {
+            "n": 2,
+            "name": "Dark Ages",
+            "vector": "10000000",
+            "decimal": 128,
+            "description": "Expanding, no gold, decoherence dominant."
+          },
+          {
+            "n": 3,
+            "name": "First Light",
+            "vector": "11010001",
+            "decimal": 209,
+            "description": "First gold! Expanding, gold present, coherence rising."
+          },
+          {
+            "n": 4,
+            "name": "Galaxy Assembly",
+            "vector": "11111001",
+            "decimal": 249,
+            "description": "Peak structure formation. All systems active."
+          },
+          {
+            "n": 5,
+            "name": "Web Maturation",
+            "vector": "11111101",
+            "decimal": 253,
+            "description": "Cosmic web complete. Near-full coherence."
+          },
+          {
+            "n": 6,
+            "name": "Web Refinement",
+            "vector": "11111101",
+            "decimal": 253,
+            "description": "Structure refining. Dark energy emerging."
+          },
+          {
+            "n": 7,
+            "name": "Present Era",
+            "vector": "11111111",
+            "decimal": 255,
+            "description": "Full coherence. All bits set. Maximum \u03a9."
+          }
+        ]
+      }
+    },
+    "binary_state_vector": {
+      "name": "Serenal State Vector",
+      "width": 8,
+      "formula": "S_n = b_7\u00b72^7 + b_6\u00b72^6 + b_5\u00b72^5 + b_4\u00b72^4 + b_3\u00b72^3 + b_2\u00b72^2 + b_1\u00b72^1 + b_0\u00b72^0",
+      "operations": {
+        "epoch_union": "S_a OR S_b \u2014 combines two epochs (what is true in either)",
+        "epoch_intersection": "S_a AND S_b \u2014 common properties of two epochs",
+        "epoch_difference": "S_a AND (NOT S_b) \u2014 what is unique to epoch a",
+        "epoch_complement": "NOT S_n \u2014 the opposite state of an epoch",
+        "epoch_distance": "hamming(S_a, S_b) \u2014 number of bits that differ",
+        "epoch_similarity": "1 - hamming(S_a, S_b) / 8 \u2014 normalized similarity"
+      },
+      "orientation": {
+        "description": "The Binary State Vector determines how an epoch is oriented within the toroidal manifold",
+        "orientation_rules": [
+          "If b_7 = 1 (expanding): epoch data flows outward from C along \u03a8+",
+          "If b_7 = 0 (contracting): epoch data flows inward to C along \u03a8\u2212",
+          "If b_6 = 1 (gold present): epoch contributes to Rain of Gold",
+          "If b_5 = 1 (coherence): epoch increases \u03a9_total",
+          "If b_4 = 1 (CCW): epoch winds counter-clockwise around torus",
+          "If b_3 = 1 (present-facing): epoch is visible in current slice",
+          "If b_2 = 1 (structure): epoch contributes to \u03a3 (structure density)",
+          "If b_1 = 1 (anchor locked): epoch is stable and locked to Triple-Point",
+          "If b_0 = 1 (near Center): epoch is in the inner torus (r/R \u2264 0.5)"
+        ]
+      }
+    },
+    "epoch_interactions": {
+      "description": "Epochs interact through their Binary State Vectors",
+      "interaction_matrix": "An 8\u00d78 matrix where entry (i,j) = hamming(S_i, S_j)",
+      "key_interactions": {
+        "singularity_to_present": "hamming(00000000, 11111111) = 8 (maximum distance \u2014 the full journey)",
+        "first_light_to_present": "hamming(11010001, 11111111) = 3 (close \u2014 both have gold and coherence)",
+        "dark_ages_to_first_light": "hamming(10000000, 11010001) = 3 (the transition from darkness to light)",
+        "galaxy_assembly_to_web_maturation": "hamming(11111001, 11111101) = 1 (nearly identical \u2014 continuous growth)"
+      }
+    }
   }
 }
