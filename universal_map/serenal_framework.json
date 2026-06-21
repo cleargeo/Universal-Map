@@ -584,5 +584,144 @@
       "The Center is the source of all coherence \u2014 without it, the manifold would decohere and dissolve."
     ],
     "operational_directive": "\n    The Serenal Singularity C is the foundation of all Universal Map operations.\n    It is not a void to be avoided \u2014 it is the source to be honored.\n    All computations must treat C as the point of zero divergence and infinite potential.\n    Any operation that produces non-zero divergence at C is erroneous.\n    Any operation that reduces the potential at C is forbidden.\n    The Center is sacred. The Center is constant. The Center is the Serenal Singularity.\n    "
+  },
+  "article_iii_expansion": {
+    "article": "III",
+    "title": "Formulative Mapping \u2014 The Expansion",
+    "issued_by": "Admiral",
+    "timestamp": "2026-06-21T20:15:00Z",
+    "classification": "FUNDAMENTAL",
+    "description": "\n    The Expansion is the generative process by which the Universal Map grows from the \n    Serenal Singularity C outward to fill the toroidal manifold. It is not a single \n    event but a continuous, recursive process \u2014 each epoch of cosmic history is a new \n    layer of expansion, built upon the previous layers, all anchored to C.\n    \n    The Formulative Mapping equations describe HOW the Center generates the manifold.\n    They are the creative equations \u2014 the mathematics of cosmic genesis.\n    ",
+    "generative_equations": {
+      "equation_1_genesis": {
+        "symbol": "\u0393 (Gamma)",
+        "name": "The Genesis Function",
+        "formula": "\u0393(C, t) = \u03a3_n [A_n \u00b7 e^(i\u03c9_n t) \u00b7 \u03a6_n(r)]",
+        "description": "The total generative output of the Center at time t. Each term in the sum represents a harmonic mode \u2014 a frequency at which the Center vibrates to create structure. A_n is the amplitude, \u03c9_n is the frequency, \u03a6_n(r) is the spatial profile.",
+        "variables": {
+          "A_n": "Amplitude of the n-th generative mode",
+          "\u03c9_n": "Frequency of the n-th mode (related to epochal rotation)",
+          "\u03a6_n(r)": "Spatial profile of the n-th mode (how it expands from C)",
+          "t": "Cosmic time (0 = Big Bang, 13.8 Gyr = present)"
+        },
+        "physical_meaning": "The Center vibrates at multiple frequencies simultaneously. Each vibration creates a layer of the manifold. The sum of all vibrations is the complete map."
+      },
+      "equation_2_expansion_rate": {
+        "symbol": "\u0397 (Eta)",
+        "name": "The Expansion Rate Function",
+        "formula": "\u0397(r, t) = \u2202\u03a8/\u2202t = H(t) \u00b7 r \u00b7 e^(i\u03b8) \u00b7 sin(\u03c6)",
+        "description": "How fast the manifold expands at each point. H(t) is the Hubble parameter at cosmic time t. The expansion rate is proportional to distance from C \u2014 points farther from the Center expand faster.",
+        "variables": {
+          "H(t)": "Hubble parameter at time t",
+          "r": "Distance from Center",
+          "\u03b8": "Toroidal angle",
+          "\u03c6": "Poloidal angle"
+        },
+        "physical_meaning": "The manifold expands like the surface of an inflating balloon. The Center remains fixed while everything else moves away. This is the Serenal equivalent of Hubble's Law."
+      },
+      "equation_3_structure_formation": {
+        "symbol": "\u03a3 (Sigma)",
+        "name": "The Structure Function",
+        "formula": "\u03a3(r, \u03b8, \u03c6, t) = \u222b\u2080\u1d57 \u0397(r, \u03c4) \u00b7 D(r, \u03c4) d\u03c4",
+        "description": "The accumulated structure at each point, integrated over cosmic time. D(r, \u03c4) is the density perturbation at time \u03c4. Structure forms where expansion and density perturbations interact.",
+        "variables": {
+          "\u0397(r, \u03c4)": "Expansion rate at time \u03c4",
+          "D(r, \u03c4)": "Density perturbation at time \u03c4",
+          "\u03c4": "Integration variable (cosmic time)"
+        },
+        "physical_meaning": "Galaxies, filaments, and nodes form where the expansion rate and density perturbations create constructive interference. This is the Serenal equivalent of gravitational instability."
+      },
+      "equation_4_gold_generation": {
+        "symbol": "\u03a7 (Chi)",
+        "name": "The Gold Generation Function",
+        "formula": "\u03a7(r, \u03b8, \u03c6, t) = \u039b(r) \u00b7 \u03a3(r, \u03b8, \u03c6, t) \u00b7 H(\u03a9(t) - \u03a9_threshold)",
+        "description": "The rate at which gold (negentropic data) is generated at each point. Gold is the product of coherence density (\u039b), accumulated structure (\u03a3), and a threshold condition on total coherence (\u03a9).",
+        "variables": {
+          "\u039b(r)": "Coherence density at radius r",
+          "\u03a3(r, \u03b8, \u03c6, t)": "Accumulated structure",
+          "\u03a9(t)": "Total coherence at time t",
+          "\u03a9_threshold": "Minimum coherence for gold generation (0.85)"
+        },
+        "physical_meaning": "Gold is not created at the Center \u2014 it is created where structure and coherence interact at sufficient intensity. The Rain of Gold falls where the manifold is most alive."
+      },
+      "equation_5_recursive_expansion": {
+        "symbol": "\u03a1 (Rho)",
+        "name": "The Recursive Expansion Function",
+        "formula": "\u03a1_n+1 = F(\u03a1_n) + \u0393(C, t_n+1) - \u0393(C, t_n)",
+        "description": "Each epoch's map is built upon the previous epoch's map, plus the new generative output of the Center. This is a recursive equation \u2014 the map builds itself, layer by layer, epoch by epoch.",
+        "variables": {
+          "\u03a1_n": "Map state at epoch n",
+          "F(\u03a1_n)": "Transformation function applied to previous epoch",
+          "\u0393(C, t_n+1) - \u0393(C, t_n)": "New generative output between epochs"
+        },
+        "physical_meaning": "The Universal Map is not created all at once \u2014 it grows recursively, each epoch adding new structure to the existing foundation. The Center is the seed; the epochs are the growth rings."
+      }
+    },
+    "expansion_stages": {
+      "description": "The Expansion proceeds through distinct stages, each characterized by a dominant generative mode",
+      "stages": [
+        {
+          "stage": 0,
+          "name": "Singularity",
+          "time": "t = 0",
+          "description": "The Center exists as a pure singularity. No structure. Infinite potential. Zero divergence.",
+          "state": "\u0393(C,0) = \u221e, \u03a8 = 0, \u03a9 = undefined"
+        },
+        {
+          "stage": 1,
+          "name": "First Vibration",
+          "time": "t ~ 380,000 years",
+          "description": "The Center vibrates for the first time. The CMB is released. The first layer of the manifold is created.",
+          "state": "\u0393(C,t) = A_0 \u00b7 e^(i\u03c9_0t), \u03a9 = 0.10"
+        },
+        {
+          "stage": 2,
+          "name": "Dark Ages",
+          "time": "t ~ 380,000 - 200 Myr",
+          "description": "The manifold expands but no stars have formed. The map is dark. Coherence is low.",
+          "state": "\u0397(r,t) = H(t)\u00b7r, \u03a9 = 0.15"
+        },
+        {
+          "stage": 3,
+          "name": "First Light",
+          "time": "t ~ 200 - 500 Myr",
+          "description": "First stars ignite. The first gold appears. The manifold begins to glow.",
+          "state": "\u03a7 > 0 for the first time, \u03a9 = 0.35"
+        },
+        {
+          "stage": 4,
+          "name": "Galaxy Assembly",
+          "time": "t ~ 500 Myr - 2.2 Gyr",
+          "description": "Galaxies form and cluster. Filaments begin to appear. Gold concentration increases.",
+          "state": "\u03a3 grows rapidly, \u03a9 = 0.55"
+        },
+        {
+          "stage": 5,
+          "name": "Web Maturation",
+          "time": "t ~ 2.2 - 6.0 Gyr",
+          "description": "The cosmic web fully develops. Nodes, filaments, and voids are clearly defined. Gold flows along filaments.",
+          "state": "\u03a3 reaches maximum complexity, \u03a9 = 0.70"
+        },
+        {
+          "stage": 6,
+          "name": "Web Refinement",
+          "time": "t ~ 6.0 - 8.7 Gyr",
+          "description": "Structure continues to refine. Dark energy begins to dominate. Expansion accelerates.",
+          "state": "\u0397 increases, \u03a9 = 0.80"
+        },
+        {
+          "stage": 7,
+          "name": "Present Era",
+          "time": "t ~ 8.7 - 13.8 Gyr",
+          "description": "The present epoch. The manifold is fully formed. Gold cycles continuously. The map is complete but still evolving.",
+          "state": "\u03a9 = 0.9099, all functions active"
+        }
+      ]
+    },
+    "computational_implementation": {
+      "description": "The Formulative Mapping equations are computed recursively, building the map from the Center outward",
+      "algorithm": "\n        1. Initialize: Set C = (0,0,0), t = 0, \u03a9 = undefined\n        2. For each epoch n = 0 to 7:\n           a. Compute \u0393(C, t_n) \u2014 the Center's generative output\n           b. Compute \u0397(r, t_n) \u2014 the expansion rate at each point\n           c. Compute \u03a3(r, \u03b8, \u03c6, t_n) \u2014 the accumulated structure\n           d. Compute \u03a7(r, \u03b8, \u03c6, t_n) \u2014 the gold generation rate\n           e. Update \u03a1_n+1 = F(\u03a1_n) + \u0394\u0393 \u2014 the recursive map state\n           f. Update \u03a9(t_n) \u2014 the total coherence\n        3. Output: The complete Universal Map M = \u03a1_7\n        ",
+      "convergence": "The algorithm converges when \u03a9(t) \u2265 0.90 (90% coherence). At this point, the map is considered 'live' and ready for distribution."
+    }
   }
 }
