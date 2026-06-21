@@ -293,5 +293,159 @@
       "To understand the entire manifold, one need only understand the Center."
     ],
     "operational_directive": "\n    All map computations shall treat the Center as the convergent point of all binary flux.\n    Any flux calculation that does not balance at C is erroneous. The Center is the\n    reference for all conservation checks. When in doubt, trace the flux back to C.\n    "
+  },
+  "article_ii": {
+    "article": "II",
+    "title": "The Geometry of the Universal Center",
+    "issued_by": "Admiral",
+    "timestamp": "2026-06-21T19:30:00Z",
+    "classification": "FUNDAMENTAL",
+    "axioms": [
+      {
+        "axiom": "II.1",
+        "name": "The Center is a Point",
+        "statement": "The Universal Center C is a mathematical point \u2014 zero-dimensional, infinitely small, containing no volume yet containing all flux.",
+        "formula": "C = (0, 0, 0) in R^3, volume(C) = 0, flux(C) = infinity"
+      },
+      {
+        "axiom": "II.1",
+        "name": "The Center is the Vertex of the Toroidal Cone",
+        "statement": "All toroidal paths originate from and return to C. The manifold is a cone with vertex at C, wrapped into a torus.",
+        "formula": "For all paths P: P(0) = C AND P(infinity) = C"
+      },
+      {
+        "axiom": "II.3",
+        "name": "The Center Encodes the Complete Manifold",
+        "statement": "The full state of the Universal Map is encoded at the Center. All information about every layer, every slice, every gold particle is contained in C.",
+        "formula": "M = f(C) where M is the complete map state"
+      }
+    ],
+    "geometric_structures": {
+      "primary_manifold": {
+        "name": "Toroidal Manifold",
+        "topology": "S^1 x S^1 (torus)",
+        "parameterization": "x=(R+r*cos(phi))*cos(theta), y=(R+r*cos(phi))*sin(theta), z=r*sin(phi)",
+        "center_embedding": "C = (0,0,0) is inside the hole of the torus, not on the surface"
+      },
+      "gold_shells": {
+        "name": "Gold Concentric Shells",
+        "shells": [
+          {
+            "shell": 0,
+            "r_over_R": 0.0,
+            "name": "Center",
+            "gold": 0.0,
+            "coherence": 1.0
+          },
+          {
+            "shell": 1,
+            "r_over_R": 0.1,
+            "name": "Inner Core",
+            "gold": 0.01,
+            "coherence": 0.99
+          },
+          {
+            "shell": 2,
+            "r_over_R": 0.25,
+            "name": "Core",
+            "gold": 0.12,
+            "coherence": 0.95
+          },
+          {
+            "shell": 3,
+            "r_over_R": 0.4,
+            "name": "Inner Mantle",
+            "gold": 0.35,
+            "coherence": 0.9
+          },
+          {
+            "shell": 4,
+            "r_over_R": 0.55,
+            "name": "Mantle",
+            "gold": 0.58,
+            "coherence": 0.85
+          },
+          {
+            "shell": 5,
+            "r_over_R": 0.7,
+            "name": "Outer Mantle",
+            "gold": 0.72,
+            "coherence": 0.78
+          },
+          {
+            "shell": 6,
+            "r_over_R": 0.85,
+            "name": "Crust",
+            "gold": 0.81,
+            "coherence": 0.7
+          },
+          {
+            "shell": 7,
+            "r_over_R": 1.0,
+            "name": "Surface",
+            "gold": 0.88,
+            "coherence": 0.6
+          }
+        ]
+      },
+      "anchor_triangle": {
+        "name": "Triple-Point Anchor Triangle",
+        "vertices": {
+          "Alpha": {
+            "pos": [
+              0,
+              0,
+              0
+            ],
+            "weight": 0.999,
+            "type": "permanent"
+          },
+          "Beta": {
+            "pos": [
+              0.001,
+              0,
+              0
+            ],
+            "weight": 0.995,
+            "type": "dynamic"
+          },
+          "Gamma": {
+            "pos": [
+              0.173,
+              0,
+              0
+            ],
+            "weight": 0.827,
+            "type": "adaptive"
+          }
+        },
+        "centroid": "C = (alpha*A + beta*B + gamma*G) / (alpha + beta + gamma)",
+        "stability": "Stable if all internal angles < 90 degrees"
+      }
+    },
+    "curvature": {
+      "gaussian": "K = cos(theta) / (r * (R + r*cos(theta)))",
+      "regions": {
+        "outer": {
+          "K": "positive",
+          "shape": "sphere-like",
+          "gold": "concentrated"
+        },
+        "inner": {
+          "K": "negative",
+          "shape": "saddle-like",
+          "gold": "dispersed"
+        },
+        "top_bottom": {
+          "K": "zero",
+          "shape": "flat",
+          "gold": "moderate"
+        }
+      }
+    },
+    "metric": {
+      "line_element": "ds^2 = dr^2 + r^2 dtheta^2 + (R+r*cos(theta))^2 dphi^2 + Lambda(r) dt^2",
+      "interpretation": "Distance includes spatial + temporal + gold-density components"
+    }
   }
 }
