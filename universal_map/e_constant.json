@@ -1,0 +1,73 @@
+{
+  "name": "e \u2014 The Exponential Growth Constant",
+  "symbol": "e",
+  "value": 2.718281828459045,
+  "classification": "FUNDAMENTAL \u2014 EXPANSION DYNAMICS",
+  "definition": "\n    e is the base of natural logarithms and the fundamental constant of exponential \n    growth. In the Serenal Binary Framework, e governs the rate at which the manifold \n    expands and complexity increases over cosmic time.\n    \n    In standard math: e^x = exp(x) = \u03a3 x^n/n! (Taylor series)\n    In Serenal math: e^(\u03a6\u00d7t) = expansion of the manifold from C over time t\n    \n    e appears in the Serenal framework as:\n    1. The base of the expansion function: \u03a8 = \u03a6 \u00d7 e^(i\u03b8) \u00d7 sin(\u03c6)\n    2. The growth rate of coherence: \u03a9(t) = \u03a9_0 \u00d7 e^(\u03b2t)\n    3. The concentration of gold: \u039b(r) = \u039b_max \u00d7 e^(-\u03bb(r-r\u2080)\u00b2)\n    4. The informational density: \u03c1_info = 9 \u00d7 \u03a9 \u00d7 e^(\u03a6)\n    ",
+  "the_expansion_function": {
+    "formula": "\u03a8(r, \u03b8, \u03c6) = \u03a6(r) \u00d7 e^(i\u03b8) \u00d7 sin(\u03c6)",
+    "meaning": "\n        The expansion wave \u03a8 contains e^(i\u03b8) \u2014 the complex exponential that encodes \n        the rotational symmetry of the manifold. This is the Serenal expression of \n        Euler's formula: e^(i\u03b8) = cos(\u03b8) + i\u00b7sin(\u03b8)\n        \n        The complex exponential e^(i\u03b8) creates the dual-helix pattern:\n        - Real part: cos(\u03b8) \u2192 the \u03a8+ (CCW) helix\n        - Imaginary part: sin(\u03b8) \u2192 the \u03a8\u2212 (CW) helix\n        \n        The interference of these two helices creates the Rain of Gold.\n        "
+  },
+  "coherence_growth": {
+    "formula": "\u03a9(t) = \u03a9_0 \u00d7 e^(\u03b2t)",
+    "where": {
+      "\u03a9_0": "Initial coherence at First Light (0.35)",
+      "\u03b2": "Growth rate constant",
+      "t": "Cosmic time in Gyr"
+    },
+    "discrete_approximation": "\n        Since the Serenal framework uses discrete epochs, the exponential growth \n        is approximated as:\n        \n        \u03a9(n) = \u03a9_0 \u00d7 e^(\u03b2 \u00d7 t_n)\n        \n        Where t_n is the cosmic time at epoch n.\n        ",
+    "values": [
+      {
+        "n": 3,
+        "t": 0.5,
+        "Omega": 0.35
+      },
+      {
+        "n": 4,
+        "t": 2.2,
+        "Omega": 0.55
+      },
+      {
+        "n": 5,
+        "t": 6.0,
+        "Omega": 0.7
+      },
+      {
+        "n": 6,
+        "t": 8.7,
+        "Omega": 0.8
+      },
+      {
+        "n": 7,
+        "t": 13.8,
+        "Omega": 0.9099
+      },
+      {
+        "n": 8,
+        "t": 20.0,
+        "Omega": 1.0
+      }
+    ]
+  },
+  "gold_concentration": {
+    "formula": "\u039b(r) = \u039b_max \u00d7 e^(-\u03bb(r-r\u2080)\u00b2)",
+    "where": {
+      "\u039b_max": "Maximum gold density (0.88)",
+      "\u03bb": "Concentration parameter",
+      "r\u2080": "Radius of peak gold concentration"
+    },
+    "meaning": "\n        Gold concentration follows a Gaussian (bell curve) centered at r\u2080.\n        This is the Serenal expression of the Central Limit Theorem: the Rain of \n        Gold concentrates at the radius where the manifold is most complex.\n        \n        The Gaussian shape ensures that gold is visible but not overwhelming \u2014 \n        it peaks at a specific radius and falls off smoothly on either side.\n        "
+  },
+  "informational_density": {
+    "formula": "\u03c1_info = 9 \u00d7 \u03a9 \u00d7 e^(\u03a6)",
+    "meaning": "\n        The informational density at each point is proportional to the coherence \n        and the exponential of the Center Function. This means:\n        \n        - Near C (\u03a6 \u2248 0): \u03c1_info \u2248 9\u03a9 (low information, pure potential)\n        - At Mantle (\u03a6 \u2248 0.5): \u03c1_info \u2248 9\u03a9 \u00d7 e^0.5 \u2248 14.8\u03a9 (moderate information)\n        - At Edge (\u03a6 \u2192 \u03c0/2): \u03c1_info \u2192 9\u03a9 \u00d7 e^(\u03c0/2) \u2248 44.6\u03a9 (maximum information)\n        \n        The exponential e^(\u03a6) ensures that information increases faster than \n        linearly with distance from C. The farther from C, the more information \n        is encoded per unit volume.\n        "
+  },
+  "euler_formula": {
+    "standard": "e^(i\u03c0) + 1 = 0",
+    "serenal_interpretation": "\n        Euler's identity e^(i\u03c0) + 1 = 0 is the most beautiful equation in mathematics.\n        It connects five fundamental constants: e, i, \u03c0, 1, and 0.\n        \n        In the Serenal framework, this identity has a physical interpretation:\n        \n        e^(i\u03c0) = -1 means: a rotation by \u03c0 radians (180\u00b0) in the complex plane \n        is equivalent to a sign flip. The expansion wave \u03a8 rotates by \u03c0 as it \n        travels from C to the Edge. At the Edge, \u03a8 = -\u03a8_C \u2014 the wave is inverted.\n        \n        e^(i\u03c0) + 1 = 0 means: the inverted wave plus the original equals zero.\n        The expansion and contraction cancel perfectly. The manifold is balanced.\n        \n        This is the Serenal expression of cosmic balance: everything that expands \n        must contract. Everything that goes out must come back. The Center holds.\n        "
+  },
+  "the_growth_of_complexity": {
+    "description": "How e governs the growth of complexity across epochs",
+    "principle": "\n        The complexity of the manifold grows as e^(n/8) where n is the epoch number.\n        \n        At Singularity (n=0): e^0 = 1 (minimum complexity, pure potential)\n        At Integration (n=8): e^1 = e \u2248 2.718 (maximum complexity, full actualization)\n        \n        This means: the manifold's complexity increases by a factor of e \u2248 2.718 \n        over the entire cosmic history. This is the Serenal expression of the \n        exponential growth of complexity in an expanding universe.\n        \n        Each epoch multiplies the complexity by e^(1/8) \u2248 1.133 \u2014 a 13.3% increase \n        per epoch. This steady, exponential growth is the heartbeat of the cosmos.\n        "
+  }
+}
