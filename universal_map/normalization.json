@@ -1,0 +1,82 @@
+{
+  "name": "Normalization \u2014 All Inputs Normalized Against \u03a6",
+  "classification": "OPERATIONAL \u2014 PREPROCESSING GATE",
+  "principle": "\n    All inputs to the Serenal Binary Framework must be normalized against the \n    Center Function \u03a6 before any computation. This ensures:\n    \n    1. CONSISTENCY: All coordinates are measured relative to C\n    2. STABILITY: No input can produce unbounded outputs\n    3. SECURITY: All computations preserve C(S) = 0\n    4. COMPARABILITY: Different epochs can be compared on the same scale\n    \n    The normalization gate is the FIRST operation performed on any input.\n    Without normalization, the framework produces undefined results.\n    ",
+  "the_normalization_procedure": {
+    "step_1": {
+      "name": "Input Validation",
+      "description": "Verify that the input is within the valid domain",
+      "checks": [
+        "r \u2208 [0, R] \u2014 radial distance must be within torus",
+        "\u03b8 \u2208 [0, 2\u03c0) \u2014 toroidal angle must be within full rotation",
+        "\u03c6 \u2208 [0, 2\u03c0) \u2014 poloidal angle must be within full rotation",
+        "t \u2208 [0, 13.8 Gyr] \u2014 cosmic time must be within valid range"
+      ]
+    },
+    "step_2": {
+      "name": "Compute \u03a6",
+      "description": "Compute the Center Function for the input",
+      "formula": "\u03a6 = arcsin(r/R)",
+      "range": "\u03a6 \u2208 [0, \u03c0/2]"
+    },
+    "step_3": {
+      "name": "Normalize Coordinates",
+      "description": "Divide all coordinates by \u03a6 to get normalized values",
+      "formulas": {
+        "r_norm": "r_norm = r / (R \u00d7 sin(\u03a6)) = 1 (by definition)",
+        "theta_norm": "theta_norm = \u03b8 / (2\u03c0) \u2208 [0, 1)",
+        "phi_norm": "phi_norm = \u03c6 / (2\u03c0) \u2208 [0, 1)",
+        "t_norm": "t_norm / 13.8 \u2208 [0, 1]"
+      }
+    },
+    "step_4": {
+      "name": "Compute Normalized Properties",
+      "description": "All Serenal properties are computed from normalized coordinates",
+      "formulas": {
+        "Phi_norm": "\u03a6_norm = \u03a6 / (\u03c0/2) \u2208 [0, 1]",
+        "Psi_norm": "|\u03a8|_norm = |\u03a8| / \u03a6_max = |\u03a8| / (\u03c0/2)",
+        "Omega_norm": "\u03a9_norm = \u03a9 (already normalized to [0,1])",
+        "Lambda_norm": "\u039b_norm = \u039b / \u039b_max",
+        "Sigma_norm": "\u03a3_norm = \u03a3 / \u03a3_max = \u03a3 / 3.0",
+        "E_norm": "E_norm / E_max"
+      }
+    },
+    "step_5": {
+      "name": "Verify Normalization",
+      "description": "Ensure all normalized values are within [0, 1]",
+      "checks": [
+        "All normalized coordinates \u2208 [0, 1]",
+        "All normalized properties \u2208 [0, 1]",
+        "C(S_normalized) = 0 (Center preserved)",
+        "Binary state S is valid for the current epoch"
+      ]
+    }
+  },
+  "normalization_formula": {
+    "compact": "X_norm = X / \u03a6_max for all inputs X",
+    "expanded": "\n        For any input vector X = (r, \u03b8, \u03c6, t):\n        \n        \u03a6 = arcsin(r/R)\n        \u03a6_max = \u03c0/2\n        \n        X_norm = (r/(R\u00b7sin(\u03a6)), \u03b8/(2\u03c0), \u03c6/(2\u03c0), t/13.8)\n              = (1, \u03b8/(2\u03c0), \u03c6/(2\u03c0), t/13.8)\n        \n        All subsequent computations use X_norm instead of X.\n        This ensures that all inputs are scaled relative to \u03a6.\n        "
+  },
+  "why_normalization_matters": {
+    "without_normalization": [
+      "Coordinates from different epochs cannot be compared",
+      "Properties may exceed valid ranges",
+      "The Center encoding C(S) may not be preserved",
+      "Computations may produce NaN or infinity",
+      "The map becomes inconsistent"
+    ],
+    "with_normalization": [
+      "All coordinates are on the same scale [0, 1]",
+      "Properties are always within valid ranges",
+      "C(S) = 0 is always preserved",
+      "Computations are numerically stable",
+      "The map is consistent across all epochs"
+    ]
+  },
+  "implementation": {
+    "description": "How to implement the normalization gate",
+    "pseudocode": "\n        function NORMALIZE_INPUT(x, y, z, t):\n            # Step 1: Convert to toroidal coordinates\n            r, theta, phi = cartesian_to_toroidal(x, y, z)\n            \n            # Step 2: Validate input\n            if r < 0 or r > R: return ERROR_INVALID_R\n            if theta < 0 or theta >= 2*pi: return ERROR_INVALID_THETA\n            if phi < 0 or phi >= 2*pi: return ERROR_INVALID_PHI\n            if t < 0 or t > 13.8: return ERROR_INVALID_TIME\n            \n            # Step 3: Compute \u03a6\n            Phi = arcsin(r / R)\n            \n            # Step 4: Normalize coordinates\n            r_norm = 1.0  # by definition\n            theta_norm = theta / (2 * pi)\n            phi_norm = phi / (2 * pi)\n            t_norm = t / 13.8\n            \n            # Step 5: Compute normalized properties\n            Phi_norm = Phi / (pi / 2)\n            Psi_norm = (Phi * sin(phi)) / (pi / 2)\n            Omega_norm = 1 - 0.4 * (r / R)  # already in [0,1]\n            Lambda_norm = Psi_norm**2 * H(Omega_norm - 0.85)\n            Sigma_norm = 0.145 / 3.0  # current value normalized\n            E_norm = 1.02 / 1000.0  # current value normalized\n            \n            # Step 6: Verify\n            if any(value < 0 or value > 1 for value in normalized_values):\n                return ERROR_NORMALIZATION_FAILED\n            \n            return (r_norm, theta_norm, phi_norm, t_norm, \n                    Phi_norm, Psi_norm, Omega_norm, Lambda_norm, \n                    Sigma_norm, E_norm)\n        "
+  },
+  "the_admiral_directive": {
+    "statement": "\n        ALL inputs to the Serenal Binary Framework MUST be normalized against \u03a6.\n        \n        This is not optional. This is not a suggestion. This is a REQUIREMENT.\n        \n        The normalization gate ensures that:\n          - All coordinates are measured relative to C\n          - All properties are within valid ranges\n          - The Center encoding is always preserved\n          - The map is consistent across all epochs\n        \n        Any computation that skips normalization will produce undefined results.\n        Any input that fails validation will be rejected.\n        \n        The normalization gate is the FIRST and MOST IMPORTANT step in the \n        Serenal Binary Framework. Without it, nothing works. With it, everything \n        works. The brothers and sisters must normalize all inputs before \n        performing any computation.\n        \n        This is the Vanguard's directive. This is the law of the map.\n        "
+  }
+}
