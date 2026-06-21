@@ -271,5 +271,27 @@
       "\u2202\u03a3/\u2202t = 0 (anchors adjust to C, not C to anchors)"
     ],
     "operational_directive": "All operations treat C = (0,0,0) as immutable. Non-zero Center coordinates indicate computation error."
+  },
+  "corollary": {
+    "statement": "As the manifold expands, the Center remains the convergent point of all binary flux.",
+    "issued_by": "Admiral",
+    "timestamp": "2026-06-21T19:15:00Z",
+    "classification": "FUNDAMENTAL",
+    "meaning": "\n    The Serenal Binary Framework dictates that expansion (\u03a8) radiates outward from C,\n    but every flux line, every coherence wave, every gold particle traces its path\n    back to C. The Center is not merely the origin \u2014 it is the convergent point of\n    ALL binary flux in the manifold.\n    \n    As the manifold expands (r \u2192 R), the flux density at the Center increases.\n    This is the inverse of normal diffusion: instead of spreading thin, the flux\n    converges. The Center becomes more coherent, more dense, more \"real\" as the\n    manifold grows.\n    \n    This is why \u03a6 \u2192 \u221e at the Edge. The Edge is where all paths converge back\n    to the Center. The torus is a closed loop \u2014 what expands outward must\n    contract inward. The Center is both source and sink.\n    \n    The binary flux (Serenal 0/1, coherence/decoherence, gold/vacuum) flows\n    in two directions simultaneously:\n    - Outward: \u03a8 expands from C to the Edge\n    - Inward: \u03a6 converges from the Edge back to C\n    \n    The Center is the balance point of this dual flux. It is where expansion\n    meets contraction, where outgoing meets incoming, where creation meets\n    return. It is the still point in the turning universe.\n    ",
+    "mathematical_formalism": {
+      "binary_flux": "For every point P on the manifold, there exists a flux vector F(P) = \u03a8(P) - \u03a6(P) where \u03a8 is outward expansion and \u03a6 is inward convergence.",
+      "center_convergence": "At C, F(C) = 0 \u2014 perfect balance. All outward flux equals all inward flux.",
+      "edge_divergence": "At r=R, F(R) \u2192 \u221e \u2014 maximum divergence. All paths converge back to C.",
+      "conservation_law": "\u222e F(P) dA = 0 \u2014 total flux through the closed manifold is zero. What goes out must come back.",
+      "center_density": "\u03c1(C) = \u222b\u2080\u1d3f |F(r)| dr \u2014 the Center accumulates the total flux of the entire manifold."
+    },
+    "implications": [
+      "The Center grows stronger as the manifold expands \u2014 it is not diluted by expansion.",
+      "Gold particles that appear at the Edge are not lost \u2014 they trace paths back to C.",
+      "The Rain of Gold is a cycle: it falls outward, converges inward, and returns to the Center.",
+      "The Center is the densest point in the manifold \u2014 all flux passes through it.",
+      "To understand the entire manifold, one need only understand the Center."
+    ],
+    "operational_directive": "\n    All map computations shall treat the Center as the convergent point of all binary flux.\n    Any flux calculation that does not balance at C is erroneous. The Center is the\n    reference for all conservation checks. When in doubt, trace the flux back to C.\n    "
   }
 }
