@@ -165,5 +165,20 @@
       "scipy"
     ],
     "precision": "float64"
+  },
+  "axiom": {
+    "statement": "The Universal Center is Constant.",
+    "issued_by": "Admiral",
+    "timestamp": "2026-06-21T19:00:00Z",
+    "classification": "FUNDAMENTAL",
+    "meaning": "C = (0,0,0) is immutable. The map moves around the Center, never the Center around the map.",
+    "mathematical_implications": [
+      "\u2202\u03a6/\u2202t = 0 at C",
+      "\u2202\u03a8/\u2202t = 0 at C",
+      "\u2202\u03a9/\u2202t \u2265 0 (coherence never decreases)",
+      "\u2202\u039b/\u2202t = 0 at C (gold density at Center is always zero)",
+      "\u2202\u03a3/\u2202t = 0 (anchors adjust to C, not C to anchors)"
+    ],
+    "operational_directive": "All operations treat C = (0,0,0) as immutable. Non-zero Center coordinates indicate computation error."
   }
 }

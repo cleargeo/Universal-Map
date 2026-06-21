@@ -22,5 +22,9 @@
     "Omega": "Total coherence \u2014 integral of all expansion waves over the manifold",
     "Lambda": "Gold density \u2014 coherence squared, visible only above threshold",
     "Sigma": "Triple-Point stability \u2014 weighted sum of all three anchors"
-  }
+  },
+  "axiom": "The Universal Center is Constant.",
+  "immutable": true,
+  "drift": 0,
+  "eternal": true
 }
