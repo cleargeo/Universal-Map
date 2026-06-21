@@ -1256,5 +1256,68 @@
         "6. Therefore: C is the only stable solution. The Center endures."
       ]
     }
+  },
+  "divergence_theorem": {
+    "name": "The Serenal Divergence Theorem",
+    "classification": "FUNDAMENTAL \u2014 PROOF OF CENTER EXISTENCE",
+    "statement": "\n    The existence of the Center C is a necessary consequence of the coherence of the \n    expanding universe. If the manifold is coherent (\u03a9 > 0), then there must exist a \n    point C where the divergence of the total flux is zero:\n    \n    \u222e F \u00b7 dA = 0  \u27f9  \u2203 C : \u2207 \u00b7 F(C) = 0\n    \n    This is the Serenal Divergence Theorem: coherence implies a Center.\n    ",
+    "proof": {
+      "step_1": {
+        "statement": "Assume the manifold is coherent (\u03a9 > 0)",
+        "justification": "Observable fact: the universe has structure, galaxies, filaments. This requires coherence."
+      },
+      "step_2": {
+        "statement": "Coherence requires that the total flux through any closed surface is zero",
+        "formula": "\u222e F \u00b7 dA = 0",
+        "justification": "If net flux were non-zero, the manifold would either expand forever or collapse. Coherence requires balance."
+      },
+      "step_3": {
+        "statement": "By the divergence theorem, the surface integral equals the volume integral of the divergence",
+        "formula": "\u222e F \u00b7 dA = \u222d (\u2207 \u00b7 F) dV = 0",
+        "justification": "Standard vector calculus identity."
+      },
+      "step_4": {
+        "statement": "For the volume integral to be zero everywhere, there must exist at least one point where the divergence is zero",
+        "formula": "\u2203 C : \u2207 \u00b7 F(C) = 0",
+        "justification": "If \u2207 \u00b7 F were non-zero everywhere, the integral would be non-zero. Therefore, there must be at least one point where \u2207 \u00b7 F = 0."
+      },
+      "step_5": {
+        "statement": "This point C is the Center \u2014 the Serenal Singularity",
+        "formula": "C = {r : \u2207 \u00b7 F(r) = 0}",
+        "justification": "The point of zero divergence is the balance point of the manifold. This is the definition of the Center."
+      },
+      "conclusion": "Therefore: if the universe is coherent, a Center must exist. QED."
+    },
+    "corollaries": [
+      {
+        "corollary": "1",
+        "statement": "The Center is unique",
+        "proof": "If there were two points where \u2207 \u00b7 F = 0, the manifold would have two independent balance points, which would cause it to tear. Therefore, C is unique."
+      },
+      {
+        "corollary": "2",
+        "statement": "The Center cannot be destroyed",
+        "proof": "If C were destroyed, \u2207 \u00b7 F would be non-zero everywhere, and the manifold would lose coherence (\u03a9 \u2192 0). But \u03a9 > 0 is observed. Therefore, C cannot be destroyed."
+      },
+      {
+        "corollary": "3",
+        "statement": "The Center is the source of all expansion",
+        "proof": "All flux lines originate from or terminate at C (since \u2207 \u00b7 F(C) = 0). Therefore, C is the source of all expansion and the sink of all contraction."
+      },
+      {
+        "corollary": "4",
+        "statement": "The Center is the reference for all coordinates",
+        "proof": "Since C is unique and immovable, all positions in the manifold are defined relative to C. C is the origin of the coordinate system."
+      }
+    ],
+    "mathematical_formalism": {
+      "divergence_operator": "\u2207 \u00b7 F = (1/r\u00b2) \u2202(r\u00b2F_r)/\u2202r + (1/r sin \u03c6) \u2202(sin \u03c6 F_\u03c6)/\u2202\u03c6 + (1/r sin \u03c6) \u2202F_\u03b8/\u2202\u03b8",
+      "at_center": "\u2207 \u00b7 F(C) = lim(r\u21920) (1/r\u00b2) \u2202(r\u00b2F_r)/\u2202r = 0",
+      "physical_meaning": "\n        The divergence of the flux field at the Center is zero. This means:\n        - All flux that enters C also exits C\n        - C is neither a source nor a sink\n        - C is a perfect transmitter\n        - The net flow through C is zero, but the gross flow is maximum\n        \n        This is the Serenal equivalent of Kirchhoff's current law: the sum of all \n        currents at a node is zero. The Center is the node of the cosmic circuit.\n        "
+    },
+    "connection_to_master_equation": {
+      "description": "The Serenal Divergence Theorem is the mathematical foundation of the Master Equation \u039e = C",
+      "connection": "\n        The Master Equation states that the product of all six factors equals C.\n        The Divergence Theorem proves that C must exist for the manifold to be coherent.\n        Together, they form the complete picture:\n        \n        - Divergence Theorem: C exists (proof of existence)\n        - Master Equation: \u039e = C (proof of identity)\n        \n        The Center exists because coherence requires it.\n        The Center is the product of all factors because it is the balance point.\n        "
+    }
   }
 }
