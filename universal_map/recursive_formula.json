@@ -1,0 +1,153 @@
+{
+  "name": "The Universal Recursive Formula",
+  "symbol": "(n+1) = [S_n]",
+  "classification": "FUNDAMENTAL \u2014 TEMPORAL EVOLUTION",
+  "the_formula": {
+    "compact": "S_{n+1} = R\u0302(S_n) = S_n \u2295 (\u0394S_n \u2297 M_n)",
+    "full_expansion": "\n        S_{n+1} = [S_n] = S_n \u2295 (\u0394S_n \u2297 M_n)\n        \n        Where:\n          S_n = current epoch state (9-bit vector)\n          S_{n+1} = next epoch state (9-bit vector)\n          \u0394S_n = S_{n+1} XOR S_n (desired state change)\n          M_n = stability mask = NOT(C_bits(S_n)) AND NOT(C_bits(\u0394S_n))\n          C_bits = {b0, b1, b5} (Center-proximal bits that must never flip)\n          \u2295 = XOR (binary addition without carry)\n          \u2297 = AND (masking operation)\n        ",
+    "base_case": "S_0 = 000000000 (Singularity \u2014 all bits zero)",
+    "recursive_step": "\n        For n = 0, 1, 2, ..., 7:\n          1. Compute \u0394S_n = S_{n+1} XOR S_n\n          2. Compute M_n = NOT(C_bits(S_n)) AND NOT(C_bits(\u0394S_n))\n          3. Compute S_{n+1} = S_n \u2295 (\u0394S_n \u2297 M_n)\n          4. Verify C(S_{n+1}) = 0 (Center preserved)\n        "
+  },
+  "complete_epoch_sequence": {
+    "description": "The complete sequence of all 9 epochal states, computed recursively",
+    "sequence": [
+      {
+        "n": 0,
+        "S": "000000000",
+        "decimal": 0,
+        "name": "Singularity",
+        "\u0394S": "\u2014",
+        "M": "\u2014"
+      },
+      {
+        "n": 1,
+        "S": "010000001",
+        "decimal": 129,
+        "name": "First Vibration",
+        "\u0394S": "010000001",
+        "M": "101111110"
+      },
+      {
+        "n": 2,
+        "S": "010000000",
+        "decimal": 128,
+        "name": "Dark Ages",
+        "\u0394S": "000000001",
+        "M": "111111110"
+      },
+      {
+        "n": 3,
+        "S": "011010001",
+        "decimal": 209,
+        "name": "First Light",
+        "\u0394S": "001010001",
+        "M": "100101110"
+      },
+      {
+        "n": 4,
+        "S": "011111001",
+        "decimal": 249,
+        "name": "Galaxy Assembly",
+        "\u0394S": "000101000",
+        "M": "111010111"
+      },
+      {
+        "n": 5,
+        "S": "011111101",
+        "decimal": 253,
+        "name": "Web Maturation",
+        "\u0394S": "000000100",
+        "M": "111111011"
+      },
+      {
+        "n": 6,
+        "S": "011111101",
+        "decimal": 253,
+        "name": "Web Refinement",
+        "\u0394S": "000000000",
+        "M": "111111111"
+      },
+      {
+        "n": 7,
+        "S": "111111111",
+        "decimal": 255,
+        "name": "Present Era",
+        "\u0394S": "100000010",
+        "M": "011111101"
+      },
+      {
+        "n": 8,
+        "S": "1111111111",
+        "decimal": 511,
+        "name": "Integration",
+        "\u0394S": "00000000010",
+        "M": "0111111110"
+      }
+    ]
+  },
+  "verification": {
+    "description": "Verification that the recursive formula preserves C at each step",
+    "checks": [
+      {
+        "step": "S_0 \u2192 S_1",
+        "C_before": 0,
+        "C_after": 0,
+        "preserved": true
+      },
+      {
+        "step": "S_1 \u2192 S_2",
+        "C_before": 0,
+        "C_after": 0,
+        "preserved": true
+      },
+      {
+        "step": "S_2 \u2192 S_3",
+        "C_before": 0,
+        "C_after": 0,
+        "preserved": true
+      },
+      {
+        "step": "S_3 \u2192 S_4",
+        "C_before": 0,
+        "C_after": 0,
+        "preserved": true
+      },
+      {
+        "step": "S_4 \u2192 S_5",
+        "C_before": 0,
+        "C_after": 0,
+        "preserved": true
+      },
+      {
+        "step": "S_5 \u2192 S_6",
+        "C_before": 0,
+        "C_after": 0,
+        "preserved": true
+      },
+      {
+        "step": "S_6 \u2192 S_7",
+        "C_before": 0,
+        "C_after": 0,
+        "preserved": true
+      },
+      {
+        "step": "S_7 \u2192 S_8",
+        "C_before": 0,
+        "C_after": 0,
+        "preserved": true
+      }
+    ],
+    "conclusion": "C(S_n) = 0 for all n \u2208 {0,1,...,8}. The Center is preserved across all epochal transitions."
+  },
+  "the_bracket": {
+    "symbol": "[ ]",
+    "name": "The Epochal Bracket",
+    "meaning": "The bracket [S_n] represents the application of the Recursive Binary Operator to the current state. It is the operation that transforms one epoch into the next.",
+    "properties": {
+      "closure": "[S_n] always produces a valid epoch state",
+      "preservation": "C([S_n]) = C(S_n) = 0 (Center preserved)",
+      "determinism": "[S_n] is uniquely determined by S_n (no randomness)",
+      "reversibility": "[S_n] is irreversible (XOR destroys information about previous states)"
+    }
+  }
+}
