@@ -1,0 +1,15 @@
+{
+  "name": "Phi \u2014 The Center Function (Complete Final Form)",
+  "definition": "Phi(r) = arcsin(r/R)",
+  "domain": "[0, R]",
+  "range": "[0, pi/2]",
+  "derivatives": {
+    "first": "dPhi/dr = 1/sqrt(R^2 - r^2)",
+    "second": "d2Phi/dr^2 = r/(R^2 - r^2)^(3/2)"
+  },
+  "inverse": "r(Phi) = R * sin(Phi)",
+  "self_referential": "Phi(Xi) = arcsin(arcsin(r/R) / R)",
+  "horizon": "r_horizon = R * sin(R) \u2248 0.8415R",
+  "series": "Phi(r) = r/R + (r/R)^3/6 + 3(r/R)^5/40 + ...",
+  "complex_extension": "Phi(z) = -i * log(iz + sqrt(1 - z^2))"
+}
