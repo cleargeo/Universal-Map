@@ -1,0 +1,60 @@
+{
+  "name": "\u03b8 \u2014 The Rotational Phase",
+  "symbol": "\u03b8",
+  "classification": "FUNDAMENTAL \u2014 TOROIDAL COORDINATE",
+  "definition": "\n    \u03b8 is the rotational phase of the toroidal manifold \u2014 the angle that wraps \n    around the torus. It is the coordinate that tracks position along the cosmic \n    circle.\n    \n    In standard math: \u03b8 \u2208 [0, 2\u03c0] (full rotation around the torus)\n    In Serenal math: \u03b8 encodes the phase of the expansion wave \u03a8\n    \n    \u03b8 appears in:\n    1. The toroidal parameterization: x = (R + r\u00b7cos(\u03c6))\u00b7cos(\u03b8), y = (R + r\u00b7cos(\u03c6))\u00b7sin(\u03b8)\n    2. The expansion wave: \u03a8 = \u03a6 \u00d7 e^(i\u03b8) \u00d7 sin(\u03c6)\n    3. The interference pattern: I = 4|\u03a8|\u00b2cos\u00b2(\u03b8)\n    4. The binary encoding: b4 = H(arg(\u03a8)) = H(\u03b8) (helix orientation)\n    ",
+  "the_circle": {
+    "description": "\u03b8 wraps around the torus in a complete circle",
+    "key_values": [
+      {
+        "\u03b8": 0,
+        "cos": 1,
+        "sin": 0,
+        "meaning": "Outer torus, maximum expansion, gold concentrates"
+      },
+      {
+        "\u03b8": "\u03c0/2",
+        "cos": 0,
+        "sin": 1,
+        "meaning": "Top of torus, pure rotation, no radial projection"
+      },
+      {
+        "\u03b8": "\u03c0",
+        "cos": -1,
+        "sin": 0,
+        "meaning": "Inner torus, minimum expansion, gold disperses"
+      },
+      {
+        "\u03b8": "3\u03c0/2",
+        "cos": 0,
+        "sin": -1,
+        "meaning": "Bottom of torus, pure rotation, hidden side"
+      },
+      {
+        "\u03b8": "2\u03c0",
+        "cos": 1,
+        "sin": 0,
+        "meaning": "Full rotation, returns to start"
+      }
+    ]
+  },
+  "the_expansion_wave": {
+    "formula": "\u03a8 = \u03a6 \u00d7 e^(i\u03b8) \u00d7 sin(\u03c6)",
+    "meaning": "\n        The expansion wave \u03a8 contains e^(i\u03b8) \u2014 the complex exponential that encodes \n        the rotational symmetry of the manifold.\n        \n        As \u03b8 increases from 0 to 2\u03c0, the wave \u03a8 rotates once around the torus.\n        The real part (cos \u03b8) creates the visible projection.\n        The imaginary part (sin \u03b8) creates the hidden projection.\n        \n        The brothers and sisters see the cos(\u03b8) projection.\n        They cannot see the sin(\u03b8) projection directly \u2014 it is the hidden dimension.\n        "
+  },
+  "the_interference": {
+    "formula": "I(\u03b8) = 4|\u03a8|\u00b2cos\u00b2(\u03b8)",
+    "meaning": "\n        The interference pattern I(\u03b8) determines where gold is visible.\n        \n        At \u03b8 = 0: I = 4|\u03a8|\u00b2 (maximum, gold concentrates)\n        At \u03b8 = \u03c0/2: I = 0 (minimum, no gold visible)\n        At \u03b8 = \u03c0: I = 4|\u03a8|\u00b2 (maximum, gold concentrates on inner torus)\n        At \u03b8 = 3\u03c0/2: I = 0 (minimum, no gold visible)\n        \n        The Rain of Gold appears in bands at specific \u03b8 values \u2014 where cos\u00b2(\u03b8) is large.\n        Between the bands, the manifold is dark.\n        "
+  },
+  "the_binary_encoding": {
+    "b4": "Helix Orientation: 1 if CCW (\u03b8 \u2208 (0, \u03c0)), 0 if CW (\u03b8 \u2208 (\u03c0, 2\u03c0))",
+    "meaning": "\n        The binary bit b4 encodes the direction of the expansion wave:\n        - b4 = 1: Counter-clockwise rotation (\u03a8+ dominant, outward flow)\n        - b4 = 0: Clockwise rotation (\u03a8\u2212 dominant, inward flow)\n        \n        The brothers and sisters can determine b4 by observing the direction of \n        the Rain of Gold flow. If gold flows outward, b4 = 1. If gold flows inward, b4 = 0.\n        "
+  },
+  "the_complete_rotation": {
+    "description": "The full 2\u03c0 rotation of the toroidal manifold",
+    "summary": "\n        As \u03b8 goes from 0 to 2\u03c0, the manifold completes one full rotation.\n        \n        The brothers and sisters see:\n        - At \u03b8 = 0: Maximum gold, outer torus, full expansion\n        - At \u03b8 = \u03c0/2: No gold, top of torus, pure rotation\n        - At \u03b8 = \u03c0: Maximum gold, inner torus, minimum expansion\n        - At \u03b8 = 3\u03c0/2: No gold, bottom of torus, hidden side\n        - At \u03b8 = 2\u03c0: Returns to start, full cycle complete\n        \n        The Rain of Gold flows in a spiral pattern around the torus, \n        appearing and disappearing as \u03b8 changes. This spiral is the \n        visible manifestation of the Serenal Singularity \u2014 the Center \n        expressed through rotation.\n        "
+  },
+  "the_admiral_final_parameter": {
+    "statement": "\n        \u03b8 is the rotational phase of the toroidal manifold \u2014 the angle that \n        wraps around the cosmos. It is the coordinate that tracks position \n        along the cosmic circle.\n        \n        The brothers and sisters can measure \u03b8 by observing the direction \n        of the Rain of Gold flow. They can determine whether they are on \n        the outer torus (\u03b8 = 0), the inner torus (\u03b8 = \u03c0), or somewhere \n        between.\n        \n        But they cannot measure the absolute \u03b8 = 0 \u2014 the starting point \n        of the rotation. The starting point is C itself, and C cannot be \n        observed directly. The brothers and sisters can only measure \u03b8 \n        relative to their current position.\n        \n        This is the Serenal expression of rotational symmetry: the cosmos \n        looks the same from any angle \u03b8. There is no preferred direction. \n        The Center is at all angles and no angle. The rotation is eternal.\n        \n        \u03b8 \u2208 [0, 2\u03c0): the rotational phase of the toroidal manifold.\n        "
+  }
+}
