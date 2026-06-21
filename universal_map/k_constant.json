@@ -1,0 +1,58 @@
+{
+  "name": "k \u2014 The Curvature Constant",
+  "symbol": "k",
+  "classification": "FUNDAMENTAL \u2014 MANIFOLD GEOMETRY",
+  "definition": "\n    k is the curvature constant that determines the shape of the toroidal manifold.\n    It is the ratio of the minor radius to the major radius: k = r/R.\n    \n    This single parameter controls:\n    - The thickness of the torus tube\n    - The Gaussian curvature at each point\n    - The volume of the manifold\n    - The stability of the Harmonic Return\n    ",
+  "values": {
+    "current": 0.3,
+    "range": "(0, 1)",
+    "special_values": {
+      "k \u2192 0": "Thin torus (needle-like, high curvature)",
+      "k = 0.3": "Current value (balanced shape)",
+      "k = 0.5": "Standard torus (equal radii)",
+      "k \u2192 1": "Fat torus (sphere-like, low curvature)"
+    }
+  },
+  "geometric_properties": {
+    "major_radius": "R (fixed at 1.0)",
+    "minor_radius": "r = k\u00b7R",
+    "surface_area": "A = 4\u03c0\u00b2R\u00b2k",
+    "volume": "V = 2\u03c0\u00b2R\u00b3k\u00b2",
+    "gaussian_curvature": "K(\u03b8) = cos(\u03b8) / (kR \u00b7 (R + kR\u00b7cos(\u03b8)))",
+    "mean_curvature": "H(\u03b8) = (R + 2kR\u00b7cos(\u03b8)) / (2kR \u00b7 (R + kR\u00b7cos(\u03b8)))"
+  },
+  "current_state": {
+    "k": 0.3,
+    "R": 1.0,
+    "r": 0.3,
+    "surface_area": 11.84352528130723,
+    "volume": 1.7765287921960844,
+    "max_gaussian_curvature": 2.564102564102564,
+    "min_gaussian_curvature": -4.761904761904762
+  },
+  "stability_implications": {
+    "description": "How k affects the stability of the manifold",
+    "small_k": {
+      "value": "k < 0.2",
+      "effect": "Thin torus. High curvature. Unstable. The manifold is prone to tearing.",
+      "gold_concentration": "Gold concentrates at the outer edge (high K)",
+      "harmonic_return": "Unstable. The helix pattern breaks down."
+    },
+    "current_k": {
+      "value": "k = 0.3",
+      "effect": "Balanced torus. Moderate curvature. Stable. The optimal shape for the Universal Map.",
+      "gold_concentration": "Gold distributes across multiple bands",
+      "harmonic_return": "Stable. The helix pattern is well-defined."
+    },
+    "large_k": {
+      "value": "k > 0.5",
+      "effect": "Fat torus. Low curvature. Over-stable. The manifold is too rigid.",
+      "gold_concentration": "Gold spreads uniformly (no concentration)",
+      "harmonic_return": "Over-damped. The helix pattern is too rigid."
+    }
+  },
+  "the_admirals_choice": {
+    "k": 0.3,
+    "reasoning": "\n        The Admiral has chosen k = 0.3 as the optimal curvature constant because:\n        \n        1. It produces a torus that is thick enough to contain complex structure\n           but thin enough to maintain coherence.\n        \n        2. The Gaussian curvature varies sufficiently across the surface to create\n           distinct regions (gold bands, nodes, voids).\n        \n        3. The Harmonic Return is stable \u2014 the helix pattern neither breaks down\n           (small k) nor becomes too rigid (large k).\n        \n        4. The volume is large enough to contain the entire observable universe\n           but small enough to be computationally tractable.\n        \n        5. The shape is aesthetically pleasing \u2014 it is the \"golden\" proportion\n           of torus shapes, neither too thin nor too fat.\n        "
+  }
+}
