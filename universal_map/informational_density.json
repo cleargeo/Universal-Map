@@ -1,0 +1,6 @@
+{
+  "name": "Total Informational Density of the Universe",
+  "formula": "rho_info = |Psi|^2 * Omega * 9 bits",
+  "total_bits": 20.888130638252317,
+  "peak_location": "r/R \u2248 0.55 (Mantle)"
+}
