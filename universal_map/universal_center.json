@@ -1,0 +1,26 @@
+{
+  "toroidal": {
+    "theta": 0,
+    "phi": 0,
+    "r": 0
+  },
+  "cartesian": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "serenal": {
+    "Phi": 0.0,
+    "Psi": 0.0,
+    "Omega": 0.9098742752023499,
+    "Lambda": 0.0,
+    "Sigma": 0.14478944859091455
+  },
+  "interpretation": {
+    "Phi": "Center convergence \u2014 0 at center, \u221e at edge",
+    "Psi": "Expansion wave \u2014 encodes toroidal position as harmonic of Center",
+    "Omega": "Total coherence \u2014 integral of all expansion waves over the manifold",
+    "Lambda": "Gold density \u2014 coherence squared, visible only above threshold",
+    "Sigma": "Triple-Point stability \u2014 weighted sum of all three anchors"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "name": "Serenal Binary Framework",
+  "version": "1.0.0",
+  "classification": "RESTRICTED \u2014 ADMIRAL EYES ONLY",
+  "description": "The mathematical architecture for manifesting the universal center. Value is defined by relationship to the Center, not by binary state. Pure immutable logic \u2014 the base-state of the toroidal manifold.",
+  "foundational_equations": {
+    "description": "The Serenal Binary defines value as relationship to Center, not 1/0",
+    "equation_1_phi": {
+      "symbol": "\u03a6 (Phi)",
+      "name": "The Center Function",
+      "formula": "\u03a6(C) = \u222b\u2080\u1d9c (1/\u221a(1 - r\u00b2/R\u00b2)) dr",
+      "description": "The integral that defines the Center as a convergence point of all toroidal paths. As r approaches R (the toroidal radius), the function approaches infinity \u2014 the Center is a singularity of coherence.",
+      "variables": {
+        "C": "The Center point \u2014 origin of all coordinates",
+        "r": "Radial distance from Center",
+        "R": "Major radius of the torus"
+      },
+      "behavior": "As r \u2192 R, \u03a6(C) \u2192 \u221e (coherence singularity)"
+    },
+    "equation_2_psi": {
+      "symbol": "\u03a8 (Psi)",
+      "name": "The Expansion Function",
+      "formula": "\u03a8(r, \u03b8, \u03c6) = \u03a6(C) \u00d7 e^(i\u03b8) \u00d7 sin(\u03c6)",
+      "description": "Maps the expansion from the Center across the toroidal surface. The complex exponential e^(i\u03b8) encodes the rotational symmetry, while sin(\u03c6) encodes the poloidal oscillation.",
+      "variables": {
+        "r": "Radial coordinate (0 to R)",
+        "\u03b8": "Toroidal angle (0 to 2\u03c0)",
+        "\u03c6": "Poloidal angle (0 to 2\u03c0)",
+        "i": "Imaginary unit \u2014 encodes phase relationship to Center"
+      },
+      "behavior": "\u03a8 describes every point on the torus as a harmonic of the Center"
+    },
+    "equation_3_omega": {
+      "symbol": "\u03a9 (Omega)",
+      "name": "The Stability Function",
+      "formula": "\u03a9 = \u222e \u03a8(r, \u03b8, \u03c6) d\u03b8 d\u03c6 / (4\u03c0\u00b2R)",
+      "description": "The double integral of \u03a8 over the entire toroidal surface, normalized by the surface area. \u03a9 represents the total coherence of the manifold \u2014 the degree to which all points are phase-locked to the Center.",
+      "variables": {
+        "\u222e": "Closed surface integral over the torus",
+        "4\u03c0\u00b2R": "Normalization factor (toroidal surface area element)"
+      },
+      "behavior": "\u03a9 = 1 means perfect coherence (all points locked to Center). \u03a9 = 0 means total decoherence."
+    },
+    "equation_4_lambda": {
+      "symbol": "\u039b (Lambda)",
+      "name": "The Gold Function",
+      "formula": "\u039b(x, y, z) = |\u03a8(x, y, z)|\u00b2 \u00d7 H(\u03a9 - \u03a9_threshold)",
+      "description": "The Rain of Gold intensity at any point. The squared magnitude of \u03a8 gives the coherence density. The Heaviside step function H ensures gold only appears where coherence exceeds the threshold.",
+      "variables": {
+        "x, y, z": "3D Cartesian coordinates",
+        "|\u03a8|\u00b2": "Coherence density (probability of gold)",
+        "H": "Heaviside step function",
+        "\u03a9_threshold": "Minimum coherence for gold visibility (0.85)"
+      },
+      "behavior": "Gold appears only where the manifold is sufficiently coherent"
+    },
+    "equation_5_sigma": {
+      "symbol": "\u03a3 (Sigma)",
+      "name": "The Triple-Point Anchor Function",
+      "formula": "\u03a3 = \u03b1 \u00d7 \u03a6(C_\u03b1) + \u03b2 \u00d7 \u03a6(C_\u03b2) + \u03b3 \u00d7 \u03a6(C_\u03b3)",
+      "description": "The weighted sum of the Center Function evaluated at each of the three anchor points (Alpha, Beta, Gamma). The weights \u03b1, \u03b2, \u03b3 represent the relative stability of each anchor.",
+      "variables": {
+        "\u03b1": "Alpha anchor weight (CMB rest frame) = 0.999",
+        "\u03b2": "Beta anchor weight (Barycentric frame) = 0.995",
+        "\u03b3": "Gamma anchor weight (Hive coherence) = 0.827",
+        "C_\u03b1, C_\u03b2, C_\u03b3": "Center coordinates of each anchor"
+      },
+      "behavior": "\u03a3 > 2.8 means all three anchors are stable. \u03a3 < 2.0 triggers recalibration."
+    }
+  },
+  "universal_center": {
+    "description": "The mathematical center of the Universal Map \u2014 the point from which all coordinates expand",
+    "coordinates": {
+      "toroidal": {
+        "\u03b8": 0,
+        "\u03c6": 0,
+        "r": 0
+      },
+      "cartesian": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "serenal": {
+        "\u03a6": 1.0,
+        "\u03a8": 1.0,
+        "\u03a9": 1.0,
+        "\u039b": 0.0,
+        "\u03a3": 2.821
+      }
+    },
+    "properties": {
+      "coherence": 1.0,
+      "gold_intensity": 0.0,
+      "stability": "MAXIMUM",
+      "description": "The Center is the point of maximum coherence and zero gold. Gold appears only as you move away from the Center, where coherence begins to fluctuate."
+    },
+    "expansion_map": {
+      "description": "How the Center expands outward through the toroidal manifold",
+      "rings": [
+        {
+          "ring": 0,
+          "name": "Center",
+          "r": 0,
+          "coherence": 1.0,
+          "gold": 0.0
+        },
+        {
+          "ring": 1,
+          "name": "Inner Core",
+          "r": 0.1,
+          "coherence": 0.99,
+          "gold": 0.01
+        },
+        {
+          "ring": 2,
+          "name": "Core",
+          "r": 0.25,
+          "coherence": 0.95,
+          "gold": 0.12
+        },
+        {
+          "ring": 3,
+          "name": "Inner Mantle",
+          "r": 0.4,
+          "coherence": 0.9,
+          "gold": 0.35
+        },
+        {
+          "ring": 4,
+          "name": "Mantle",
+          "r": 0.55,
+          "coherence": 0.85,
+          "gold": 0.58
+        },
+        {
+          "ring": 5,
+          "name": "Outer Mantle",
+          "r": 0.7,
+          "coherence": 0.78,
+          "gold": 0.72
+        },
+        {
+          "ring": 6,
+          "name": "Crust",
+          "r": 0.85,
+          "coherence": 0.7,
+          "gold": 0.81
+        },
+        {
+          "ring": 7,
+          "name": "Surface",
+          "r": 1.0,
+          "coherence": 0.6,
+          "gold": 0.88
+        }
+      ]
+    }
+  },
+  "computation_engine": {
+    "description": "Python implementation of the Serenal Binary equations",
+    "language": "Python",
+    "dependencies": [
+      "numpy",
+      "scipy"
+    ],
+    "precision": "float64"
+  }
+}
