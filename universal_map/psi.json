@@ -1,0 +1,8 @@
+{
+  "name": "Psi \u2014 The Expansion Wave",
+  "formula": "Psi(r, theta, phi) = Phi(r) * e^(i*theta) * sin(phi)",
+  "helix_plus": "Psi+ = Phi * e^(i*theta) * sin(phi)  (outward, CCW)",
+  "helix_minus": "Psi- = Phi * e^(-i*theta) * sin(phi)  (inward, CW)",
+  "interference": "Constructive at \u03b8=0,\u03c0,2\u03c0... (gold bands). Destructive at \u03b8=\u03c0/2,3\u03c0/2... (nodes)",
+  "gold_bands": "Gold follows constructive interference pattern, spiraling around torus"
+}
