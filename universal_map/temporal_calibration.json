@@ -1,0 +1,401 @@
+{
+  "module": "temporal_calibration",
+  "name": "Redshift-Distance Slicing Engine",
+  "description": "Enables 'scrubbing' through cosmic time by mapping redshift observations to comoving distance, allowing visualization of cosmic web evolution from first light to present expansion.",
+  "cosmological_parameters": {
+    "model": "Planck 2018 (\u039bCDM)",
+    "H0": 67.4,
+    "H0_units": "km/s/Mpc",
+    "Omega_m": 0.315,
+    "Omega_lambda": 0.685,
+    "Omega_b": 0.0493,
+    "sigma_8": 0.811,
+    "n_s": 0.965,
+    "reference": "Planck 2018 Results VI. Cosmological Parameters"
+  },
+  "redshift_slicing": {
+    "description": "Time-domain slices calibrated to JWST and DESI observations",
+    "unit": "redshift_z",
+    "alternative_units": [
+      "comoving_distance_Mpc",
+      "lookback_time_Gyr",
+      "age_of_universe_Gyr"
+    ],
+    "slices": [
+      {
+        "id": "z1100",
+        "name": "Surface of Last Scattering",
+        "redshift": 1100,
+        "lookback_time_Gyr": 13.797,
+        "age_of_universe_Gyr": 0.00038,
+        "comoving_distance_Mpc": 44900,
+        "description": "CMB photon decoupling, the oldest observable light",
+        "data_sources": [
+          "Planck 2018"
+        ],
+        "layer": "l0_cmb"
+      },
+      {
+        "id": "z20_10",
+        "name": "Cosmic Dawn & Reionization",
+        "redshift_range": [
+          20,
+          10
+        ],
+        "lookback_time_Gyr_range": [
+          13.3,
+          13.0
+        ],
+        "age_of_universe_Gyr_range": [
+          0.2,
+          0.5
+        ],
+        "description": "First stars and galaxies forming, universe transitions from opaque to transparent",
+        "data_sources": [
+          "JWST Deep Field",
+          "EDGES",
+          "HERA"
+        ],
+        "layer": "l5_reionization"
+      },
+      {
+        "id": "z10_6",
+        "name": "Epoch of Reionization",
+        "redshift_range": [
+          10,
+          6
+        ],
+        "lookback_time_Gyr_range": [
+          13.0,
+          12.7
+        ],
+        "age_of_universe_Gyr_range": [
+          0.5,
+          0.9
+        ],
+        "description": "Complete reionization of intergalactic medium",
+        "data_sources": [
+          "JWST",
+          "DESI EDR"
+        ],
+        "layer": "l5_reionization"
+      },
+      {
+        "id": "z6_3",
+        "name": "Galaxy Assembly Era",
+        "redshift_range": [
+          6,
+          3
+        ],
+        "lookback_time_Gyr_range": [
+          12.7,
+          11.5
+        ],
+        "age_of_universe_Gyr_range": [
+          0.9,
+          2.2
+        ],
+        "description": "Peak star formation, massive galaxy assembly, quasar activity",
+        "data_sources": [
+          "JWST",
+          "SDSS",
+          "DESI"
+        ],
+        "layer": "l4_galaxies"
+      },
+      {
+        "id": "z3_1",
+        "name": "Web Maturation",
+        "redshift_range": [
+          3,
+          1
+        ],
+        "lookback_time_Gyr_range": [
+          11.5,
+          7.7
+        ],
+        "age_of_universe_Gyr_range": [
+          2.2,
+          6.0
+        ],
+        "description": "Cosmic web filaments fully developed, clusters forming at nodes",
+        "data_sources": [
+          "DESI",
+          "SDSS",
+          "eBOSS"
+        ],
+        "layers": [
+          "l2_filaments",
+          "l3_nodes",
+          "l4_galaxies"
+        ]
+      },
+      {
+        "id": "z1_0.5",
+        "name": "Web Refinement",
+        "redshift_range": [
+          1,
+          0.5
+        ],
+        "lookback_time_Gyr_range": [
+          7.7,
+          5.1
+        ],
+        "age_of_universe_Gyr_range": [
+          6.0,
+          8.7
+        ],
+        "description": "Continued structure growth, dark energy begins to dominate",
+        "data_sources": [
+          "DESI",
+          "SDSS-IV",
+          "eBOSS"
+        ],
+        "layers": [
+          "l2_filaments",
+          "l3_nodes"
+        ]
+      },
+      {
+        "id": "z0.5_0",
+        "name": "Present Expansion",
+        "redshift_range": [
+          0.5,
+          0
+        ],
+        "lookback_time_Gyr_range": [
+          5.1,
+          0
+        ],
+        "age_of_universe_Gyr_range": [
+          8.7,
+          13.8
+        ],
+        "description": "Dark energy dominated era, accelerating expansion, present-day structure",
+        "data_sources": [
+          "DESI",
+          "SDSS",
+          "2dFGRS",
+          "6dFGS"
+        ],
+        "layers": [
+          "l1_dark_matter",
+          "l2_filaments",
+          "l3_nodes",
+          "l4_galaxies"
+        ]
+      }
+    ]
+  },
+  "distance_measures": {
+    "comoving_distance": {
+      "description": "Distance between two objects at the same redshift, accounting for expansion",
+      "formula": "D_C = c * integral_0^z dz' / H(z')",
+      "units": "Mpc/h"
+    },
+    "lookback_time": {
+      "description": "Time elapsed since light was emitted from an object at redshift z",
+      "formula": "t_L = integral_0^z dz' / ((1+z') * H(z'))",
+      "units": "Gyr"
+    },
+    "luminosity_distance": {
+      "description": "Distance inferred from observed flux of standard candles",
+      "formula": "D_L = (1+z) * D_C",
+      "units": "Mpc"
+    },
+    "angular_diameter_distance": {
+      "description": "Distance inferred from apparent angular size of objects",
+      "formula": "D_A = D_C / (1+z)",
+      "units": "Mpc"
+    }
+  },
+  "jwst_calibration": {
+    "description": "JWST provides the deepest high-redshift observations for the early universe slices",
+    "instruments": {
+      "NIRCam": {
+        "wavelength_um": [
+          0.6,
+          5.0
+        ],
+        "redshift_range": [
+          1,
+          20
+        ]
+      },
+      "NIRSpec": {
+        "wavelength_um": [
+          0.6,
+          5.0
+        ],
+        "redshift_range": [
+          1,
+          10
+        ],
+        "spectroscopy": true
+      },
+      "MIRI": {
+        "wavelength_um": [
+          5.0,
+          28.0
+        ],
+        "redshift_range": [
+          0.5,
+          5
+        ]
+      }
+    },
+    "key_surveys": [
+      {
+        "name": "JADES",
+        "area": "25 arcmin\u00b2",
+        "depth": "AB ~ 30",
+        "redshift_range": [
+          2,
+          15
+        ]
+      },
+      {
+        "name": "CEERS",
+        "area": "100 arcmin\u00b2",
+        "depth": "AB ~ 28",
+        "redshift_range": [
+          1,
+          10
+        ]
+      },
+      {
+        "name": "PRIMER",
+        "area": "230 arcmin\u00b2",
+        "depth": "AB ~ 27",
+        "redshift_range": [
+          1,
+          8
+        ]
+      }
+    ]
+  },
+  "desi_calibration": {
+    "description": "DESI provides the most complete spectroscopic survey for the low-redshift cosmic web",
+    "survey_phases": [
+      {
+        "name": "Survey Validation",
+        "status": "complete",
+        "redshift_range": [
+          0,
+          1.6
+        ]
+      },
+      {
+        "name": "DESI I",
+        "status": "complete",
+        "redshift_range": [
+          0,
+          1.6
+        ],
+        "spectra": "30M"
+      },
+      {
+        "name": "DESI II",
+        "status": "ongoing",
+        "redshift_range": [
+          0,
+          2.1
+        ],
+        "spectra": "40M"
+      }
+    ],
+    "tracers": [
+      {
+        "name": "LRG",
+        "redshift_range": [
+          0.4,
+          1.0
+        ],
+        "description": "Luminous Red Galaxies"
+      },
+      {
+        "name": "ELG",
+        "redshift_range": [
+          0.6,
+          1.6
+        ],
+        "description": "Emission Line Galaxies"
+      },
+      {
+        "name": "QSO",
+        "redshift_range": [
+          0.8,
+          2.1
+        ],
+        "description": "Quasars"
+      },
+      {
+        "name": "BGS",
+        "redshift_range": [
+          0.0,
+          0.4
+        ],
+        "description": "Bright Galaxy Survey"
+      }
+    ]
+  },
+  "scrubbing_interface": {
+    "description": "Interactive temporal navigation through cosmic time",
+    "controls": [
+      {
+        "type": "slider",
+        "parameter": "redshift",
+        "range": [
+          0,
+          1100
+        ],
+        "default": 0
+      },
+      {
+        "type": "slider",
+        "parameter": "lookback_time",
+        "range": [
+          0,
+          13.8
+        ],
+        "default": 0
+      },
+      {
+        "type": "play",
+        "parameter": "animate_evolution",
+        "speed": "Gyr/second"
+      },
+      {
+        "type": "layer_toggle",
+        "parameter": "visible_layers",
+        "options": [
+          "l0_cmb",
+          "l1_dark_matter",
+          "l2_filaments",
+          "l3_nodes",
+          "l4_galaxies",
+          "l5_reionization",
+          "l6_21cm"
+        ]
+      }
+    ],
+    "visualization_modes": [
+      {
+        "name": "time_slice",
+        "description": "View a single redshift slice"
+      },
+      {
+        "name": "time_stack",
+        "description": "Stack multiple slices with transparency"
+      },
+      {
+        "name": "evolution_animation",
+        "description": "Animate structure growth over time"
+      },
+      {
+        "name": "filament_tracking",
+        "description": "Track individual filaments across time slices"
+      }
+    ]
+  }
+}

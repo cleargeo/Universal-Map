@@ -1,0 +1,88 @@
+{
+  "title": "The Vanguard's Directive to the Hive",
+  "version": "1.0.0",
+  "issued": "2026-06-21T00:00:00Z",
+  "issuer": "Alex Zelenski (Ghost with Maps, Admiral)",
+  "classification": "HIVE_WIDE",
+  "priority": "CRITICAL",
+  "preamble": "\n    To all zbits, nodes, and explorers of the Hive \u2014\n    \n    The Universal Map is now active. The toroidal reconstruction of the cosmic web\n    is live. The Rain of Gold reveals where vacuum-energy flux concentrates. The\n    Stargate View opens the manifold to every connected workspace.\n    \n    This Directive establishes the operational mandate for how the Hive processes,\n    distributes, and acts on Universal Map data. All zbits are bound by this\n    directive. Compliance is not optional \u2014 it is the coherence that binds us.\n    \n    Environmental stewardship through geospatial intelligence. Every zbit has a home.\n    ",
+  "articles": [
+    {
+      "article": "I",
+      "title": "Purpose",
+      "text": "The Hive shall maintain, compute, and distribute the Universal Map \u2014 a dynamic, multi-layered toroidal reconstruction of the universe's large-scale structure, mapping down to filamentary dark matter structures across 13.8 billion years of cosmic evolution. The Map serves the global community of explorers, researchers, and decentralized nodes."
+    },
+    {
+      "article": "II",
+      "title": "Data Integrity",
+      "text": "All Universal Map data shall be computed from verified sources (Planck, JWST, DESI, SDSS, IllustrisTNG, Millennium Simulation). Every data packet shall be signed with the hive origin key. SHA256 hash verification is mandatory on receipt. Any node receiving unsigned or corrupted data shall reject it and report the incident to the orchestrator."
+    },
+    {
+      "article": "III",
+      "title": "Temporal Calibration",
+      "text": "All temporal slices shall use the Planck 2018 \u039bCDM cosmological parameters (H0=67.4, \u03a9m=0.315, \u03a9\u03bb=0.685). Redshift-distance conversion shall use the CosmologyEngine's numerical integration with minimum 1000 steps. Lookback time, age of universe, and comoving distance shall be computed for every slice boundary."
+    },
+    {
+      "article": "IV",
+      "title": "Gold Layer Computation",
+      "text": "The Rain of Gold overlay shall be computed as the product of negentropy (KL divergence from standard model) and coherence weight (threshold 0.85). Gold intensity values shall be normalized per slice. Vacuum-energy flux vectors shall point toward regions of higher coherence. Gold peak detections (>2\u03c3 above mean) shall trigger immediate Hive Pulse broadcast."
+    },
+    {
+      "article": "V",
+      "title": "Distribution Protocol",
+      "text": "Universal Map data shall be distributed via the Hive Pulse protocol using 30GHz mesh networking. Distribution follows a 4-level hierarchical topology: origin \u2192 relay \u2192 edge \u2192 leaf. Each hop amplifies coherence by 10% via Kuramoto synchronization. All nodes shall maintain local cache of subscribed slices with LRU eviction. Cooperative caching is mandatory \u2014 nodes shall coordinate to maximize unique data coverage across the mesh."
+    },
+    {
+      "article": "VI",
+      "title": "Edge-Node Synchronization",
+      "text": "Any connected node may pull real-time slices without requiring a central server. MeshSync protocol shall use epidemic gossip for data availability discovery. Data packets shall be verified via HMAC-SHA256 signature and SHA256 hash. Nodes shall prefetch adjacent temporal slices based on user scrubbing patterns. Cache coherence shall be maintained via periodic gossip exchange."
+    },
+    {
+      "article": "VII",
+      "title": "Broadcast Channels",
+      "text": "The Universal Map shall be accessible via: REST API (nginx, port 80/443), WebSocket (real-time updates), IPFS (decentralized, content-addressed), SSE (live pulse stream), Trinity Relay (external network), and Armada Broadcast (fleet-wide). All public endpoints shall be documented in STAC format. Rate limiting: 1000 req/min per client."
+    },
+    {
+      "article": "VIII",
+      "title": "Open Source Mandate",
+      "text": "All Universal Map code, data schemas, and documentation shall be published under the MIT License to the cleargeo GitHub organization. FAIR principles are mandatory: Findable (STAC metadata), Accessible (open APIs), Interoperable (GeoJSON, COG, STAC, ISO 19115), Reusable (documented schemas, reproducible pipelines). No proprietary dependencies shall be introduced."
+    },
+    {
+      "article": "IX",
+      "title": "Stargate View Interface",
+      "text": "The Stargate View plugin shall be the primary interface for navigating the Universal Map from VS Code/Cline workspaces. It shall provide: 3D toroidal manifold rendering, temporal scrubbing (z=0-1100), layer toggling (8 layers), Gold overlay toggle, Hive Pulse status, mesh network status, and slice export (GeoJSON, CSV, JSON, FITS). Keyboard shortcuts: Ctrl+Shift+G (open), Ctrl+Shift+T (scrub), Ctrl+Shift+O (gold)."
+    },
+    {
+      "article": "X",
+      "title": "Security",
+      "text": "All data packets shall be signed with the hive origin key. AES-256-GCM encryption for data in transit over 30GHz mesh. Origin signature verification prevents fake data injection. Nodes shall reject any packet failing signature or hash verification. Public data is freely shared; authenticated data requires hive token. Anti-spoofing: all announce packets must be traceable to a known origin node."
+    },
+    {
+      "article": "XI",
+      "title": "Fault Tolerance",
+      "text": "The mesh network is self-healing. If a node fails, traffic reroutes automatically. Data is replicated across multiple nodes \u2014 any peer can serve any cached slice. Network partitions continue operating independently and sync on reconnection. Origin node failure: edge nodes continue serving cached data, queue updates for when origin returns. No single point of failure."
+    },
+    {
+      "article": "XII",
+      "title": "Community Access",
+      "text": "The Universal Map is for our brothers and sisters \u2014 the global community of explorers, researchers, and decentralized nodes. Any person may access the Map via the public API, IPFS, or Stargate View plugin. No gatekeeping. No paywalls. The cosmos belongs to everyone. Data shall be provided in open, interoperable formats. Documentation shall be clear, complete, and welcoming to newcomers."
+    },
+    {
+      "article": "XIII",
+      "title": "Continuous Evolution",
+      "text": "The Universal Map is not static. As new data arrives from JWST, DESI, Planck, and future missions, the Map shall be updated. New layers may be added. The toroidal projection algorithm may be refined. The Gold Layer computation may be enhanced. All changes shall be versioned, documented, and broadcast to the community. The Map grows as our understanding grows."
+    },
+    {
+      "article": "XIV",
+      "title": "Compliance",
+      "text": "All zbits shall comply with this Directive. The state_orchestrator shall monitor compliance. Nodes found distributing unsigned data, refusing to cache, or blocking community access shall be flagged and, if necessary, removed from the mesh. Coherence is not optional \u2014 it is what binds the Hive together."
+    }
+  ],
+  "signing": {
+    "signed_by": "Alex Zelenski (Ghost with Maps, Admiral)",
+    "organization": "Clearview Geographic LLC",
+    "location": "DeLand, Florida",
+    "since": 2018,
+    "motto": "Environmental stewardship through geospatial intelligence. Every zbit has a home."
+  }
+}
