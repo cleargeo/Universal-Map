@@ -447,5 +447,97 @@
       "line_element": "ds^2 = dr^2 + r^2 dtheta^2 + (R+r*cos(theta))^2 dphi^2 + Lambda(r) dt^2",
       "interpretation": "Distance includes spatial + temporal + gold-density components"
     }
+  },
+  "article_iii": {
+    "article": "III",
+    "title": "The Dual-Helix Binary Flow Within the Torus",
+    "issued_by": "Admiral",
+    "timestamp": "2026-06-21T19:45:00Z",
+    "classification": "FUNDAMENTAL",
+    "description": "\n    To visualize the Center through the Serenal mathematical lens, we look at the \n    interaction of the dual-helix binary flow within the torus. Two complementary \n    flux streams \u2014 one expanding (\u03a8+), one contracting (\u03a8\u2212) \u2014 wind around the toroidal \n    surface in a double-helix pattern. Their interaction creates the visible structure \n    of the manifold and reveals the Center as the convergence point of both helices.\n    ",
+    "dual_helix_structure": {
+      "name": "Serenal Double Helix",
+      "description": "Two complementary binary flux streams winding around the torus in opposite rotational directions",
+      "helix_plus": {
+        "name": "\u03a8+ (Expansion Helix)",
+        "direction": "counter-clockwise (positive \u03b8 rotation)",
+        "formula": "\u03a8+(\u03b8,\u03c6) = \u03a6(C) \u00b7 e^(i\u03b8) \u00b7 sin(\u03c6)",
+        "description": "The outward-expanding flux stream. Carries coherence from C to the Edge. Gold particles ride this helix outward.",
+        "color": "gold",
+        "amplitude": "increases with r (stronger at Edge)",
+        "phase": "locked to toroidal angle \u03b8"
+      },
+      "helix_minus": {
+        "name": "\u03a8\u2212 (Contraction Helix)",
+        "direction": "clockwise (negative \u03b8 rotation)",
+        "formula": "\u03a8\u2212(\u03b8,\u03c6) = \u03a6(C) \u00b7 e^(\u2212i\u03b8) \u00b7 sin(\u03c6)",
+        "description": "The inward-contracting flux stream. Carries coherence from the Edge back to C. Gold particles return on this helix.",
+        "color": "silver",
+        "amplitude": "decreases with r (stronger at Center)",
+        "phase": "anti-locked to toroidal angle \u03b8"
+      },
+      "interaction": {
+        "name": "Helix Interference Pattern",
+        "description": "Where \u03a8+ and \u03a8\u2212 intersect, they create an interference pattern. Constructive interference = high coherence (gold). Destructive interference = low coherence (vacuum).",
+        "formula": "I(\u03b8,\u03c6) = |\u03a8+ + \u03a8\u2212|\u00b2 = |\u03a8+|\u00b2 + |\u03a8\u2212|\u00b2 + 2\u00b7Re(\u03a8+ \u00b7 \u03a8\u2212*)",
+        "constructive": "I > threshold \u2192 gold appears",
+        "destructive": "I < threshold \u2192 vacuum (no gold)",
+        "nodes": "Points where \u03a8+ = \u2212\u03a8\u2212 (complete cancellation \u2014 these form the Center)"
+      }
+    },
+    "visualization": {
+      "description": "The dual-helix flow creates a visible pattern on the toroidal surface that reveals the Center",
+      "view_from_center": {
+        "description": "Looking outward from C, the dual helices appear as concentric rings of alternating gold and silver. The rings are the interference pattern of the two helices.",
+        "pattern": "Gold rings at r/R = 0.25, 0.55, 0.85 (constructive interference)",
+        "vacuum_gaps": "Silver rings at r/R = 0.1, 0.4, 0.7 (destructive interference)",
+        "center_visibility": "The Center appears as the darkest point \u2014 zero gold, maximum coherence, perfect cancellation of both helices"
+      },
+      "view_from_edge": {
+        "description": "Looking inward from the Edge, the helices appear as spirals converging on C. The spirals tighten as they approach C, creating a vortex pattern.",
+        "pattern": "Gold spirals winding inward, tightening toward C",
+        "center_visibility": "The Center appears as the eye of the vortex \u2014 the point where all spirals converge"
+      },
+      "view_from_above": {
+        "description": "Looking down the toroidal axis, the helices appear as a double spiral \u2014 like a galaxy or DNA strand.",
+        "pattern": "Two interleaved spirals, one gold (\u03a8+), one silver (\u03a8\u2212)",
+        "center_visibility": "The Center appears as the origin point of both spirals"
+      }
+    },
+    "binary_flow_dynamics": {
+      "description": "The binary flow is not static \u2014 it evolves over cosmic time",
+      "flow_equations": {
+        "continuity": "\u2202\u03c1/\u2202t + \u2207\u00b7(\u03c1v) = 0 (conservation of flux)",
+        "momentum": "\u03c1(\u2202v/\u2202t + v\u00b7\u2207v) = \u2212\u2207P + \u03c1g_coherence (coherence pressure)",
+        "energy": "\u2202E/\u2202t + \u2207\u00b7(Ev) = \u2212P(\u2207\u00b7v) + Q_gold (gold heating)"
+      },
+      "gold_transport": {
+        "description": "Gold particles are carried by the dual-helix flow. They ride \u03a8+ outward and \u03a8\u2212 inward, creating a continuous cycle.",
+        "outward_flux": "J+ = \u03c1_gold \u00b7 v+ (gold carried by expansion helix)",
+        "inward_flux": "J\u2212 = \u03c1_gold \u00b7 v\u2212 (gold carried by contraction helix)",
+        "net_flux": "J_net = J+ \u2212 J\u2212 (net gold flow at each point)",
+        "cycle_time": "T_cycle = 2\u03c0R / v_helix (time for gold to complete one loop)"
+      },
+      "helix_coupling": {
+        "description": "The two helices are coupled \u2014 energy transfers between them at interference nodes",
+        "coupling_strength": "\u03ba = |\u03a8+ \u00b7 \u03a8\u2212| / (|\u03a8+| \u00b7 |\u03a8\u2212|)",
+        "energy_transfer": "dE+/dt = \u2212\u03ba(E+ \u2212 E\u2212) (energy flows from stronger to weaker helix)",
+        "equilibrium": "When E+ = E\u2212, the system is in perfect balance \u2014 maximum \u03a9"
+      }
+    },
+    "center_visualization": {
+      "description": "The Center is visible as the convergence point of both helices",
+      "visual_signature": {
+        "from_any_angle": "C appears as the point where gold spirals converge and silver spirals diverge",
+        "coherence_signature": "C has maximum coherence (\u03a9 = 1) \u2014 visible as a bright white point surrounded by gold rings",
+        "gold_signature": "C has zero gold (\u039b = 0) \u2014 visible as a dark eye in the center of the gold storm",
+        "binary_signature": "C is where \u03a8+ = \u03a8\u2212 \u2014 perfect balance, visible as the node of the interference pattern"
+      },
+      "mathematical_signature": {
+        "condition": "C is the unique point where \u03a8+(C) + \u03a8\u2212(C) = 0",
+        "proof": "At C, r=0, so \u03a6(C)=0, so \u03a8+(C)=0 and \u03a8\u2212(C)=0, so \u03a8+ + \u03a8\u2212 = 0. QED.",
+        "uniqueness": "No other point satisfies this \u2014 at any r>0, at least one helix is non-zero"
+      }
+    }
   }
 }
