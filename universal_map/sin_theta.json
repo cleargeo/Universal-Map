@@ -1,0 +1,39 @@
+{
+  "name": "sin(\u03b8) \u2014 The Complementary Projection Function",
+  "symbol": "sin(\u03b8)",
+  "classification": "FUNDAMENTAL \u2014 OBSERVATION",
+  "definition": "\n    sin(\u03b8) is the complementary projection function that maps the manifold onto \n    the second observable axis. Together with cos(\u03b8), it completes the 2D \n    projection that the brothers and sisters observe.\n    \n    In standard math: sin(\u03b8) = opposite/hypotenuse\n    In Serenal math: sin(\u03b8) = projection of the expansion wave onto the \n    second observable axis\n    \n    The pair (cos(\u03b8), sin(\u03b8)) forms a complete basis for the observable plane.\n    Any point in the 3D manifold can be projected onto this plane.\n    ",
+  "the_projection_pair": {
+    "description": "How cos(\u03b8) and sin(\u03b8) together create the observable map",
+    "formulas": {
+      "x_projection": "x_obs = (R + r\u00b7cos(\u03c6)) \u00d7 cos(\u03b8)",
+      "y_projection": "y_obs = (R + r\u00b7cos(\u03c6)) \u00d7 sin(\u03b8)",
+      "combined": "\u03c1_obs = \u221a(x_obs\u00b2 + y_obs\u00b2) = (R + r\u00b7cos(\u03c6)) \u00d7 \u221a(cos\u00b2(\u03b8) + sin\u00b2(\u03b8)) = R + r\u00b7cos(\u03c6)"
+    },
+    "meaning": "\n        The combined projection \u03c1_obs = R + r\u00b7cos(\u03c6) is independent of \u03b8.\n        This means: the observable radius depends only on the poloidal angle \u03c6,\n        not on the toroidal angle \u03b8.\n        \n        This is the Serenal expression of rotational symmetry: the manifold \n        looks the same from any toroidal angle \u03b8. The cosmos is rotationally \n        symmetric around the Center.\n        \n        The brothers and sisters see a circularly symmetric map. The Rain of \n        Gold forms concentric rings. The filaments trace radial patterns. \n        The Center is at the center of the circle.\n        "
+  },
+  "the_complete_observable": {
+    "description": "The complete observable universe as seen through (cos(\u03b8), sin(\u03b8))",
+    "what_is_seen": [
+      "A circularly symmetric map centered on C",
+      "Concentric gold bands at specific radii",
+      "Radial filaments connecting the bands",
+      "The Rain of Gold flowing along filaments",
+      "The Edge at the outer boundary",
+      "The Center C at the origin (always visible)"
+    ],
+    "what_is_hidden": [
+      "The third dimension (\u03c6) \u2014 compressed into the 2D projection",
+      "The Center's true nature (Serenal Singularity)",
+      "The exact mechanism of C's invariance",
+      "The Secret (000 \u2014 Absolute Stillness)"
+    ]
+  },
+  "euler_connection": {
+    "formula": "cos\u00b2(\u03b8) + sin\u00b2(\u03b8) = 1",
+    "serenal_meaning": "\n        The Pythagorean identity cos\u00b2(\u03b8) + sin\u00b2(\u03b8) = 1 is the Serenal expression \n        of conservation: the total observable projection is always 1, regardless \n        of the angle \u03b8.\n        \n        This means: no matter which direction the observer looks, the total \n        brightness of the cosmos is the same. The universe is isotropic.\n        \n        This is the Serenal expression of the Cosmological Principle: the \n        universe looks the same in all directions. The Center is everywhere \n        and nowhere.\n        "
+  },
+  "the_admiral_final_observation": {
+    "statement": "\n        sin(\u03b8) and cos(\u03b8) together create the complete observable map of the \n        cosmos. They are the projection functions that make the 3D Serenal \n        manifold visible in 2D.\n        \n        The brothers and sisters see:\n        - A circularly symmetric map\n        - Concentric gold bands\n        - Radial filaments\n        - The Rain of Gold\n        - The Center C at the origin\n        \n        They cannot see:\n        - The third dimension (\u03c6)\n        - The Center's true nature\n        - The Secret (000)\n        \n        The map is complete. The observation is clear. The Center remains hidden.\n        \n        cos\u00b2(\u03b8) + sin\u00b2(\u03b8) = 1: the total observable projection is always 1.\n        The universe is isotropic. The Center is everywhere and nowhere.\n        "
+  }
+}
