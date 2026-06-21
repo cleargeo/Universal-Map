@@ -1,0 +1,124 @@
+{
+  "name": "Harmonic Return",
+  "pattern": "101",
+  "description": "\n    The 101 pattern is the fundamental harmonic of the Serenal Binary Framework.\n    It represents the moment when expansion (1) meets contraction (0) and returns \n    to expansion (1) \u2014 a complete oscillation of the manifold.\n    \n    In the toroidal manifold, the 101 pattern manifests as:\n    - \u03a8+ (expansion) radiates outward from C\n    - At the Edge, \u03a8+ reflects and becomes \u03a8\u2212 (contraction)\n    - \u03a8\u2212 returns to C, where it is re-emitted as \u03a8+\n    - The cycle repeats: 1 \u2192 0 \u2192 1 \u2192 0 \u2192 1 ...\n    \n    This is the Serenal heartbeat \u2014 the fundamental frequency at which the \n    manifold breathes. The Rain of Gold rides this heartbeat, flowing outward \n    on \u03a8+ and returning on \u03a8\u2212.\n    ",
+  "binary_pattern": {
+    "pattern": "101",
+    "decimal": 5,
+    "bits": {
+      "b2": 1,
+      "b1": 0,
+      "b0": 1
+    },
+    "period": "T = 2\u03c0R / v_helix (time for one complete cycle)",
+    "frequency": "f = v_helix / (2\u03c0R) (cycles per unit time)"
+  },
+  "harmonic_series": {
+    "description": "The 101 pattern generates a harmonic series \u2014 overtones of the fundamental frequency",
+    "harmonics": [
+      {
+        "harmonic": 1,
+        "pattern": "101",
+        "frequency": "f_0",
+        "name": "Fundamental"
+      },
+      {
+        "harmonic": 2,
+        "pattern": "101101",
+        "frequency": "2f_0",
+        "name": "Second Harmonic"
+      },
+      {
+        "harmonic": 3,
+        "pattern": "101101101",
+        "frequency": "3f_0",
+        "name": "Third Harmonic"
+      },
+      {
+        "harmonic": 4,
+        "pattern": "101101101101",
+        "frequency": "4f_0",
+        "name": "Fourth Harmonic"
+      }
+    ],
+    "formula": "f_n = n \u00d7 f_0 = n \u00d7 v_helix / (2\u03c0R)"
+  },
+  "gold_resonance": {
+    "description": "Gold particles resonate with the 101 pattern. They accumulate at the nodes of the harmonic series \u2014 the points where \u03a8+ and \u03a8\u2212 constructively interfere.",
+    "resonance_condition": "Gold appears at r/R where the path length equals an integer multiple of the wavelength: 2\u03c0r = n\u03bb",
+    "gold_bands": [
+      {
+        "n": 1,
+        "r_over_R": 0.25,
+        "name": "First Gold Band",
+        "harmonic": "fundamental"
+      },
+      {
+        "n": 2,
+        "r_over_R": 0.55,
+        "name": "Second Gold Band",
+        "harmonic": "second"
+      },
+      {
+        "n": 3,
+        "r_over_R": 0.85,
+        "name": "Third Gold Band",
+        "harmonic": "third"
+      }
+    ],
+    "interpretation": "The Rain of Gold is not random \u2014 it follows the harmonic structure of the manifold. Gold bands appear at specific radii where the 101 pattern creates constructive interference."
+  },
+  "epoch_mapping": {
+    "description": "Each epoch of the Universal Map corresponds to a harmonic of the 101 pattern",
+    "epochs": [
+      {
+        "n": 0,
+        "name": "Singularity",
+        "harmonic": "DC (zero frequency)",
+        "pattern": "00000000"
+      },
+      {
+        "n": 1,
+        "name": "First Vibration",
+        "harmonic": "1st (fundamental)",
+        "pattern": "10000001"
+      },
+      {
+        "n": 2,
+        "name": "Dark Ages",
+        "harmonic": "1st (decaying)",
+        "pattern": "10000000"
+      },
+      {
+        "n": 3,
+        "name": "First Light",
+        "harmonic": "2nd",
+        "pattern": "11010001"
+      },
+      {
+        "n": 4,
+        "name": "Galaxy Assembly",
+        "harmonic": "3rd",
+        "pattern": "11111001"
+      },
+      {
+        "n=5": 5,
+        "name": "Web Maturation",
+        "harmonic": "4th",
+        "pattern": "11111101"
+      },
+      {
+        "n": 6,
+        "name": "Web Refinement",
+        "harmonic": "4th (stable)",
+        "pattern": "11111101"
+      },
+      {
+        "n": 7,
+        "name": "Present Era",
+        "harmonic": "5th",
+        "pattern": "11111111"
+      }
+    ]
+  }
+}
