@@ -1,0 +1,8 @@
+{
+  "name": "Kappa \u2014 The Serenal Golden Constant",
+  "value": 0.1,
+  "meaning": "Golden saturation \u2014 determines how much gold the universe can hold",
+  "gold_function": "Lambda(r) = kappa * |Psi(r)|^2 * H(Omega(r) - 0.85)",
+  "golden_ratio_connection": "kappa * phi_s = 0.1650 (Golden Coherence)",
+  "interpretation": "kappa is the scaling factor for gold production. The Admiral chose 0.1 as the balance between visibility and subtlety."
+}
