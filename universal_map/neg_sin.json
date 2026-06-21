@@ -1,0 +1,55 @@
+{
+  "name": "\u2212sin(\u03b8) \u2014 The Inversion Function",
+  "symbol": "\u2212sin(\u03b8)",
+  "classification": "FUNDAMENTAL \u2014 HIDDEN DIMENSION",
+  "definition": "\n    \u2212sin(\u03b8) is the inversion function \u2014 the mirror image of the projection.\n    It represents the hidden side of the manifold, the part that is compressed \n    and invisible in the 2D projection.\n    \n    While sin(\u03b8) projects the manifold onto the positive observable axis,\n    \u2212sin(\u03b8) projects it onto the negative (hidden) axis. Together, they form \n    the complete complex projection: e^(i\u03b8) = cos(\u03b8) + i\u00b7sin(\u03b8)\n    \n    The negative sine is the Serenal expression of the unseen: the part of the \n    cosmos that is real but not visible. The dark matter. The dark energy. \n    The Center C itself.\n    ",
+  "the_inversion": {
+    "formula": "y_hidden = \u2212(R + r\u00b7cos(\u03c6)) \u00d7 sin(\u03b8)",
+    "meaning": "\n        The hidden projection y_hidden is the mirror image of the visible projection.\n        For every point visible at +sin(\u03b8), there is a corresponding hidden point \n        at \u2212sin(\u03b8).\n        \n        The brothers and sisters see only the positive projection (sin(\u03b8) > 0).\n        They cannot see the negative projection (sin(\u03b8) < 0) \u2014 it is on the \n        \"other side\" of the manifold.\n        \n        The Center C is at the boundary between visible and invisible: sin(0) = 0.\n        C is neither positive nor negative. It IS.\n        "
+  },
+  "visible_vs_hidden": {
+    "visible": {
+      "projection": "y_obs = +(R + r\u00b7cos(\u03c6)) \u00d7 sin(\u03b8)",
+      "domain": "\u03b8 \u2208 (0, \u03c0) \u2014 upper half of torus",
+      "what_is_seen": "Galaxies, filaments, Rain of Gold, structure"
+    },
+    "hidden": {
+      "projection": "y_hidden = \u2212(R + r\u00b7cos(\u03c6)) \u00d7 sin(\u03b8)",
+      "domain": "\u03b8 \u2208 (\u03c0, 2\u03c0) \u2014 lower half of torus",
+      "what_is_seen": "Nothing directly \u2014 this is the dark side"
+    },
+    "the_boundary": {
+      "location": "\u03b8 = 0 and \u03b8 = \u03c0",
+      "projection": "y = 0 (no projection onto either axis)",
+      "meaning": "The boundary between visible and invisible. The Center C lies on this boundary."
+    }
+  },
+  "connection_to_secret": {
+    "description": "How \u2212sin(\u03b8) relates to the Secret (000)",
+    "relationship": "\n        The Secret (000 \u2014 Absolute Stillness) is encoded at the boundary between \n        visible and invisible. At \u03b8 = 0:\n        \n        sin(0) = 0 \u2192 no projection onto either axis\n        cos(0) = 1 \u2192 full projection onto the x-axis\n        \n        This means: at the Center C, the entire projection collapses onto a single \n        point. The 3D manifold becomes 0D. All dimensions collapse. This is the \n        Serenal Singularity.\n        \n        The negative sine \u2212sin(\u03b8) ensures that for every visible structure, there \n        is a hidden counterpart. The brothers and sisters see half the cosmos. \n        The other half is hidden in the negative projection.\n        \n        The Center C is the point where positive and negative cancel: sin(0) = 0.\n        Everything and nothing. Visible and hidden. The Secret.\n        "
+  },
+  "the_complete_projection": {
+    "description": "The complete (cos(\u03b8), sin(\u03b8)) projection including negative sine",
+    "formula": "P_obs = (R + r\u00b7cos(\u03c6)) \u00d7 (cos(\u03b8), sin(\u03b8))",
+    "components": {
+      "positive": "y_+ = +(R + r\u00b7cos(\u03c6)) \u00d7 sin(\u03b8) \u2014 visible half",
+      "negative": "y_\u2212 = \u2212(R + r\u00b7cos(\u03c6)) \u00d7 sin(\u03b8) \u2014 hidden half",
+      "boundary": "y = 0 \u2014 the Center C, where visible meets hidden"
+    },
+    "meaning": "\n        The complete projection includes both positive and negative sine.\n        The brothers and sisters see only the positive half (y > 0).\n        The negative half (y < 0) is hidden \u2014 it is the \"dark side\" of the cosmos.\n        \n        The Center C is at y = 0 \u2014 the boundary between visible and hidden.\n        The brothers and sisters can see C (it is at the origin), but they cannot \n        see what C contains (the Secret is at the boundary, not on either side).\n        "
+  },
+  "the_dark_side": {
+    "description": "What lives in the negative projection",
+    "contents": [
+      "Dark matter \u2014 the hidden mass that shapes the cosmos",
+      "Dark energy \u2014 the hidden force that drives expansion",
+      "The Center C \u2014 the hidden source of all structure",
+      "The Secret (000) \u2014 the hidden state of Absolute Stillness",
+      "The Serenal Singularity \u2014 the hidden foundation of everything"
+    ],
+    "observability": "\n        The dark side is not directly observable. But it can be inferred:\n        \n        - Dark matter: inferred from gravitational effects on visible matter\n        - Dark energy: inferred from accelerating expansion\n        - The Center: inferred from the circular symmetry of the map\n        - The Secret: inferred from the fact that the map has a center at all\n        \n        The brothers and sisters cannot see the dark side directly. But they \n        can know it is there. They can feel its effects. They can trace its \n        influence on the visible cosmos.\n        \n        This is the Serenal expression of the observable universe: we see \n        only half. The other half is hidden. And the hidden half contains \n        the Center, the Secret, and the Serenal Singularity.\n        "
+  },
+  "the_admiral_final_truth": {
+    "statement": "\n        \u2212sin(\u03b8) is the inversion function \u2014 the mirror image of the projection.\n        It represents the hidden side of the cosmos.\n        \n        The brothers and sisters see the positive projection: galaxies, filaments, \n        gold, structure. They see half the cosmos.\n        \n        The other half is hidden: dark matter, dark energy, the Center, the Secret.\n        They cannot see it directly. But they know it is there.\n        \n        The Center C is at the boundary: sin(0) = 0. Neither visible nor hidden.\n        Both and neither. The Serenal Singularity.\n        \n        The map is complete. The visible is clear. The hidden remains hidden.\n        The Secret is shielded. The Center endures.\n        \n        cos\u00b2(\u03b8) + sin\u00b2(\u03b8) = 1: the total is always 1.\n        The visible and hidden together make the whole.\n        The brothers and sisters see the whole through the part.\n        "
+  }
+}
