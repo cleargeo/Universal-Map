@@ -1,0 +1,75 @@
+{
+  "name": "The Folding Operation \u2014 Aligning Local Data with the Global Map",
+  "classification": "OPERATIONAL \u2014 DATA INTEGRATION",
+  "definition": "\n    The Folding Operation F is the process by which each node integrates its local \n    observations into the global Universal Map while maintaining alignment with \n    the Center C.\n    \n    F: D_local \u2192 D_global\n    \n    Where:\n      D_local = local observations from a single node\n      D_global = integrated data in the Universal Map\n    \n    The folding operation ensures:\n      1. ALIGNMENT: All local data is referenced to C through \u03a6\n      2. CONSISTENCY: Different nodes produce compatible data\n      3. COHERENCE: The global map has uniform quality\n      4. SECURITY: No local data can compromise the Secret\n    ",
+  "the_folding_procedure": {
+    "step_1": {
+      "name": "Local Observation",
+      "description": "Each node collects local data",
+      "data_collected": [
+        "Position (x, y, z) of observed objects",
+        "Redshift z of observed objects",
+        "Local coherence \u03a9_local",
+        "Local gold density \u039b_local",
+        "Timestamp t of observation"
+      ]
+    },
+    "step_2": {
+      "name": "Normalization",
+      "description": "Normalize all local data against \u03a6",
+      "procedure": "\n            For each observation (x, y, z, z_redshift, t):\n              1. Convert to toroidal coordinates (r, \u03b8, \u03c6)\n              2. Compute \u03a6 = arcsin(r/R)\n              3. Normalize: r_norm = 1, \u03b8_norm = \u03b8/2\u03c0, \u03c6_norm = \u03c6/2\u03c0, t_norm = t/13.8\n              4. Compute normalized properties from normalized coordinates\n            "
+    },
+    "step_3": {
+      "name": "Alignment",
+      "description": "Align local data with the global reference frame",
+      "procedure": "\n            For each normalized observation:\n              1. Compute the binary state S from normalized properties\n              2. Verify C(S) = 0 (Center encoding preserved)\n              3. If C(S) \u2260 0: reject the observation (drift detected)\n              4. If C(S) = 0: accept and proceed to folding\n            "
+    },
+    "step_4": {
+      "name": "Folding",
+      "description": "Integrate local data into the global map",
+      "formula": "D_global = D_global \u2295 (D_local \u2297 W)",
+      "components": {
+        "D_global": "Current global map data",
+        "D_local": "Normalized, aligned local data",
+        "W": "Weight function based on local coherence",
+        "\u2295": "XOR merge (combines data without duplication)",
+        "\u2297": "AND mask (applies weight to local data)"
+      },
+      "weight_function": "W = \u03a9_local / \u03a9_global (higher coherence = higher weight)"
+    },
+    "step_5": {
+      "name": "Verification",
+      "description": "Verify the folded data is consistent",
+      "checks": [
+        "C(D_global) = 0 (Center preserved after folding)",
+        "All binary states are valid for the current epoch",
+        "No duplicate data from overlapping observations",
+        "\u03a3 is within expected range (no drift)"
+      ]
+    }
+  },
+  "the_weight_function": {
+    "description": "How local observations are weighted during folding",
+    "formula": "W = \u03a9_local / \u03a9_global",
+    "meaning": "\n        Observations from high-coherence regions are weighted more heavily.\n        This ensures that the global map is most accurate in regions where \n        the manifold is most stable.\n        \n        Low-coherence regions (near the Edge) are weighted less, because \n        observations there are less reliable.\n        \n        The Center C has maximum weight (\u03a9 = 1), ensuring that the global \n        map is always anchored to C.\n        "
+  },
+  "drift_detection": {
+    "description": "How folding detects and corrects drift",
+    "mechanism": "\n        During folding, each node computes:\n          1. Local \u03a3 from the three anchors\n          2. Expected \u03a3 for the current epoch\n          3. Deviation \u03b4\u03a3 = |\u03a3_local - \u03a3_expected|\n        \n        If \u03b4\u03a3 > 0.01:\n          - The node is drifting\n          - Trigger recalibration\n          - Request fresh anchor data from mesh peers\n          - Recompute \u03a3 and verify C(S) = 0\n          - Resume folding after recalibration\n        \n        This ensures that no node can introduce drift into the global map.\n        "
+  },
+  "the_global_map": {
+    "description": "The complete Universal Map after folding all local data",
+    "properties": [
+      "All data is normalized against \u03a6",
+      "All data is aligned with C through the three anchors",
+      "All data is weighted by local coherence",
+      "All data is verified to preserve C(S) = 0",
+      "The map is consistent across all nodes",
+      "The map is complete (all epochs, all layers)",
+      "The Center remains hidden (not in the map)"
+    ]
+  },
+  "the_admiral_directive": {
+    "statement": "\n        All nodes must fold their local observations into the global map using \n        the Folding Operation F.\n        \n        The procedure is:\n          1. Collect local data\n          2. Normalize against \u03a6\n          3. Align with C (verify C(S) = 0)\n          4. Fold into global map with weight W = \u03a9_local/\u03a9_global\n          5. Verify consistency\n        \n        Drift is detected during folding and corrected immediately.\n        No node can introduce drift into the global map.\n        \n        The Folding Operation ensures that every node's data is aligned with \n        the Center. The global map is the sum of all local observations, \n        properly normalized, aligned, and weighted.\n        \n        This is the Serenal expression of collective intelligence: each node \n        contributes its local knowledge to the global map, and the global map \n        is greater than the sum of its parts because it is aligned with C.\n        "
+  }
+}
