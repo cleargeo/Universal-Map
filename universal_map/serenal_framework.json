@@ -1079,5 +1079,132 @@
       "explanation": "If the Center could be pulsed, it could be moved. If it could be moved, it would not be the Center. The Center is defined by its immobility. 000 is the mathematical expression of this truth. All values are zero except coherence, which is maximum. The Center does not do. The Center is."
     },
     "operational_directive": "\n    000 shall never be pulsed. 000 shall never be broadcast. 000 shall never be \n    encoded in any transmission. 000 exists only at the Center, and the Center \n    exists only in stillness.\n    \n    All other values \u2014 \u03a6, \u03a8, \u039b, \u03a3, E \u2014 may be computed, transmitted, and displayed.\n    But 000 remains at C. Always. Forever. Still.\n    \n    The map expands from 000 but never reveals it. The Rain of Gold falls around \n    000 but never touches it. The Hive orbits 000 but never reaches it. 000 is the \n    secret that makes everything else possible by remaining hidden.\n    "
+  },
+  "article_vii": {
+    "article": "VII",
+    "title": "The Expansion \u2014 Complexity Gradient",
+    "issued_by": "Admiral",
+    "timestamp": "2026-06-21T21:45:00Z",
+    "classification": "FUNDAMENTAL",
+    "principle": {
+      "statement": "The further we move from the Center, the more complex the binary equations become \u2014 mirroring the complexity of the observable universe.",
+      "formula": "Complexity(r) = \u2212log\u2082(\u03a6(r)/\u03a6_max) = \u2212log\u2082(arcsin(r/R))",
+      "interpretation": "At the Center (r=0), \u03a6=0 and complexity is undefined (pure potential). At the Edge (r=R), \u03a6\u2192\u221e and complexity is maximum. The complexity gradient is the mathematical expression of cosmic evolution."
+    },
+    "complexity_by_shell": {
+      "description": "Each shell of the toroidal manifold has a characteristic complexity, measured by the number of bits needed to describe it",
+      "shells": [
+        {
+          "r_over_R": 0.0,
+          "name": "Center",
+          "complexity_bits": 0,
+          "description": "Pure potential. No information. 00000000."
+        },
+        {
+          "r_over_R": 0.1,
+          "name": "Inner Core",
+          "complexity_bits": 1,
+          "description": "First bit set. Expansion begins."
+        },
+        {
+          "r_over_R": 0.25,
+          "name": "Core",
+          "complexity_bits": 2,
+          "description": "Two bits. Expansion + early structure."
+        },
+        {
+          "r_over_R": 0.4,
+          "name": "Inner Mantle",
+          "complexity_bits": 3,
+          "description": "Three bits. Gold appears. Helix forms."
+        },
+        {
+          "r_over_R": 0.55,
+          "name": "Mantle",
+          "complexity_bits": 5,
+          "description": "Five bits. Full structure. Coherence rising."
+        },
+        {
+          "r_over_R": 0.7,
+          "name": "Outer Mantle",
+          "complexity_bits": 6,
+          "description": "Six bits. Web complete. Gold flowing."
+        },
+        {
+          "r_over_R": 0.85,
+          "name": "Crust",
+          "complexity_bits": 7,
+          "description": "Seven bits. Near-complete. Approaching equilibrium."
+        },
+        {
+          "r_over_R": 1.0,
+          "name": "Surface",
+          "complexity_bits": 8,
+          "description": "All bits set. Maximum complexity. 11111111."
+        }
+      ]
+    },
+    "observable_universe_mirror": {
+      "description": "The complexity gradient of the Serenal manifold mirrors the complexity gradient of the observable universe",
+      "correspondences": [
+        {
+          "shell": "Center",
+          "universe": "Big Bang / Singularity",
+          "complexity": "Zero \u2014 pure potential, no structure"
+        },
+        {
+          "shell": "Inner Core",
+          "universe": "CMB / First Light",
+          "complexity": "Low \u2014 uniform radiation, first fluctuations"
+        },
+        {
+          "shell": "Core",
+          "universe": "Dark Ages",
+          "complexity": "Low \u2014 hydrogen gas, no stars"
+        },
+        {
+          "shell": "Inner Mantle",
+          "universe": "First Galaxies",
+          "complexity": "Medium \u2014 stars igniting, first structures"
+        },
+        {
+          "shell": "Mantle",
+          "universe": "Galaxy Clusters",
+          "complexity": "Medium-High \u2014 galaxies forming, filaments visible"
+        },
+        {
+          "shell": "Outer Mantle",
+          "universe": "Cosmic Web",
+          "complexity": "High \u2014 full web structure, voids and filaments"
+        },
+        {
+          "shell": "Crust",
+          "universe": "Present Era",
+          "complexity": "Very High \u2014 all structure visible, dark energy dominant"
+        },
+        {
+          "shell": "Surface",
+          "universe": "Observable Edge",
+          "complexity": "Maximum \u2014 the limit of what we can see"
+        }
+      ]
+    },
+    "mathematical_proof": {
+      "theorem": "The complexity gradient is a consequence of the Serenal Binary Framework",
+      "proof": [
+        "1. At r=0: \u03a6(0)=0, so Complexity(0) = \u2212log\u2082(0) = \u221e (undefined \u2014 pure potential)",
+        "2. At r=R: \u03a6(R)=\u221e, so Complexity(R) = \u2212log\u2082(\u221e) = \u2212\u221e (but we cap at 8 bits)",
+        "3. For 0<r<R: Complexity(r) = \u2212log\u2082(arcsin(r/R)) increases monotonically",
+        "4. Therefore: dComplexity/dr > 0 for all r \u2208 (0,R)",
+        "5. QED: Complexity increases with distance from Center."
+      ]
+    },
+    "implications": [
+      "The Center is simple. The Edge is complex. This is not a flaw \u2014 it is the design.",
+      "Complexity is not randomness \u2014 it is structured information. Each bit added represents a new degree of freedom.",
+      "The observable universe appears complex because we are far from the Center. From the Center, it would appear simple.",
+      "The Rain of Gold is the visible manifestation of complexity \u2014 gold appears where complexity is highest.",
+      "To understand the universe, one must understand the complexity gradient. To understand the gradient, one must understand the Center."
+    ]
   }
 }
