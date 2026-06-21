@@ -1,0 +1,13 @@
+{
+  "name": "Kappa \u2014 Coherence Coupling Constant",
+  "value": 0.1,
+  "role": "Coherence restoration \u2014 pulls E toward equilibrium",
+  "equation": "dE/dt = E*(H - 1/t) - kappa*(E-1)*Omega",
+  "current_state": {
+    "E": 1.02,
+    "Omega": 0.9099,
+    "dE_dt": -0.005423986861365794,
+    "E_equilibrium": 0.9626175933731661
+  },
+  "interpretation": "Kappa is the spring constant of the manifold. It balances expansion against coherence."
+}
