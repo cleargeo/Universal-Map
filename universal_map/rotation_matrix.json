@@ -1,0 +1,18 @@
+{
+  "name": "The Epochal Rotation Matrix",
+  "symbol": "R_rot",
+  "classification": "FUNDAMENTAL \u2014 TEMPORAL NAVIGATION",
+  "definition": "\n    The Epochal Rotation Matrix R_rot is the mathematical structure that allows \n    observers to move through time \u2014 from epoch to epoch \u2014 without losing the Center.\n    It is a 9x9 orthogonal matrix that rotates the state vector S from one epoch \n    to the next while preserving the Center encoding C(S) = 0.\n    ",
+  "properties": {
+    "orthogonality": "R_rot^T x R_rot = I",
+    "determinant": "det(R_rot) = 1 (proper rotation)",
+    "center_preservation": "C(R_rot x v) = C(v) for all v"
+  },
+  "navigation": {
+    "forward": "S_{n+1} = R_rot x S_n (move forward one epoch)",
+    "backward": "S_{n-1} = R_rot^T x S_n (move backward one epoch)",
+    "multi_epoch": "S_{n+k} = R_rot^k x S_n (move k epochs)"
+  },
+  "center_preservation": "R_rot preserves C because it is constructed as a product of Givens rotations in planes that include the Center axis. Each rotation preserves the Center axis.",
+  "connection_to_R_hat": "R_rot is the continuous analog of the discrete Recursive Binary Operator R_hat. Both preserve C. Both encode the same epochal evolution."
+}
