@@ -1,0 +1,101 @@
+{
+  "type": "FeatureCollection",
+  "name": "l2_filaments",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:ICRS"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "filament_001",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            10,
+            5,
+            2
+          ],
+          [
+            20,
+            15,
+            5
+          ],
+          [
+            30,
+            20,
+            8
+          ],
+          [
+            40,
+            25,
+            10
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Main Filament Alpha",
+        "length_mpc": 50.2,
+        "density": 2.5,
+        "coherence": 0.91,
+        "gold_intensity": 0.88,
+        "flux_magnitude": 0.04,
+        "connected_nodes": [
+          "node_001",
+          "node_002"
+        ],
+        "slice": "z3_1"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "filament_002",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            40,
+            25,
+            10
+          ],
+          [
+            50,
+            30,
+            15
+          ],
+          [
+            60,
+            35,
+            20
+          ],
+          [
+            70,
+            40,
+            25
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Secondary Filament Beta",
+        "length_mpc": 35.8,
+        "density": 1.8,
+        "coherence": 0.85,
+        "gold_intensity": 0.75,
+        "flux_magnitude": 0.03,
+        "connected_nodes": [
+          "node_002",
+          "node_003"
+        ],
+        "slice": "z3_1"
+      }
+    }
+  ]
+}

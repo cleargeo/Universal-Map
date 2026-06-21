@@ -1,0 +1,51 @@
+{
+  "type": "Collection",
+  "id": "l0_cmb",
+  "title": "Cosmic Microwave Background",
+  "description": "Planck 2018 CMB temperature anisotropy map",
+  "stac_version": "1.0.0",
+  "license": "Open",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2026-06-21T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "providers": [
+    {
+      "name": "Clearview Geographic LLC",
+      "roles": [
+        "producer",
+        "licensor"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/cleargeo/Universal-Map/main/metadata/stac/l0_cmb.json"
+    },
+    {
+      "rel": "root",
+      "href": "https://raw.githubusercontent.com/cleargeo/Universal-Map/main/metadata/stac/catalog.json"
+    },
+    {
+      "rel": "items",
+      "href": "https://raw.githubusercontent.com/cleargeo/Universal-Map/main/data/layers/l0_cmb/"
+    }
+  ]
+}

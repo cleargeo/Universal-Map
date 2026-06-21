@@ -1,0 +1,51 @@
+{
+  "type": "Collection",
+  "id": "l3_nodes",
+  "title": "Cluster Nodes",
+  "description": "Galaxy cluster positions at filament intersections",
+  "stac_version": "1.0.0",
+  "license": "Open",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2026-06-21T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "providers": [
+    {
+      "name": "Clearview Geographic LLC",
+      "roles": [
+        "producer",
+        "licensor"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/cleargeo/Universal-Map/main/metadata/stac/l3_nodes.json"
+    },
+    {
+      "rel": "root",
+      "href": "https://raw.githubusercontent.com/cleargeo/Universal-Map/main/metadata/stac/catalog.json"
+    },
+    {
+      "rel": "items",
+      "href": "https://raw.githubusercontent.com/cleargeo/Universal-Map/main/data/layers/l3_nodes/"
+    }
+  ]
+}

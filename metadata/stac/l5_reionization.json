@@ -1,0 +1,51 @@
+{
+  "type": "Collection",
+  "id": "l5_reionization",
+  "title": "Reionization History",
+  "description": "Epoch of reionization from JWST observations",
+  "stac_version": "1.0.0",
+  "license": "Open",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2026-06-21T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "providers": [
+    {
+      "name": "Clearview Geographic LLC",
+      "roles": [
+        "producer",
+        "licensor"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/cleargeo/Universal-Map/main/metadata/stac/l5_reionization.json"
+    },
+    {
+      "rel": "root",
+      "href": "https://raw.githubusercontent.com/cleargeo/Universal-Map/main/metadata/stac/catalog.json"
+    },
+    {
+      "rel": "items",
+      "href": "https://raw.githubusercontent.com/cleargeo/Universal-Map/main/data/layers/l5_reionization/"
+    }
+  ]
+}

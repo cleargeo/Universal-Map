@@ -1,0 +1,49 @@
+{
+  "type": "Catalog",
+  "id": "universal-map",
+  "title": "The Universal Map (Omni-Chart)",
+  "description": "Dynamic toroidal reconstruction of the cosmic web with 8 data layers and 7 temporal slices",
+  "stac_version": "1.0.0",
+  "license": "MIT",
+  "providers": [
+    {
+      "name": "Clearview Geographic LLC",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://github.com/cleargeo"
+    }
+  ],
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ],
+      "crs": "ICRS"
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2026-06-21T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://raw.githubusercontent.com/cleargeo/Universal-Map/main/metadata/stac/catalog.json"
+    },
+    {
+      "rel": "root",
+      "href": "https://raw.githubusercontent.com/cleargeo/Universal-Map/main/metadata/stac/catalog.json"
+    }
+  ]
+}

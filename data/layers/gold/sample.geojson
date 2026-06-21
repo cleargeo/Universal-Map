@@ -1,0 +1,87 @@
+{
+  "type": "FeatureCollection",
+  "name": "l_gold",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "TOROIDAL"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "gold_001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.0,
+          -30.0,
+          10.0
+        ]
+      },
+      "properties": {
+        "intensity": 0.98,
+        "coherence": 0.99,
+        "negentropy": 0.45,
+        "flux_magnitude": 0.12,
+        "flux_direction": [
+          0.1,
+          0.2,
+          0.97
+        ],
+        "classification": "peak",
+        "description": "Maximum vacuum-energy flux concentration \u2014 Cosmic Dawn"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gold_002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0,
+          0.0,
+          6.0
+        ]
+      },
+      "properties": {
+        "intensity": 0.95,
+        "coherence": 0.97,
+        "negentropy": 0.38,
+        "flux_magnitude": 0.08,
+        "flux_direction": [
+          0.2,
+          0.1,
+          0.97
+        ],
+        "classification": "high",
+        "description": "Strong gold concentration \u2014 Reionization Era"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "gold_003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          90.1,
+          60.0,
+          1.2
+        ]
+      },
+      "properties": {
+        "intensity": 0.91,
+        "coherence": 0.95,
+        "negentropy": 0.32,
+        "flux_magnitude": 0.05,
+        "flux_direction": [
+          0.3,
+          0.2,
+          0.93
+        ],
+        "classification": "high",
+        "description": "Gold concentration \u2014 Galaxy Assembly Era"
+      }
+    }
+  ]
+}
