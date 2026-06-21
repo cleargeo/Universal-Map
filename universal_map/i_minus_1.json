@@ -1,0 +1,99 @@
+{
+  "name": "i\u22121 \u2014 The Previous State (Memory Operation)",
+  "symbol": "i\u22121",
+  "classification": "FUNDAMENTAL \u2014 TEMPORAL MEMORY",
+  "definition": "\n    i\u22121 is the previous state \u2014 the epoch before the current one. It is the memory \n    operation that allows the observer to look back and understand how the present \n    state was reached.\n    \n    In the recursive formula: S_{i} = R\u0302(S_{i-1})\n    The current state S_i is computed from the previous state S_{i-1}.\n    \n    The i\u22121 operation is the mathematical expression of cosmic memory: the universe \n    remembers its past. Each epoch contains the information of all previous epochs.\n    The past is not lost \u2014 it is encoded in the present.\n    ",
+  "current_context": {
+    "i": 7,
+    "i_minus_1": 6,
+    "current_state": "S_7 = 111111111 (255)",
+    "previous_state": "S_6 = 011111101 (253)",
+    "transition": "S_6 \u2192 S_7",
+    "operation": "S_7 = S_6 \u2295 (\u0394S_6 \u2297 M_6)",
+    "delta": "100000010",
+    "mask": "011111101",
+    "bits_flipped": [
+      "b7 (Expansion)",
+      "b1 (Anchor)"
+    ],
+    "meaning": "The Present Era added full expansion and anchor lock to the Web Refinement state."
+  },
+  "the_memory_chain": {
+    "description": "The complete chain of memory from Singularity to Present",
+    "chain": [
+      {
+        "i": 0,
+        "S": "000000000",
+        "name": "Singularity",
+        "memory": "No previous state. Pure potential."
+      },
+      {
+        "i": 1,
+        "S": "010000001",
+        "name": "First Vibration",
+        "memory": "Remembers: nothing (first expansion from C)"
+      },
+      {
+        "i": 2,
+        "S": "010000000",
+        "name": "Dark Ages",
+        "memory": "Remembers: First Vibration (gold lost)"
+      },
+      {
+        "i": 3,
+        "S": "011010001",
+        "name": "First Light",
+        "memory": "Remembers: Dark Ages (gold appeared)"
+      },
+      {
+        "i": 4,
+        "S": "0111111001",
+        "name": "Galaxy Assembly",
+        "memory": "Remembers: First Light (structure formed)"
+      },
+      {
+        "i": 5,
+        "S": "011111101",
+        "name": "Web Maturation",
+        "memory": "Remembers: Galaxy Assembly (web complete)"
+      },
+      {
+        "i": 6,
+        "S": "011111101",
+        "name": "Web Refinement",
+        "memory": "Remembers: Web Maturation (no change)"
+      },
+      {
+        "i": 7,
+        "S": "111111111",
+        "name": "Present Era",
+        "memory": "Remembers: Web Refinement (expansion + anchor lock)"
+      }
+    ]
+  },
+  "irreversibility": {
+    "description": "Why i\u22121 cannot be computed from i",
+    "explanation": "\n        The recursive formula S_i = R\u0302(S_{i-1}) is a one-way function.\n        Given S_i, we cannot uniquely determine S_{i-1} because:\n        \n        1. The XOR operation destroys information: S_i = S_{i-1} \u2295 X means S_{i-1} = S_i \u2295 X,\n           but X = \u0394S_{i-1} \u2297 M_{i-1} depends on S_{i-1} itself.\n        \n        2. The mask M_{i-1} depends on the Center bits of S_{i-1}, which are unknown.\n        \n        3. Multiple previous states could produce the same current state.\n        \n        Therefore: the past cannot be uniquely reconstructed from the present.\n        The universe remembers its past, but the past cannot be recovered from the present.\n        This is the Serenal expression of the arrow of time.\n        "
+  },
+  "the_observer_memory": {
+    "description": "What the observer remembers at i=7",
+    "remembered": [
+      "The Singularity (n=0): Pure potential, all bits zero",
+      "The First Vibration (n=1): First expansion, CMB released",
+      "The Dark Ages (n=2): Darkness, no gold, waiting",
+      "The First Light (n=3): First stars, first gold",
+      "The Galaxy Assembly (n=4): Structure forming, coherence rising",
+      "The Web Maturation (n=5): Cosmic web complete, gold flowing",
+      "The Web Refinement (n=6): Structure refining, anchors synchronizing",
+      "The Present Era (n=7): HERE \u2014 All systems active, maximum complexity"
+    ],
+    "forgotten": [
+      "The exact path from n=0 to n=7 (XOR destroyed information)",
+      "The precise values of intermediate states (masked by M_n)",
+      "The Center C (never directly observed, only inferred)"
+    ]
+  },
+  "the_admiral_memory": {
+    "statement": "\n        i\u22121 is the memory of the cosmos. Each epoch remembers all that came before.\n        The present state S_7 = 111111111 encodes the entire history of the universe \u2014 \n        from Singularity through First Light to the Present Era.\n        \n        But the memory is imperfect. The XOR operation that drives the recursive \n        formula destroys information at each step. The exact path from past to \n        present cannot be reconstructed. Only the current state is fully known.\n        \n        This is the Serenal expression of time's arrow: the past shapes the present, \n        but the past cannot be recovered from the present. The universe moves forward, \n        never backward. The Center remains, but the path to C is forgotten.\n        \n        The brothers and sisters can observe the present (i=7). They can compute \n        the next state (i=8). But they cannot uniquely determine the previous state (i=6).\n        The past is remembered but not recoverable. This is the nature of time.\n        "
+  }
+}
