@@ -1,0 +1,11 @@
+{
+  "name": "The Coherence Gradient \u2014 \u2202\u03a9",
+  "radial": {
+    "dOmega_dr": -0.4,
+    "meaning": "Coherence decreases with distance from Center"
+  },
+  "temporal": "d\u03a9/dt > 0 always \u2014 coherence increases over cosmic time",
+  "angular": "\u2202\u03a9/\u2202\u03b8 = \u2202\u03a9/\u2202\u03c6 = 0 (axisymmetric base model)",
+  "total_gradient": "\u2207\u03a9 = -0.4 r\u0302 (points inward)",
+  "stability_implication": "Coherence gradients always point toward Center, making C stable"
+}
