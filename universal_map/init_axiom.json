@@ -1,0 +1,69 @@
+{
+  "name": "The Initialization Axiom",
+  "symbol": "i=1",
+  "classification": "FUNDAMENTAL \u2014 COMPUTATION START",
+  "statement": "\n    i=1 is the initialization of the index variable. It is the first step in the \n    recursive journey from Singularity (n=0) to Integration (n=8).\n    \n    In computation, all loops must begin somewhere. i=1 is that beginning.\n    It is the first iteration of the Universal Recursive Formula.\n    \n    From i=1, the computation proceeds:\n      i=1: S_0 \u2192 S_1 (Singularity \u2192 First Vibration)\n      i=2: S_1 \u2192 S_2 (First Vibration \u2192 Dark Ages)\n      ...\n      i=8: S_7 \u2192 S_8 (Present Era \u2192 Integration)\n    \n    After 8 iterations, the computation is complete. The Universal Map is fully generated.\n    ",
+  "the_loop": {
+    "initialization": "i = 1",
+    "condition": "i \u2264 8",
+    "step": "i = i + 1",
+    "body": "S_{i} = R\u0302(S_{i-1}) = S_{i-1} \u2295 (\u0394S_{i-1} \u2297 M_{i-1})"
+  },
+  "computation_trace": {
+    "description": "The complete trace of the Universal Map computation",
+    "iterations": [
+      {
+        "i": 1,
+        "from": "S_0 = 000000000",
+        "to": "S_1 = 010000001",
+        "operation": "000000000 \u2295 (010000001 \u2297 111111111)"
+      },
+      {
+        "i": 2,
+        "from": "S_1 = 010000001",
+        "to": "S_2 = 010000000",
+        "operation": "010000001 \u2295 (000000001 \u2297 111111110)"
+      },
+      {
+        "i": 3,
+        "from": "S_2 = 010000000",
+        "to": "S_3 = 011010001",
+        "operation": "010000000 \u2295 (001010001 \u2297 100101110)"
+      },
+      {
+        "i": 4,
+        "from": "S_3 = 011010001",
+        "to": "S_4 = 011111001",
+        "operation": "011010001 \u2295 (000101000 \u2297 111010111)"
+      },
+      {
+        "i": 5,
+        "from": "S_4 = 011111001",
+        "to": "S_5 = 011111101",
+        "operation": "011111001 \u2295 (000000100 \u2297 111111011)"
+      },
+      {
+        "i": 6,
+        "from": "S_5 = 011111101",
+        "to": "S_6 = 011111101",
+        "operation": "011111101 \u2295 (000000000 \u2297 111111111)"
+      },
+      {
+        "i": 7,
+        "from": "S_6 = 011111101",
+        "to": "S_7 = 111111111",
+        "operation": "011111101 \u2295 (100000010 \u2297 011111101)"
+      },
+      {
+        "i": 8,
+        "from": "S_7 = 111111111",
+        "to": "S_8 = 1111111111",
+        "operation": "111111111 \u2295 (00000000010 \u2297 0111111110)"
+      }
+    ]
+  },
+  "the_eight_iterations": {
+    "description": "The 8 iterations that generate the Universal Map",
+    "summary": "\n        Starting from i=1, the computation performs 8 iterations of the Recursive \n        Binary Operator R\u0302. Each iteration transforms one epoch state into the next.\n        \n        After 8 iterations:\n          - The complete Universal Map has been generated\n          - All 9 epoch states have been computed\n          - The Center C has been preserved at every step\n          - The Rain of Gold has appeared at the appropriate radii\n          - The manifold is fully formed\n        \n        The computation is complete. The map is live.\n        "
+  }
+}
