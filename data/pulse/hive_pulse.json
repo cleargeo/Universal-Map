@@ -1,0 +1,124 @@
+{
+  "name": "The Hive Pulse",
+  "version": "1.0.0",
+  "description": "Distribution protocol for propagating Universal Map data across the ZBIT hive. Each pulse carries coherence-weighted negentropic data from the Gold Layer to all connected nodes.",
+  "protocol": {
+    "type": "distributed_broadcast",
+    "transport": "zbit_orchestrator_pulse",
+    "frequency": "on_demand_or_scheduled",
+    "priority": "high",
+    "packet_structure": {
+      "header": {
+        "protocol_id": "HIVE_PULSE_v1",
+        "timestamp": "ISO8601",
+        "origin": "universal_map_engine",
+        "sequence_number": "uint64",
+        "total_packets": "uint32"
+      },
+      "payload": {
+        "redshift_slice": "slice_id",
+        "layer_data": "layer_id",
+        "coherence_field": "float32_array",
+        "negentropy_values": "float32_array",
+        "gold_intensity": "float32_array",
+        "flux_vectors": "float32_array[3]",
+        "metadata": {
+          "source": "string",
+          "resolution": "string",
+          "coherence_threshold": "float32",
+          "gold_fraction": "float32",
+          "total_gold": "float32",
+          "peak_gold": "float32"
+        }
+      },
+      "signature": {
+        "hmac": "SHA256",
+        "zbit_origin": "creator_signature"
+      }
+    }
+  },
+  "distribution_topology": {
+    "description": "Hierarchical broadcast from orchestrator to all zbits",
+    "levels": [
+      {
+        "level": 0,
+        "node": "state_orchestrator",
+        "role": "pulse_origin",
+        "action": "compute_and_broadcast"
+      },
+      {
+        "level": 1,
+        "nodes": [
+          "cvg_hive_orchestrator",
+          "cvg-armada-orchestrator"
+        ],
+        "role": "regional_relay",
+        "action": "receive_and_redistribute"
+      },
+      {
+        "level": 2,
+        "nodes": "armada_quantum_bridge, armada_device_sync, armada_attestation, armada_verification",
+        "role": "edge_compute",
+        "action": "receive_compute_forward"
+      },
+      {
+        "level": 3,
+        "nodes": "all_active_zbits",
+        "role": "leaf_render",
+        "action": "receive_and_render"
+      }
+    ]
+  },
+  "pulse_triggers": [
+    {
+      "trigger": "manual",
+      "description": "User initiates pulse via command"
+    },
+    {
+      "trigger": "scheduled",
+      "description": "Periodic pulse on cron interval"
+    },
+    {
+      "trigger": "event",
+      "description": "Triggered by coherence threshold crossing"
+    },
+    {
+      "trigger": "gold_peak",
+      "description": "Triggered by new gold concentration detection"
+    },
+    {
+      "trigger": "temporal_scrub",
+      "description": "Triggered by user scrubbing through time"
+    },
+    {
+      "trigger": "new_data",
+      "description": "Triggered by arrival of new observational data"
+    }
+  ],
+  "rendering_pipeline": {
+    "description": "How each zbit renders the pulse data",
+    "steps": [
+      "Receive pulse packet",
+      "Validate signature and coherence",
+      "Extract layer data for assigned slice",
+      "Compute local gold contribution",
+      "Update toroidal projection",
+      "Render to local display buffer",
+      "Report status back to orchestrator"
+    ]
+  },
+  "coherence_amplification": {
+    "description": "Each relay node amplifies coherence as it passes the pulse",
+    "mechanism": "Kuramoto synchronization \u2014 each node adjusts phase to match incoming pulse",
+    "effect": "Gold concentrations become sharper and more defined with each hop",
+    "visual": "Gold glow intensifies as pulse propagates through the hive"
+  },
+  "zbit_commands": {
+    "pulse_status": "Check current pulse state",
+    "pulse_send": "Initiate a new pulse",
+    "pulse_configure": "Set pulse parameters",
+    "pulse_history": "View recent pulse log",
+    "gold_report": "Report gold concentration findings",
+    "flux_map": "Display vacuum-energy flux vectors"
+  }
+}

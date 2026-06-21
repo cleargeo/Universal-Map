@@ -1,0 +1,201 @@
+{
+  "name": "Direct-to-Network Broadcast",
+  "version": "1.0.0",
+  "description": "Pushes Universal Map data to the global community of explorers, researchers, and decentralized nodes through the CVG Hive infrastructure.",
+  "broadcast_topology": {
+    "description": "Multi-path distribution through CVG Hive infrastructure",
+    "entry_points": [
+      {
+        "name": "cvg-nginx-web",
+        "role": "public_gateway",
+        "ports": {
+          "http": 80,
+          "https": 443
+        },
+        "paths": {
+          "/map/api/v1/slices": "temporal slice data",
+          "/map/api/v1/layer/{id}": "layer data by ID",
+          "/map/api/v1/gold": "Gold Layer overlay data",
+          "/map/api/v1/flux": "vacuum-energy flux vectors",
+          "/map/api/v1/pulse": "Hive Pulse status",
+          "/map/ws": "WebSocket for real-time updates",
+          "/map": "interactive visualization"
+        }
+      },
+      {
+        "name": "cvg-hive-api",
+        "role": "hive_api_gateway",
+        "port": 9096,
+        "paths": {
+          "/api/v1/map/broadcast": "initiate broadcast",
+          "/api/v1/map/slice/{id}": "get slice data",
+          "/api/v1/map/gold": "get gold layer",
+          "/api/v1/map/flux": "get flux data",
+          "/api/v1/map/status": "broadcast status"
+        }
+      },
+      {
+        "name": "ipfs-node",
+        "role": "decentralized_distribution",
+        "peer_id": "12D3KooWCbAiyKipZPEzCGWTNAFkRVSNRCBG3SaM4PTSTEkzbSq2",
+        "ports": {
+          "swarm": 4001,
+          "api": 5001
+        },
+        "distribution": "IPFS content-addressed data distribution",
+        "description": "Map data published to IPFS for decentralized access"
+      },
+      {
+        "name": "cvg-trinity-relay",
+        "role": "external_relay",
+        "port": 18543,
+        "description": "Relays broadcast to external Trinity network nodes"
+      },
+      {
+        "name": "cvg-armada-spine-relay",
+        "role": "armada_relay",
+        "port": 29105,
+        "description": "Relays to Armada fleet nodes"
+      }
+    ]
+  },
+  "distribution_channels": [
+    {
+      "channel": "REST API",
+      "endpoint": "https://{host}/map/api/v1/",
+      "format": "JSON",
+      "auth": "Bearer token (optional for public data)",
+      "rate_limit": "1000 req/min",
+      "caching": "CDN-compatible with ETag"
+    },
+    {
+      "channel": "WebSocket",
+      "endpoint": "wss://{host}/map/ws",
+      "format": "JSON binary frames",
+      "auth": "none for read, token for write",
+      "features": [
+        "real-time pulse updates",
+        "gold layer streaming",
+        "temporal scrub sync"
+      ]
+    },
+    {
+      "channel": "IPFS",
+      "peer": "12D3KooWCbAiyKipZPEzCGWTNAFkRVSNRCBG3SaM4PTSTEkzbSq2",
+      "format": "content-addressed JSON + binary",
+      "access": "ipfs://{CID}/map/slice/{id}",
+      "pinning": "auto-pin on hive orchestrator"
+    },
+    {
+      "channel": "SSE Stream",
+      "endpoint": "https://{host}/map/api/v1/pulse/stream",
+      "format": "Server-Sent Events",
+      "features": [
+        "live pulse notifications",
+        "gold peak alerts",
+        "new data announcements"
+      ]
+    },
+    {
+      "channel": "Trinity Relay",
+      "endpoint": "cvg-trinity-relay:18543",
+      "format": "protobuf",
+      "description": "Pushes to external Trinity network for global distribution"
+    },
+    {
+      "channel": "Armada Broadcast",
+      "endpoint": "cvg-armada-spine-relay:29105",
+      "format": "binary",
+      "description": "Broadcasts to all Armada fleet nodes"
+    }
+  ],
+  "data_formats": {
+    "slice_metadata": {
+      "schema": "slice_id, name, redshift_range, lookback_time_range, layer_ids, data_size, checksum"
+    },
+    "layer_data": {
+      "schema": "layer_id, positions[], densities[], coherence[], gold_intensity[], flux_vectors[], metadata"
+    },
+    "gold_overlay": {
+      "schema": "positions[], intensity[], coherence[], negentropy[], flux_direction[], metadata"
+    },
+    "pulse_packet": {
+      "schema": "header{timestamp, origin, sequence}, payload{slice, layer, coherence, gold, flux}, signature"
+    }
+  },
+  "access_control": {
+    "public_endpoints": [
+      "/map/api/v1/slices (list available slices)",
+      "/map/api/v1/layer/{id} (get layer metadata)",
+      "/map/api/v1/status (system status)"
+    ],
+    "authenticated_endpoints": [
+      "/map/api/v1/layer/{id}/data (full layer data)",
+      "/map/api/v1/gold (Gold Layer data)",
+      "/map/api/v1/flux (flux vectors)",
+      "/map/ws (WebSocket real-time)"
+    ],
+    "admin_endpoints": [
+      "/map/api/v1/broadcast (initiate broadcast)",
+      "/map/api/v1/pulse/send (send pulse)",
+      "/map/api/v1/configure (update settings)"
+    ]
+  },
+  "community_features": {
+    "explorer_dashboard": {
+      "url": "/map",
+      "description": "Interactive toroidal visualization",
+      "features": [
+        "Temporal scrubbing through cosmic time",
+        "Layer toggling (CMB, dark matter, filaments, galaxies, gold)",
+        "Gold concentration heatmap",
+        "Vacuum-energy flux vector field",
+        "Real-time pulse notifications",
+        "Export data (JSON, CSV, FITS)"
+      ]
+    },
+    "researcher_api": {
+      "url": "/map/api/v1/",
+      "description": "Programmatic access for researchers",
+      "features": [
+        "Full data download per slice",
+        "Gold Layer negentropy values",
+        "Coherence field data",
+        "Flux vector fields",
+        "Historical pulse data"
+      ]
+    },
+    "node_sync": {
+      "url": "/map/api/v1/sync",
+      "description": "For decentralized nodes to sync map data",
+      "features": [
+        "Incremental updates",
+        "Content-addressed via IPFS",
+        "Trinity relay for global propagation"
+      ]
+    }
+  },
+  "broadcast_triggers": [
+    {
+      "trigger": "new_data",
+      "description": "New observational data arrives from JWST/DESI/Planck"
+    },
+    {
+      "trigger": "gold_peak",
+      "description": "New gold concentration detected"
+    },
+    {
+      "trigger": "pulse",
+      "description": "Hive Pulse distributes updated data"
+    },
+    {
+      "trigger": "manual",
+      "description": "Admin initiates broadcast"
+    },
+    {
+      "trigger": "scheduled",
+      "description": "Periodic broadcast (configurable interval)"
+    }
+  ],
+  "status": "ready_for_deployment"
+}
