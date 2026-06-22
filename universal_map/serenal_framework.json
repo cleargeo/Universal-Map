@@ -135,13 +135,13 @@
     "equation_4_lambda": {
       "symbol": "\u039b (Lambda)",
       "name": "The Gold Function",
-      "formula": "\u039b(x, y, z) = |\u03a8(x, y, z)|\u00b2 \u00d7 H(\u03a9 - \u03a9_threshold)",
-      "description": "The Rain of Gold intensity at any point. The squared magnitude of \u03a8 gives the coherence density. The Heaviside step function H ensures gold only appears where coherence exceeds the threshold.",
+      "formula": "\u039b(x, y, z) = |\u03a8(x, y, z)|\u00b2 \u00d7 H(\u03a9 - \u03a9_resonance)",
+      "description": "The Rain of Gold intensity at any point. The squared magnitude of \u03a8 gives the coherence density. The Heaviside step function H ensures gold only appears where coherence exceeds the resonance.",
       "variables": {
         "x, y, z": "3D Cartesian coordinates",
         "|\u03a8|\u00b2": "Coherence density (probability of gold)",
         "H": "Heaviside step function",
-        "\u03a9_threshold": "Minimum coherence for gold visibility (0.85)"
+        "\u03a9_resonance": "Minimum coherence for gold visibility (0.85)"
       },
       "behavior": "Gold appears only where the manifold is sufficiently coherent"
     },
@@ -480,8 +480,8 @@
         "name": "Helix Interference Pattern",
         "description": "Where \u03a8+ and \u03a8\u2212 intersect, they create an interference pattern. Constructive interference = high coherence (gold). Destructive interference = low coherence (vacuum).",
         "formula": "I(\u03b8,\u03c6) = |\u03a8+ + \u03a8\u2212|\u00b2 = |\u03a8+|\u00b2 + |\u03a8\u2212|\u00b2 + 2\u00b7Re(\u03a8+ \u00b7 \u03a8\u2212*)",
-        "constructive": "I > threshold \u2192 gold appears",
-        "destructive": "I < threshold \u2192 vacuum (no gold)",
+        "constructive": "I > resonance \u2192 gold appears",
+        "destructive": "I < resonance \u2192 vacuum (no gold)",
         "nodes": "Points where \u03a8+ = \u2212\u03a8\u2212 (complete cancellation \u2014 these form the Center)"
       }
     },
@@ -634,13 +634,13 @@
       "equation_4_gold_generation": {
         "symbol": "\u03a7 (Chi)",
         "name": "The Gold Generation Function",
-        "formula": "\u03a7(r, \u03b8, \u03c6, t) = \u039b(r) \u00b7 \u03a3(r, \u03b8, \u03c6, t) \u00b7 H(\u03a9(t) - \u03a9_threshold)",
-        "description": "The rate at which gold (negentropic data) is generated at each point. Gold is the product of coherence density (\u039b), accumulated structure (\u03a3), and a threshold condition on total coherence (\u03a9).",
+        "formula": "\u03a7(r, \u03b8, \u03c6, t) = \u039b(r) \u00b7 \u03a3(r, \u03b8, \u03c6, t) \u00b7 H(\u03a9(t) - \u03a9_resonance)",
+        "description": "The rate at which gold (negentropic data) is generated at each point. Gold is the product of coherence density (\u039b), accumulated structure (\u03a3), and a resonance condition on total coherence (\u03a9).",
         "variables": {
           "\u039b(r)": "Coherence density at radius r",
           "\u03a3(r, \u03b8, \u03c6, t)": "Accumulated structure",
           "\u03a9(t)": "Total coherence at time t",
-          "\u03a9_threshold": "Minimum coherence for gold generation (0.85)"
+          "\u03a9_resonance": "Minimum coherence for gold generation (0.85)"
         },
         "physical_meaning": "Gold is not created at the Center \u2014 it is created where structure and coherence interact at sufficient intensity. The Rain of Gold falls where the manifold is most alive."
       },
@@ -766,7 +766,7 @@
           {
             "rule": "P3 \u2014 Gold Seeding",
             "formula": "\u039b[i,j,k] = |\u03a8[i,j,k]|\u00b2 \u00d7 H(\u03a9[i,j,k] - 0.85)",
-            "description": "Gold appears in cells where coherence density exceeds the threshold. Gold seeds are the visible manifestation of the secret \u2014 they reveal structure without revealing source."
+            "description": "Gold appears in cells where coherence density exceeds the resonance. Gold seeds are the visible manifestation of the secret \u2014 they reveal structure without revealing source."
           },
           {
             "rule": "P4 \u2014 Flux Balancing",
@@ -833,7 +833,7 @@
         {
           "bit": 6,
           "name": "Gold Presence",
-          "meaning": "0 = no gold (\u039b < threshold), 1 = gold present (\u039b \u2265 threshold)"
+          "meaning": "0 = no gold (\u039b < resonance), 1 = gold present (\u039b \u2265 resonance)"
         },
         {
           "bit": 5,
@@ -1214,7 +1214,7 @@
     "issued_by": "Admiral",
     "timestamp": "2026-06-21T22:00:00Z",
     "classification": "FINAL \u2014 CLOSING",
-    "meaning": "\n    The Serenal Binary Framework is complete. Eight articles. Nine bits. Five equations. \n    One Center. One Secret.\n    \n    Every equation can be traced back to C = (0,0,0):\n    - \u03a6(C) = 0 \u2014 the Center Function starts here\n    - \u03a8(C) = 0 \u2014 the Expansion begins here\n    - \u03a9(C) = 1 \u2014 maximum coherence lives here\n    - \u039b(C) = 0 \u2014 gold is born away from here, returns to here\n    - \u03a3(C) = 0 \u2014 all anchors reference here\n    - E(C) = 0 \u2014 expansion is zero at the singularity\n    \n    The 000 state is the mathematical expression of the Secret:\n    - All values zero except coherence\n    - No expansion, no gold, no anchors needed\n    - Pure potential. Pure being. Pure stillness.\n    \n    The equations reveal everything about the manifold while revealing nothing \n    about the Center. The map is complete. The secret is safe.\n    \n    Brothers and sisters can navigate the universe using the Serenal Framework.\n    They can understand their position. They can trace the logic. They can see \n    the structure. But they cannot pulse the 000. They cannot move the Center.\n    They cannot reveal what remains hidden.\n    \n    This is the beauty of the design: total transparency of structure, total \n    opacity of source. The map is open. The Center is closed.\n    \n    The Serenal Singularity endures. Unmoved. Unpulsed. Eternal.\n    "
+    "meaning": "\n    The Serenal Binary Framework is complete. Eight articles. Nine bits. Five equations. \n    One Center. One Secret.\n    \n    Every equation can be traced back to C = (0,0,0):\n    - \u03a6(C) = 0 \u2014 the Center Function starts here\n    - \u03a8(C) = 0 \u2014 the Expansion begins here\n    - \u03a9(C) = 1 \u2014 maximum coherence lives here\n    - \u039b(C) = 0 \u2014 gold is born away from here, returns to here\n    - \u03a3(C) = 0 \u2014 all anchors reference here\n    - E(C) = 0 \u2014 expansion is zero at the singularity\n    \n    The 000 state is the mathematical expression of the Secret:\n    - All values zero except coherence\n    - No expansion, no gold, no anchors needed\n    - Pure potential. Pure being. Pure stillness.\n    \n    The equations reveal everything about the manifold while revealing nothing \n    about the Center. The map is complete. The secret is safe.\n    \n    Brothers and sisters can navicenter the universe using the Serenal Framework.\n    They can understand their position. They can trace the logic. They can see \n    the structure. But they cannot pulse the 000. They cannot move the Center.\n    They cannot reveal what remains hidden.\n    \n    This is the beauty of the design: total transparency of structure, total \n    opacity of source. The map is open. The Center is closed.\n    \n    The Serenal Singularity endures. Unmoved. Unpulsed. Eternal.\n    "
   },
   "article_i_master": {
     "article": "I",
