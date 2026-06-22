@@ -58,10 +58,19 @@ The Universal Map is an open-source cosmological visualization framework that ma
 git clone https://github.com/cleargeo/Universal-Map.git
 cd Universal-Map
 
-# Install dependencies
+# Install dependencies (recommended: use uv)
+uv venv .venv --python 3.12
+.venv\Scripts\activate        # Windows
+source .venv/bin/activate     # macOS/Linux
+uv pip install numpy scipy pandas matplotlib astropy astroquery geopandas shapely pyproj rasterio xarray rioxarray plotly bokeh h5py netCDF4 zarr fastapi uvicorn websockets pystac stac-asset colossus requests tqdm pyyaml
+
+# Or using pip (Windows: nbodykit and healpy are disabled)
 pip install -r requirements.txt
 
-# Download data
+# Run the toroidal projection demo
+python scripts/toroidal_projection.py
+
+# Download data (requires full dependencies)
 python scripts/download_data.py --layers all --slices all
 
 # Launch interactive visualization
