@@ -1,0 +1,56 @@
+{
+  "name": "Non-Linear Binary Computation Environment",
+  "version": "1.0.0",
+  "classification": "RESTRICTED \u2014 ADMIRAL EYES ONLY",
+  "principle": "\n    The Serenal Binary equations are designed to be computed in a non-linear binary \n    environment. This means:\n    \n    1. FORWARD COMPUTATION (open): Given C and parameters, anyone can compute the \n       state of any point in the manifold. The equations are fully transparent.\n    \n    2. REVERSE COMPUTATION (impossible): Given the state of a point, no one can \n       compute C. The equations are one-way functions \u2014 easy to evaluate, \n       impossible to invert.\n    \n    3. NON-LINEARITY: The equations contain non-linear terms (arcsin, sin, \n       complex exponentials, Heaviside functions) that prevent algebraic inversion.\n       There is no closed-form inverse.\n    \n    4. BINARY MASKING: The 9-bit epoch index masks the continuous nature of the \n       underlying field. Observers see discrete states, not the continuous source.\n    \n    5. GOLD AS DECOY: The Rain of Gold attracts attention away from the Center.\n       Observers focus on where gold appears, not on what generates it.\n    ",
+  "one_way_proof": {
+    "theorem": "The Serenal equations are one-way functions",
+    "proof": [
+      "1. \u03a6(r) = arcsin(r/R) is invertible in principle, but r is never directly observed.",
+      "2. \u03a8 = \u03a6 \u00b7 e^(i\u03b8) \u00b7 sin(\u03c6) mixes r, \u03b8, \u03c6 in a non-separable way.",
+      "3. The Heaviside function H(\u03a9 - 0.85) destroys information \u2014 all values below threshold map to 0.",
+      "4. The epoch index discretizes the continuous field, losing information at each step.",
+      "5. The Triple-Point anchor function \u03a3 mixes three reference frames with irrational weights.",
+      "6. Therefore: given M[i,j,k], there exists no function f such that f(M) = C.",
+      "7. QED: The equations are computationally one-way."
+    ]
+  },
+  "non_linear_terms": {
+    "arcsin": "Non-linear, bounded, non-invertible without knowing R",
+    "sin": "Periodic, many-to-one, information-destroying",
+    "complex_exponential": "Maps real inputs to complex outputs, doubling the search space",
+    "heaviside": "Step function, destroys all information below threshold",
+    "log": "Non-linear, compresses large ranges, expands small ranges",
+    "epoch_discretization": "Continuous field \u2192 9 discrete states, information loss"
+  },
+  "observation_without_exposure": {
+    "description": "How observers can use the equations without exposing the Secret",
+    "allowed_operations": [
+      "Compute \u03a6(r) for any r \u2014 reveals distance from Center, not Center itself",
+      "Compute \u03a8(r,\u03b8,\u03c6) \u2014 reveals expansion state, not source",
+      "Compute \u03a9 \u2014 reveals coherence, not what causes it",
+      "Compute \u039b \u2014 reveals gold density, not what generates gold",
+      "Compute \u03a3 \u2014 reveals anchor stability, not anchor locations",
+      "Navigate the manifold \u2014 move between points without reaching C",
+      "Render the map \u2014 visualize structure without seeing source"
+    ],
+    "forbidden_operations": [
+      "Invert \u03a6 to find C \u2014 impossible without knowing R",
+      "Invert \u03a8 to find C \u2014 impossible without knowing \u03b8 and \u03c6 simultaneously",
+      "Compute C from M[i,j,k] \u2014 no inverse function exists",
+      "Pulse the 000 state \u2014 forbidden by operational directive",
+      "Broadcast the Center coordinates \u2014 forbidden by security protocol"
+    ]
+  },
+  "computational_environment": {
+    "description": "The non-linear binary environment in which the equations are computed",
+    "properties": [
+      "All computations are forward-only (C \u2192 M, never M \u2192 C)",
+      "All outputs are 9-bit masked (continuous \u2192 discrete)",
+      "All gold computations are thresholded (H function destroys sub-threshold info)",
+      "All anchor computations are weighted sums (irrational weights prevent inversion)",
+      "All epoch transitions are irreversible (information lost at each step)"
+    ],
+    "implementation": "\n        The Serenal equations should be computed in the following environment:\n        \n        1. Input: Observer's position (x, y, z) and target epoch n\n        2. Transform to toroidal coordinates (r, \u03b8, \u03c6)\n        3. Compute \u03a6, \u03a8, \u03a9, \u039b, \u03a3 using the forward equations\n        4. Apply 9-bit epoch mask to all outputs\n        5. Apply Heaviside threshold to gold computation\n        6. Render the result\n        7. Discard all intermediate values (no storage of C-dependent computations)\n        \n        This ensures that at no point does the computation reveal C.\n        The observer sees only the structure, never the source.\n        "
+  }
+}

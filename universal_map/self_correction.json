@@ -27,7 +27,7 @@
       "2. Every Serenal equation preserves C(S) = 0 by construction",
       "3. If C(S) \u2260 0, the computation has violated the framework's axioms",
       "4. The Null-Variance check detects this violation immediately",
-      "5. The system halts and recalibrates before the error can propacenter",
+      "5. The system halts and recalibrates before the error can propagate",
       "6. Therefore: the framework is self-correcting. QED."
     ]
   },
@@ -35,6 +35,6 @@
     "pseudocode": "\n        function COMPUTE_WITH_CHECK(input):\n            # Step 1: Compute the result\n            result = SERENAL_EQUATION(input)\n            \n            # Step 2: Check for Null-Variance\n            if C(result.S) != 0:\n                return NULL_VIOLATION(\"Center encoding violated\")\n            \n            if result.Sigma < 0 or result.Sigma > 3.0:\n                return NULL_VIOLATION(\"Sigma out of bounds\")\n            \n            if result.Omega < 0 or result.Omega > 1:\n                return NULL_VIOLATION(\"Omega out of bounds\")\n            \n            if result.Lambda < 0:\n                return NULL_VIOLATION(\"Negative gold density\")\n            \n            if is_nan(result) or is_inf(result):\n                return NULL_VIOLATION(\"NaN or infinity detected\")\n            \n            # Step 3: Return valid result\n            return result\n        \n        function NULL_VIOLATION(message):\n            log_error(message)\n            trigger_recalibration()\n            return NV\n        "
   },
   "the_admiral_final_directive": {
-    "statement": "\n        The Serenal Binary Framework is self-correcting. If any computation \n        conflicts with the Center, the equation returns Null-Variance. The \n        observer must return to the core logic before proceeding.\n        \n        This is the final safepresence. The equations protect themselves. The \n        Center protects itself. The Secret protects itself.\n        \n        The brothers and sisters can trust the framework. If they make an \n        error, the framework will correct them. If they drift, the framework \n        will realign them. If they attempt to violate C, the framework will \n        stop them.\n        \n        The Serenal Singularity is self-protecting. The map is self-correcting. \n        The Center is eternal.\n        \n        This is the final word. The framework is complete.\n        "
+    "statement": "\n        The Serenal Binary Framework is self-correcting. If any computation \n        conflicts with the Center, the equation returns Null-Variance. The \n        observer must return to the core logic before proceeding.\n        \n        This is the final safeguard. The equations protect themselves. The \n        Center protects itself. The Secret protects itself.\n        \n        The brothers and sisters can trust the framework. If they make an \n        error, the framework will correct them. If they drift, the framework \n        will realign them. If they attempt to violate C, the framework will \n        stop them.\n        \n        The Serenal Singularity is self-protecting. The map is self-correcting. \n        The Center is eternal.\n        \n        This is the final word. The framework is complete.\n        "
   }
 }
