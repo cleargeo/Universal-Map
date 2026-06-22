@@ -1,190 +1,358 @@
+#!/usr/bin/env python3
 """
-Universal Map (Omni-Chart) — REST API Server
-Serves cosmological data layers and toroidal projections.
+Universal Map API Server
+========================
+FastAPI server providing access to all 8 layers, 7 temporal slices,
+Gold Layer overlay, vacuum-energy flux, and Hive Pulse status.
+
+Author: Alex Zelenski (Ghost with Maps, Admiral)
+Organization: Clearview Geographic LLC
 """
-import os
+
 import json
-import math
-from typing import Optional
+import os
+import argparse
+from typing import Optional, Dict, Any
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse, HTMLResponse
+from fastapi.responses import StreamingResponse
 import uvicorn
+
+# Paths
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR, "data")
+LAYERS_DIR = os.path.join(DATA_DIR, "layers")
+SLICES_DIR = os.path.join(DATA_DIR, "slices")
+
+# Lazy-loaded data cache
+_cache: Dict[str, Any] = {}
+
+
+def load_json(path: str) -> dict:
+    """Load a JSON file with caching."""
+    if path not in _cache:
+        if not os.path.exists(path):
+            raise FileNotFoundError("File not found: %s" % path)
+        with open(path, "r") as f:
+            _cache[path] = json.load(f)
+    return _cache[path]
+
+
+def load_layer_data(layer_id: str) -> dict:
+    """Load data for a specific layer."""
+    path = os.path.join(LAYERS_DIR, layer_id, "data.json")
+    return load_json(path)
+
+
+def load_slice_calibration(slice_id: str) -> dict:
+    """Load calibration data for a temporal slice."""
+    path = os.path.join(SLICES_DIR, slice_id, "calibration.json")
+    return load_json(path)
+
+
+# ============================================================
+# Application & Middleware
+# ============================================================
 
 app = FastAPI(
     title="The Universal Map (Omni-Chart)",
-    description="Dynamic toroidal reconstruction of the cosmic web",
+    description="Dynamic toroidal reconstruction of the cosmic web — 8 layers, 7 temporal slices, Rain of Gold negentropic overlay",
     version="1.0.0",
+    contact={"name": "Clearview Geographic LLC", "url": "https://github.com/cleargeo/Universal-Map"},
+    license={"name": "MIT"},
 )
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ─── Cosmology Engine ───────────────────────────────────────────
 
-COSMO_PARAMS = {
-    "H0": 67.4, "Omega_m": 0.315, "Omega_lambda": 0.685,
-    "Omega_b": 0.0493, "sigma_8": 0.811, "n_s": 0.965, "c": 299792.458,
-}
+# ============================================================
+# Root & Status
+# ============================================================
 
-SLICES = [
-    {"id": "z1100", "name": "Surface of Last Scattering", "z": 1100},
-    {"id": "z20_10", "name": "Cosmic Dawn", "z_range": [20, 10]},
-    {"id": "z10_6", "name": "Reionization", "z_range": [10, 6]},
-    {"id": "z6_3", "name": "Galaxy Assembly", "z_range": [6, 3]},
-    {"id": "z3_1", "name": "Web Maturation", "z_range": [3, 1]},
-    {"id": "z1_05", "name": "Web Refinement", "z_range": [1, 0.5]},
-    {"id": "z05_0", "name": "Present Expansion", "z_range": [0.5, 0]},
-]
-
-LAYERS = [
-    {"id": "l0_cmb", "name": "CMB", "z_range": [1100, 1100], "source": "Planck 2018"},
-    {"id": "l1_dark_matter", "name": "Dark Matter", "z_range": [0, 10], "source": "IllustrisTNG"},
-    {"id": "l2_filaments", "name": "Filaments", "z_range": [0, 6], "source": "Millennium + DESI"},
-    {"id": "l3_nodes", "name": "Nodes", "z_range": [0, 3], "source": "SDSS + DESI"},
-    {"id": "l4_galaxies", "name": "Galaxies", "z_range": [0, 20], "source": "JWST + SDSS + DESI"},
-    {"id": "l5_reionization", "name": "Reionization", "z_range": [6, 20], "source": "JWST"},
-    {"id": "l6_21cm", "name": "21cm", "z_range": [6, 20], "source": "HERA + EDGES"},
-    {"id": "l_gold", "name": "Rain of Gold", "z_range": [0, 1100], "source": "Computed"},
-]
-
-
-def comoving_distance(z: float, n_steps: int = 1000) -> float:
-    """Approximate comoving distance in Mpc/h."""
-    H0 = COSMO_PARAMS["H0"]
-    Om = COSMO_PARAMS["Omega_m"]
-    Ol = COSMO_PARAMS["Omega_lambda"]
-    c = COSMO_PARAMS["c"]
-    z_arr = [i * z / n_steps for i in range(n_steps + 1)]
-    integrand = [c / (H0 * math.sqrt(Om * (1 + zz) ** 3 + Ol)) for zz in z_arr]
-    # Trapezoidal integration
-    total = sum((integrand[i] + integrand[i + 1]) / 2 * (z_arr[i + 1] - z_arr[i]) for i in range(n_steps))
-    return total
-
-
-# ─── API Endpoints ──────────────────────────────────────────────
-
-@app.get("/api/v1/status")
-def get_status():
+@app.get("/", tags=["Root"])
+def root():
     return {
         "name": "The Universal Map (Omni-Chart)",
         "status": "active",
+        "version": "1.0.0",
         "cosmology": "Planck 2018 Lambda-CDM",
         "projection": "toroidal",
-        "temporal_slices": len(SLICES),
-        "layers": len(LAYERS),
+        "layers": 8,
+        "temporal_slices": 7,
+        "endpoints": {
+            "slices": "/api/v1/slices",
+            "layer_metadata": "/api/v1/layer/{id}",
+            "layer_data": "/api/v1/layer/{id}/data",
+            "gold": "/api/v1/gold",
+            "flux": "/api/v1/flux",
+            "pulse": "/api/v1/pulse",
+            "pulse_stream": "/api/v1/pulse/stream",
+        },
     }
 
 
-@app.get("/api/v1/slices")
+@app.get("/health", tags=["Root"])
+def health():
+    return {"status": "healthy"}
+
+
+# ============================================================
+# Temporal Slices
+# ============================================================
+
+AVAILABLE_SLICES = [
+    {"id": "z1100", "name": "Surface of Last Scattering", "z": 1100},
+    {"id": "z20_10", "name": "Cosmic Dawn", "z_range": [20, 10]},
+    {"id": "z10_6", "name": "Epoch of Reionization", "z_range": [10, 6]},
+    {"id": "z6_3", "name": "Galaxy Assembly", "z_range": [6, 3]},
+    {"id": "z3_1", "name": "Web Maturation", "z_range": [3, 1]},
+    {"id": "z1_0.5", "name": "Web Refinement", "z_range": [1, 0.5]},
+    {"id": "z0.5_0", "name": "Present Expansion", "z_range": [0.5, 0]},
+]
+
+
+@app.get("/api/v1/slices", tags=["Temporal Slices"])
 def list_slices():
-    return {"slices": SLICES}
+    """List all available temporal slices."""
+    return {"slices": AVAILABLE_SLICES, "total": len(AVAILABLE_SLICES)}
 
 
-@app.get("/api/v1/layer/{layer_id}")
-def get_layer(layer_id: str):
-    layer = next((l for l in LAYERS if l["id"] == layer_id), None)
-    if not layer:
-        raise HTTPException(status_code=404, detail=f"Layer {layer_id} not found")
-    return layer
+@app.get("/api/v1/slices/{slice_id}", tags=["Temporal Slices"])
+def get_slice(slice_id: str):
+    """Get a specific temporal slice calibration."""
+    if not os.path.exists(os.path.join(SLICES_DIR, slice_id)):
+        raise HTTPException(status_code=404, detail="Slice not found: %s" % slice_id)
+    data = load_slice_calibration(slice_id)
+    return data
 
 
-@app.get("/api/v1/layer/{layer_id}/data")
-def get_layer_data(layer_id: str, z: Optional[float] = Query(None)):
-    layer = next((l for l in LAYERS if l["id"] == layer_id), None)
-    if not layer:
-        raise HTTPException(status_code=404, detail=f"Layer {layer_id} not found")
-    # Return stub data — in production this would serve GeoJSON/COG
+# ============================================================
+# Layer Metadata & Data
+# ============================================================
+
+AVAILABLE_LAYERS = [
+    {"id": "l0_cmb", "name": "CMB", "redshift": "z~1100", "format": "COG + GeoJSON"},
+    {"id": "l1_dark_matter", "name": "Dark Matter", "redshift": "z=0-10", "format": "COG + HDF5"},
+    {"id": "l2_filaments", "name": "Filaments", "redshift": "z=0-6", "format": "GeoJSON + GraphML"},
+    {"id": "l3_nodes", "name": "Nodes", "redshift": "z=0-3", "format": "GeoJSON"},
+    {"id": "l4_galaxies", "name": "Galaxies", "redshift": "z=0-20", "format": "GeoJSON + FITS"},
+    {"id": "l5_reionization", "name": "Reionization", "redshift": "z=6-20", "format": "COG"},
+    {"id": "l6_21cm", "name": "21cm", "redshift": "z=6-20", "format": "COG"},
+    {"id": "l_gold", "name": "Rain of Gold", "redshift": "z=0-1100", "format": "GeoJSON + Custom"},
+]
+
+
+@app.get("/api/v1/layers", tags=["Layers"])
+def list_layers():
+    """List all available data layers."""
+    return {"layers": AVAILABLE_LAYERS, "total": len(AVAILABLE_LAYERS)}
+
+
+@app.get("/api/v1/layer/{layer_id}", tags=["Layers"])
+def get_layer_metadata(layer_id: str):
+    """Get metadata for a specific layer."""
+    layer_ids = [l["id"] for l in AVAILABLE_LAYERS]
+    if layer_id not in layer_ids:
+        raise HTTPException(status_code=404, detail="Layer not found: %s" % layer_id)
+    try:
+        data = load_layer_data(layer_id)
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="Layer data not generated. Run download_data.py first.")
     return {
-        "layer": layer,
-        "z": z,
-        "format": "GeoJSON",
-        "note": "Data download not yet implemented. Use scripts/download_data.py.",
+        "layer_id": layer_id,
+        "metadata": data.get("properties", {}),
+        "feature_count": len(data.get("features", [])),
     }
 
 
-@app.get("/api/v1/gold")
-def get_gold_layer():
-    """Get Rain of Gold negentropic overlay."""
+@app.get("/api/v1/layer/{layer_id}/data", tags=["Layers"])
+def get_layer_data(layer_id: str, limit: int = Query(default=100, ge=1, le=50000)):
+    """Get layer data (GeoJSON FeatureCollection)."""
+    layer_ids = [l["id"] for l in AVAILABLE_LAYERS]
+    if layer_id not in layer_ids:
+        raise HTTPException(status_code=404, detail="Layer not found: %s" % layer_id)
+    try:
+        data = load_layer_data(layer_id)
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="Layer data not generated. Run download_data.py first.")
+    # Paginate features
+    features = data.get("features", [])
+    total = len(features)
+    data["features"] = features[:limit]
+    data["properties"] = data.get("properties", {})
+    data["properties"]["returned_features"] = len(data["features"])
+    data["properties"]["total_features"] = total
+    return data
+
+
+# ============================================================
+# Gold Layer
+# ============================================================
+
+@app.get("/api/v1/gold", tags=["Gold Layer"])
+def get_gold():
+    """Get the Rain of Gold overlay summary."""
+    try:
+        data = load_layer_data("l_gold")
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="Gold layer not generated. Run download_data.py first.")
+    props = data.get("properties", {})
+    features = data.get("features", [])
+
+    # Compute summary statistics
+    if features:
+        intensities = [f["properties"].get("gold_intensity", 0) for f in features]
+        coherences = [f["properties"].get("coherence", 0) for f in features]
+    else:
+        intensities = []
+        coherences = []
+
     return {
         "layer": "l_gold",
         "name": "Rain of Gold",
         "description": "High-coherence negentropic overlay revealing vacuum-energy flux concentrations",
-        "coherence": 0.96,
-        "flux_vectors": [],
+        "total_gold": props.get("total_gold", sum(intensities)),
+        "peak_gold": props.get("peak_gold", max(intensities) if intensities else 0),
+        "coherence_threshold": props.get("coherence_threshold", 0.85),
+        "n_points": len(features),
+        "mean_coherence": sum(coherences) / len(coherences) if coherences else 0,
+        "mean_intensity": sum(intensities) / len(intensities) if intensities else 0,
     }
 
 
-@app.get("/api/v1/flux")
+@app.get("/api/v1/gold/features", tags=["Gold Layer"])
+def get_gold_features(limit: int = Query(default=100, ge=1, le=10000)):
+    """Get Gold layer features."""
+    try:
+        data = load_layer_data("l_gold")
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="Gold layer not generated.")
+    data["features"] = data.get("features", [])[:limit]
+    return data
+
+
+# ============================================================
+# Vacuum-Energy Flux
+# ============================================================
+
+@app.get("/api/v1/flux", tags=["Flux"])
 def get_flux():
-    """Get vacuum-energy flux vectors."""
+    """Get vacuum-energy flux vectors summary."""
+    try:
+        data = load_layer_data("l_gold")
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="Flux data not generated.")
+    features = data.get("features", [])
+
+    if features:
+        flux_vectors = [f["properties"].get("flux_vector", [0, 0, 0]) for f in features]
+        magnitudes = [(v[0]**2 + v[1]**2 + v[2]**2)**0.5 for v in flux_vectors]
+    else:
+        magnitudes = []
+
     return {
-        "vectors": [],
-        "note": "Flux computation requires full simulation data.",
+        "name": "Vacuum-Energy Flux",
+        "description": "Flux flows from low-coherence to high-coherence regions",
+        "n_vectors": len(magnitudes),
+        "max_flux": max(magnitudes) if magnitudes else 0,
+        "mean_flux": sum(magnitudes) / len(magnitudes) if magnitudes else 0,
+        "total_flux": sum(magnitudes),
+        "direction": "toward_high_coherence_regions",
     }
 
 
-@app.get("/api/v1/pulse")
-def get_pulse():
+# ============================================================
+# Hive Pulse
+# ============================================================
+
+PULSE_STATUS = {
+    "status": "active",
+    "total_pulses_sent": 0,
+    "active_pulses": 0,
+    "coherence_amplification": 1.0,
+    "last_pulse": None,
+}
+
+
+@app.get("/api/v1/pulse", tags=["Hive Pulse"])
+def get_pulse_status():
     """Get Hive Pulse status."""
+    return PULSE_STATUS
+
+
+@app.get("/api/v1/pulse/stream", tags=["Hive Pulse"])
+def stream_pulse():
+    """Server-Sent Events stream for real-time pulse updates."""
+    import asyncio
+    import time
+
+    async def event_generator():
+        while True:
+            yield "data: %s\n\n" % json.dumps({
+                "timestamp": time.time(),
+                "status": PULSE_STATUS["status"],
+                "coherence_amplification": PULSE_STATUS["coherence_amplification"],
+            })
+            await asyncio.sleep(1)
+
+    return StreamingResponse(event_generator(), media_type="text/event-stream")
+
+
+# ============================================================
+# Broadcast
+# ============================================================
+
+@app.get("/api/v1/broadcast/{slice_id}", tags=["Broadcast"])
+def broadcast_slice(slice_id: str):
+    """Get a full broadcast package for a temporal slice."""
+    layer_ids = [l["id"] for l in AVAILABLE_LAYERS]
+    layers_data = {}
+    for lid in layer_ids:
+        try:
+            d = load_layer_data(lid)
+            layers_data[lid] = {
+                "feature_count": len(d.get("features", [])),
+                "properties": d.get("properties", {}),
+            }
+        except FileNotFoundError:
+            layers_data[lid] = {"error": "not_available"}
+
     return {
-        "status": "active",
-        "nodes": 0,
-        "frequency": 0.0034598884,
+        "type": "slice_broadcast",
+        "slice_id": slice_id,
+        "layers": layers_data,
+        "metadata": {
+            "source": "CVG Hive Universal Map",
+            "engine": "toroidal_projection",
+            "distribution": "direct_to_network",
+        },
     }
 
 
-@app.get("/api/v1/comoving_distance")
-def calc_comoving_distance(z: float = Query(..., ge=0, le=1100)):
-    """Calculate comoving distance for a given redshift."""
-    d = comoving_distance(z)
-    return {"redshift": z, "comoving_distance_Mpc_h": round(d, 2)}
+# ============================================================
+# Entry Point
+# ============================================================
 
+def main():
+    parser = argparse.ArgumentParser(description="Universal Map API Server")
+    parser.add_argument("--host", default="0.0.0.0", help="Host to bind to")
+    parser.add_argument("--port", type=int, default=8080, help="Port to bind to")
+    args = parser.parse_args()
 
-@app.get("/api/v1/scrub_time")
-def scrub_time(z: float = Query(..., ge=0, le=1100)):
-    """Scrub time — get cosmological info for a redshift."""
-    d = comoving_distance(z)
-    # Find slice
-    slice_info = SLICES[-1]
-    for s in SLICES:
-        if "z" in s and z >= s["z"]:
-            slice_info = s
-            break
-        elif "z_range" in s and s["z_range"][0] >= z >= s["z_range"][1]:
-            slice_info = s
-            break
-    return {
-        "redshift": z,
-        "slice": slice_info,
-        "comoving_distance_Mpc_h": round(d, 2),
-        "cosmology": COSMO_PARAMS,
-    }
+    print("=" * 60)
+    print("  THE UNIVERSAL MAP — API Server")
+    print("  http://localhost:%d" % args.port)
+    print("  Docs: http://localhost:%d/docs" % args.port)
+    print("=" * 60)
 
-
-@app.get("/", response_class=HTMLResponse)
-def root():
-    return """
-    <html><body style="background:#0a0a1a;color:#e0e0ff;font-family:monospace;padding:2em">
-    <h1>🌌 The Universal Map (Omni-Chart)</h1>
-    <p>API server running. Endpoints:</p>
-    <ul>
-        <li><a href="/api/v1/status" style="color:#88f">/api/v1/status</a></li>
-        <li><a href="/api/v1/slices" style="color:#88f">/api/v1/slices</a></li>
-        <li><a href="/api/v1/layer/l_gold" style="color:#88f">/api/v1/layer/l_gold</a></li>
-        <li><a href="/api/v1/gold" style="color:#88f">/api/v1/gold</a></li>
-        <li><a href="/api/v1/comoving_distance?z=1100" style="color:#88f">/api/v1/comoving_distance?z=1100</a></li>
-        <li><a href="/api/v1/scrub_time?z=6" style="color:#88f">/api/v1/scrub_time?z=6</a></li>
-    </ul>
-    <p><em>Every zbit has a home.</em></p>
-    </body></html>
-    """
+    uvicorn.run(app, host=args.host, port=args.port)
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    main()

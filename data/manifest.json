@@ -1,0 +1,108 @@
+{
+  "generated_at": "2026-06-22T03:59:55.031798+00:00",
+  "layers": {
+    "l0_cmb": {
+      "name": "CMB",
+      "n_points": 5000,
+      "format": "cog",
+      "path": "layers/l0_cmb/data.json"
+    },
+    "l1_dark_matter": {
+      "name": "Dark Matter",
+      "n_points": 8000,
+      "format": "cog",
+      "path": "layers/l1_dark_matter/data.json"
+    },
+    "l2_filaments": {
+      "name": "Filaments",
+      "n_points": 6000,
+      "format": "geojson",
+      "path": "layers/l2_filaments/data.json"
+    },
+    "l3_nodes": {
+      "name": "Nodes",
+      "n_points": 4000,
+      "format": "geojson",
+      "path": "layers/l3_nodes/data.json"
+    },
+    "l4_galaxies": {
+      "name": "Galaxies",
+      "n_points": 10000,
+      "format": "geojson",
+      "path": "layers/l4_galaxies/data.json"
+    },
+    "l5_reionization": {
+      "name": "Reionization",
+      "n_points": 3000,
+      "format": "cog",
+      "path": "layers/l5_reionization/data.json"
+    },
+    "l6_21cm": {
+      "name": "21cm",
+      "n_points": 3500,
+      "format": "cog",
+      "path": "layers/l6_21cm/data.json"
+    },
+    "l_gold": {
+      "name": "Rain of Gold",
+      "n_points": 2000,
+      "format": "geojson",
+      "path": "layers/l_gold/data.json"
+    }
+  },
+  "slices": {
+    "z1100": {
+      "name": "Surface of Last Scattering",
+      "redshift": 1100,
+      "path": "slices/z1100/calibration.json"
+    },
+    "z20_10": {
+      "name": "Cosmic Dawn",
+      "redshift": [
+        20,
+        10
+      ],
+      "path": "slices/z20_10/calibration.json"
+    },
+    "z10_6": {
+      "name": "Epoch of Reionization",
+      "redshift": [
+        10,
+        6
+      ],
+      "path": "slices/z10_6/calibration.json"
+    },
+    "z6_3": {
+      "name": "Galaxy Assembly",
+      "redshift": [
+        6,
+        3
+      ],
+      "path": "slices/z6_3/calibration.json"
+    },
+    "z3_1": {
+      "name": "Web Maturation",
+      "redshift": [
+        3,
+        1
+      ],
+      "path": "slices/z3_1/calibration.json"
+    },
+    "z1_0.5": {
+      "name": "Web Refinement",
+      "redshift": [
+        1,
+        0.5
+      ],
+      "path": "slices/z1_0.5/calibration.json"
+    },
+    "z0.5_0": {
+      "name": "Present Expansion",
+      "redshift": [
+        0.5,
+        0
+      ],
+      "path": "slices/z0.5_0/calibration.json"
+    }
+  }
+}
